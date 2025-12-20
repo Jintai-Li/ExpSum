@@ -5,7 +5,7 @@ Overview
 HMSum-13 is an industrial-scale benchmark for function-level code summarization, constructed from HarmonyOS version 13.
 The dataset is designed to support research on generating practically acceptable code summaries that align with developers’ documentation expectations, beyond semantic correctness alone.
 
-Each function in HMSum-13 is paired with an officially released, human-written code summary, curated and reviewed by professional developers, and strictly following industrial documentation standards. We collect the data from [HarmonyOS DEVELOPER.]([http://blog.csdn.net/guodongxiaren](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/development-intro-api))
+Each function in HMSum-13 is paired with an officially released, human-written code summary, curated and reviewed by professional developers, and strictly following industrial documentation standards. We collect the data from [HarmonyOS DEVELOPER](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/development-intro-api).
 
 Dataset Statistics
 -
