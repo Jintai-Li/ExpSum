@@ -1,0 +1,200 @@
+Emits a value to the observer in a thread-safe manner, handling backpressure and error delays.
+Returns an Observable that emits the items emitted by the first source Observable to emit an item among several source Observables.
+Returns an Observable that emits the items emitted by the first source Observable to emit an item among several provided Observables, or returns an empty Observable if no sources are provided, and wraps a single source if only one is provided.
+Concatenates multiple `ObservableSource` instances into a single `Observable` sequence, ensuring that all elements are emitted in order and errors are delayed until all sources have been subscribed to.
+Concatenates multiple `ObservableSource` instances into a single `Observable`, with a specified prefetch count to optimize performance.
+Concatenates multiple `ObservableSource` instances into a single `Observable` sequence, handling cases where no or only one source is provided.
+Concatenates the given ObservableSources into a single Observable, delaying errors until all sources have completed.
+Concatenates the given `ObservableSource` instances into a single `Observable` and subscribes to each source eagerly.
+Concatenates multiple `ObservableSource` instances eagerly, allowing a specified maximum concurrency and prefetch size.
+Concatenates multiple Observable sources eagerly, with specified maximum concurrency and prefetch values, and delays errors until all sources complete.
+Concatenates multiple Observables into a single Observable, delaying any errors until all Observables have completed.
+Concatenates multiple `ObservableSource` instances into one sequence, with options to control error handling and prefetching.
+Concatenates multiple `ObservableSource` instances eagerly up to a specified concurrency and prefetch count, without using a scheduler.
+Concatenates observables eagerly, allowing a specified maximum number of concurrent subscriptions and a prefetch amount, without applying any scheduler.
+Returns an empty Observable that completes without emitting any items, ensuring no scheduler is used and suppressing unchecked warnings.
+Creates an Observable that emits a single `onError` notification using the provided `Callable` to generate the exception.
+Converts an array of items into an Observable sequence, handling null checks and optimizing for zero or single item arrays.
+Converts an Iterable into an Observable sequence, ensuring the source is not null and applying plugin transformations.
+Converts a Publisher into an Observable, ensuring the publisher is not null and applying backpressure support.
+Generates an Observable that emits items based on the provided generator function, ensuring the generator is not null and using default suppliers and consumers.
+Generates an Observable that emits items based on the provided state and generator function, without using any scheduler.
+Creates an Observable that emits a sequence of Long values at regular intervals, starting after an initial delay, using a specified scheduler and time unit.
+Creates an Observable that emits a sequence of Long values at a specified time interval using the computation scheduler.
+Generates an Observable that emits a sequence of Long values at a specified interval using a custom scheduler.
+Generates an Observable that emits a sequence of Longs over a specified time interval, starting after an initial delay, using the computation scheduler.
+Generates an Observable that emits a sequence of numbers over a specified time interval, with options to delay the start and specify the time unit and scheduler.
+Creates an Observable that emits a single item and then completes, ensuring the item is not null.
+Merges multiple `ObservableSource` instances into one `Observable`, controlling concurrency and buffer size.
+Merges multiple `ObservableSource` instances into one `Observable`, controlling concurrency and buffer size.
+Merges multiple `ObservableSource` instances into a single `Observable` that emits all items from the sources, sequentially.
+Merges the specified `ObservableSource` instances into a single `Observable` that emits all of their items sequentially.
+Merges the specified observable sources into a single observable sequence, delaying errors until all sources have completed.
+Returns an Observable that never emits any items and never completes or errors, useful for scenarios where an ongoing process without termination is needed.
+Generates an `Observable` that emits a range of integers starting from `start` and containing `count` elements, with checks to prevent invalid arguments and integer overflow.
+Generates an Observable that emits a range of Long values from `start` to `start + count - 1`, ensuring no overflow and that `count` is non-negative.
+Compares two observables to determine if they emit the same sequence of items based on a provided equality comparer.
+Checks if two observables emit the same sequence of items using a specified equality comparer and buffer size, returning a boolean result as a `Single`.
+Compares two observable sequences to determine if they are equal based on a specified buffer size.
+Switches between multiple observables emitted by a source observable, using the specified buffer size for the internal queue.
+Flattens an Observable that emits Observables into a single Observable, but only after all Observables have completed, and allows specifying a prefetch count for performance optimization.
+Creates an `Observable` from an `ObservableSource`, performing checks to ensure the source is not null and is not already an `Observable`.
+Creates an Observable that manages resources by using the supplied functions to create and dispose of resources, and to generate items to be emitted.
+Creates an Observable that manages resources by providing a resource supplier, a source supplier, and a disposer, with an option for eager disposal.
+Wraps an `ObservableSource` into an `Observable`, ensuring non-null and applying plugins if necessary.
+Combines multiple `ObservableSource` instances into a single `Observable` using a specified function to aggregate their items.
+Combines multiple `ObservableSource` instances into a single `Observable` using a specified function to aggregate their items.
+Combines multiple Observables into a single Observable that emits a list of items from these Observables, using a specified function to combine their emissions.
+Checks if all elements in the observable sequence satisfy the given predicate and returns a boolean result.
+Performs an amb operation with another observable, emitting items from the first observable to produce an item until one of them completes or errors.
+Checks if any element in the observable sequence satisfies the given predicate and returns a boolean result.
+Blocks and waits for the first item emitted by the Observable, or throws a NoSuchElementException if no items are emitted.
+Iterates over the elements of the Observable, applying the given Consumer to each element, and handles exceptions by disposing the resource and rethrowing the exception.
+Returns an iterable that blocks and waits for items from the observable, with the specified buffer size.
+Blocks and waits for the last item emitted by the Observable, or throws NoSuchElementException if no items were emitted.
+Returns an iterable that blocks and waits for the most recent item emitted by the Observable, using the specified initial value if no items have been emitted yet.
+Blocks and waits for a single item to be emitted from the Observable, throwing a NoSuchElementException if no items are emitted.
+Blocks and waits for a single item from the Observable, returning the default item if no items are emitted.
+Converts this Observable into a Future that will be completed when the Observable completes.
+Blocks and subscribes to the observable sequence, invoking the given `onNext` consumer for each item emitted.
+Blocks and subscribes to the observable sequence, invoking the specified action for each element and handling errors with the provided error handler.
+Blocks and subscribes to the observable sequence, invoking the specified actions for each element, error, and completion.
+Subscribes the given observer to this Observable in a blocking manner, without using any scheduler.
+Buffers elements into lists of a specified size, using the same size for both the buffer's skip and take parameters.
+Buffers elements into lists of a specified size, skipping a specified number of elements between the creation of consecutive lists.
+Buffers elements into collections based on the specified count and skip values, using the provided buffer supplier.
+Buffers elements into collections of a specified size using the provided collection supplier.
+Buffers items emitted by the source Observable into lists based on the specified timespan and timeskip, using the computation scheduler.
+Buffers elements from the source observable sequence into collections based on a timespan and timeskip interval, using a specified scheduler and buffer supplier.
+Buffers items emitted by the Observable into lists, based on the specified time span and count, using the computation scheduler.
+Buffers items emitted by the Observable into lists, using a specified time span, unit, scheduler, and buffer size.
+Buffers items emitted by the Observable into collections based on a specified time interval and/or item count, using a custom scheduler and a supplier for creating the collection type.
+Buffers elements from the source observable into lists, triggered by opening and closing indicators provided as parameters.
+Buffers elements from the source observable into collections determined by opening and closing indicators, using a supplied buffer factory method.
+Buffers elements emitted by the source Observable into lists, using a boundary Observable to determine when to start and end new lists.
+Buffers items emitted by the source Observable into lists, using a boundary Observable to determine when to start a new list and an initial capacity for the lists.
+Buffers elements from the source observable into collections determined by a boundary observable, using a supplier to create new collection instances.
+Buffers elements into lists based on the provided boundary supplier.
+Caches the observable sequence with an initial capacity, ensuring the specified capacity is positive.
+Collects items emitted by the Observable into a single value using a supplier for the initial value and a collector function, returning a Single that emits the final collected value.
+Collects items emitted by this Observable into a single value using the provided collector function, starting with an initial value.
+Applies a transformation to the Observable using the provided `ObservableTransformer`, returning a new Observable instance.
+Maps each element of the source observable into an observable and concatenates the results, using a default concurrency of 2.
+Transforms each item emitted by the Observable into an Observable and flattens the results into a single Observable, with an option to specify the number of items to prefetch.
+Maps each element of the source observable into an observable and flattens the resulting observables into one, delaying errors until all sources have completed.
+Performs a non-blocking transformation of items emitted by the Observable into Observables, then flattens these into a single Observable, eagerly subscribing to inner Observables as soon as they are available.
+Transforms each item emitted by the Observable into an Observable, then flattens these Observables into a single Observable, executing up to `maxConcurrency` inner subscriptions eagerly and prefetching items as specified.
+Maps each element of the source observable into an observable and merges their results into a single observable, with the option to delay errors until all inner observables have completed or until a boundary condition is met.
+Maps each item emitted by the Observable into a CompletableSource using the specified function and concatenates them, returning a Completable that completes only after all CompletableSources have completed.
+Transforms each item emitted by the Observable into a CompletableSource using the specified function and concatenates them, with an option to specify the initial capacity hint for the internal queue.
+Maps each item emitted by the Observable into a CompletableSource using the specified function and waits until all CompletableSources have completed before emitting a completion notification, with error propagation delayed.
+Maps each element of the source Observable into a Completable using the specified function and delays errors until all sources have completed or until the end if specified, with an option to prefetch elements.
+Maps each element of the source Observable into an Iterable, then flattens these Iterables into a single Observable.
+Maps each item emitted by the Observable into an Iterable and flattens the resulting Iterables into a single Observable, with an option to specify the number of items to prefetch.
+Maps each element of the source Observable to a MaybeSource using the specified function and concatenates the resulting Observables, with a default concurrency of 2.
+Transforms each item emitted by the Observable into a MaybeSource and concatenates the results, applying backpressure with the specified prefetch value.
+Transforms each item emitted by the Observable into a MaybeSource and concatenates them, with an option to delay errors.
+Transforms each item emitted by the Observable into a MaybeSource, then flattens the resulting Maybes into a single Observable, optionally delaying error handling until all sources have completed or based on the specified error mode.
+Maps each element of the source Observable into a Single and then flattens the resulting Singles into a single Observable, using the specified concurrency limit.
+Transforms each item emitted by the Observable into a SingleSource, then flattens these into a single Observable sequence, with the option to specify a prefetch count.
+Maps each element of the source Observable into a SingleSource and subscribes to them, but delays errors until all SingleSources have completed or if `tillTheEnd` is true, until the end of the sequence.
+Transforms each item emitted by the Observable into a SingleSource, and subscribes to each SingleSource after the previous one completes, with an option to delay errors until all items have been processed or to handle them at the boundary of each SingleSource, and with a specified prefetch buffer size.
+Concatenates this observable with another observable, ensuring the other observable is not null.
+Concatenates this Observable with another SingleSource, emitting all items from the first Observable before the items from the SingleSource.
+Concatenates this Observable with another MaybeSource, emitting all items from the first Observable before subscribing to the second one.
+Concatenates this Observable with another CompletableSource, emitting all items from this Observable before subscribing to the other CompletableSource.
+Checks if the Observable contains the specified element and returns a Single emitting true or false.
+Applies a debounce operation to the observable sequence, emitting items only after a specified duration of no new emissions as determined by the provided debounce selector function.
+Returns a new Observable that emits only the last item emitted by the source Observable within a specified time period, using a computation scheduler.
+Applies a debounce operation to the observable sequence, emitting items only after a specified period of silence, using a custom scheduler.
+Returns an Observable that emits a specified default item if the original Observable completes without emitting any items.
+Delays the emission of items from the source Observable by a duration determined by applying a function to each item.
+Delays the emission of items from the source Observable by a specified duration using a given Scheduler.
+Delays the emission of items from the source Observable by a specified duration, using a given Scheduler, and optionally delays errors.
+Delays the emission of items from the source Observable and each item individually according to the provided Observables.
+Delays the subscription to the current Observable until the given `other` ObservableSource emits an item or completes.
+Delays the subscription to the Observable by a specified amount of time using a given scheduler.
+Converts a materialized Observable into a regular Observable by extracting the notification events. Note: This method is deprecated and should not be used in new code.
+Converts a stream of `Notification` objects into a stream of their encapsulated values using the provided selector function.
+Returns a new Observable that emits only distinct items from the source Observable, using `Functions.identity()` and `Functions.createHashSet()` to track and compare items.
+Returns a new Observable that emits only distinct items emitted by the source Observable, determined by the keySelector function.
+Returns an Observable that emits only distinct items emitted by the source Observable, determined by a key selector function and a collection supplier.
+Returns an Observable that emits only when the current item emitted is different from the previous one using the identity function for comparison.
+Returns an Observable that emits only the distinct items from the source Observable, determined by a specified key selector function.
+Returns an Observable that emits only the distinct items emitted by the source Observable, determined by the provided comparer function.
+Performs an action after each item is emitted by the Observable, but before the next item is emitted.
+Registers an action to be executed after the sequence terminates, whether normally or due to an error.
+Executes a specified action after the Observable completes or terminates, regardless of whether it completed successfully or due to an error.
+Registers an action to be performed when the observable is disposed.
+Registers an action to be executed when the observable completes successfully.
+Performs actions on each event (next, error, complete, and after termination) in the observable sequence, ensuring non-null parameters.
+Registers a callback to be invoked for each item emitted by the Observable, including onNext, onError, and onComplete notifications.
+Performs actions on each event emitted by the observable, including next, error, and complete events, using the provided observer.
+Adds a handler to be invoked upon an error during the sequence. This method returns an `Observable` that will invoke the provided `Consumer` when an error occurs.
+Registers lifecycle callbacks for subscription and disposal events in an observable sequence.
+Registers a function to be called for each item emitted by the Observable, without affecting the items emitted.
+Registers a callback to be invoked when the subscription occurs, allowing actions to be performed at the start of the lifecycle.
+Registers an action to be performed when the Observable terminates, either normally or due to an error.
+Returns a `Maybe<T>` that emits the item at a specified position in the source Observable, or a notification of absence if the index is out of bounds, ensuring non-negative index values.
+Returns a Single that emits the item at the specified position in the source Observable, or a default item if the position is out of bounds.
+Returns a Single that emits the item at a specified position in the Observable or throws an error if the index is out of bounds.
+Filters items emitted by the Observable through a specified predicate function.
+Returns a Single that emits the first item emitted by the Observable, or a default item if the Observable is empty.
+Transforms the items emitted by an Observable using a specified function and optionally delays errors until all items have been processed.
+Maps each element of the source Observable into an Observable, then flattens the resulting Observables into one Observable, optionally delaying errors and limiting concurrency.
+Maps each element of the source Observable into an Observable and flattens the result into a single Observable, handling errors and completion with provided functions.
+Applies a function to each item emitted by the source Observable and flattens the results into a single Observable, using a result selector to combine the original and transformed items.
+Maps each element of the source Observable into a Completable and flattens the resulting Completables into a single Completable.
+Transforms each item emitted by the Observable into an Iterable, then applies a result selector function to each item and its corresponding items from the Iterable, producing a new Observable.
+Flattens the items emitted by this Observable into MaybeSources and merges their emissions, optionally suppressing errors.
+Transforms each item emitted by the Observable into a MaybeSource and then flattens the resulting MaybeSources into a single Observable, optionally delaying errors until all sources have completed.
+Maps each element of the source Observable into a SingleSource using the specified function and then flattens the result into an Observable.
+Transforms each item emitted by the Observable into a SingleSource and then flattens the resulting Singles into a single Observable sequence, optionally delaying errors until all Singles have completed.
+Iterates over the items emitted by this Observable, applying the given predicate to each item until the predicate returns false or an error occurs, then invoking the appropriate consumer or action based on the outcome.
+Groups the items emitted by the observable into multiple observables based on the key generated by the provided key selector function.
+Groups items emitted by an Observable into collections based on a specified key and value selector, without applying any scheduler.
+Groups the source Observable values by a specified key and value selector, with options to delay errors and set buffer size.
+Hides the identity of the Observable to prevent detection and interference from outside the reactive chain.
+Ignores all elements and only propagates completion or error signals.
+Determines if the Observable has no elements by returning a `Single<Boolean>` that emits `true` if the Observable is empty, otherwise `false`.
+Joins two observables based on their elements' duration and combines their items using a specified function, returning a new observable sequence.
+Returns a `Maybe<T>` that emits the last item emitted by the source Observable, or a `Maybe.empty()` if the source Observable completes without emitting any items.
+Returns a Single that emits the last item emitted by the source Observable, or a default item if the source is empty.
+Returns a Single that emits the last item emitted by the Observable, or an error if the Observable completes without emitting any items.
+Maps each element of the observable sequence into another form using the specified function and returns a new observable sequence with the transformed elements.
+Transforms the emissions from this Observable into a sequence of Notification objects representing the emissions and notifications.
+Merges this Observable with another given Observable, emitting items from both Observables without any particular order, but checking for null and ensuring no scheduler is used.
+Merges this Observable with another SingleSource, emitting all items from both sources without any specific order, and propagates errors or completion from either source.
+Merges this Observable with another MaybeSource, emitting items from both sources without any specific order, and propagates errors or completion from either source.
+Merges this Observable with another CompletableSource, returning a new Observable that emits items from both sources.
+Specifies the scheduler on which the observable will operate, returning a new observable that emits items observed on the specified scheduler.
+Switches the execution of an Observable to a specified scheduler, with options to delay errors and set buffer size.
+Resumes the sequence with another ObservableSource when an error occurs, using the provided function to determine the next ObservableSource.
+Resumes the sequence with the specified `ObservableSource` if an error occurs, ensuring that the next observable is not null and then passing it to the internal `onErrorResumeNext` method.
+Returns an Observable that emits a specified item when the source Observable encounters an error, using the provided function to determine the item to emit.
+Resumes the sequence with the specified observable source if an error occurs during the execution of the current observable.
+Detaches the observer from the source Observable when the source terminates, allowing for cleanup or resource release.
+Publishes an Observable that applies a function of your choosing to the source Observable, where the function returns an Observable that will be merged into the output Observable. This method requires a non-null selector function.
+Applies a reduction operation on the observable sequence using the provided reducer function, returning a `Maybe<T>` that will emit the reduced value if the sequence is not empty.
+Applies a reduction function to the elements emitted by the Observable, accumulating results into a single final value, starting with an initial seed value.
+Applies a reduction operation to the observable sequence, using an initial seed value and an accumulator function, returning a single result wrapped in a `Single`.
+Repeats the observable sequence indefinitely.
+Repeats the emission of items from this Observable a specified number of times or indefinitely if `times` is less than zero, throwing an `IllegalArgumentException` if `times` is negative, and returning an empty Observable if `times` is zero.
+Repeats the observable sequence until the supplied condition evaluates to true.
+Repeats the observable sequence using a specified handler function to determine when to stop repeating.
+Replays the items emitted by the source Observable using a selector function to determine how to replay them, ensuring the selector is not null.
+Replays the emissions from the original Observable within a specified time window and buffer size on a computation scheduler.
+Replays the items emitted by the source Observable and applies a selector function on the replayed Observable using the specified scheduler.
+Replays the emissions from this Observable to any number of observers, buffering up to the specified number of items.
+Returns a ConnectableObservable that replays the specified number of items and within the specified time duration on a computation scheduler.
+Returns a ConnectableObservable that replays the specified number of items and within a specified time window, using a custom scheduler.
+Returns a ConnectableObservable that replays the items emitted by the source Observable to late subscribers using a specified buffer size and scheduler.
+Returns a ConnectableObservable that replays emissions from the original Observable on the specified scheduler.
+Retries the observable sequence indefinitely until it completes successfully.
+Retries the observable sequence based on the provided predicate, which determines whether to retry based on the number of retries and the error encountered.
+Repeats the Observable sequence a specified number of times or until it successfully completes without errors.
+Retries the source Observable sequence the specified number of times or until it successfully terminates, based on the predicate function.
+Repeats the observable sequence upon error based on a predicate function, retrying indefinitely.
+Retries the source Observable when it encounters an error by passing the error to a handler function that returns an Observable signaling whether to resubscribe or not.
+Samples items from the Observable at regular intervals specified by the period and unit, using the computation scheduler.
+Samples the emissions from this Observable at regular intervals of time specified by `period` and `unit`, using the provided `scheduler`.

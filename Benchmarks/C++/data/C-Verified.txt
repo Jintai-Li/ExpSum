@@ -1,0 +1,36 @@
+Posts to the SEM by incrementing its value and releasing a waiting thread if present.
+Wait for SEM being posted. This function is a cancellation point and therefore not marked with __THROW.
+Adds the specified signal to the signal set.
+Initializes the specified signal set to an empty state, clearing all previously stored signals.
+Initializes the signal set to include all signals.
+Sets or retrieves the signal handling action for a specified signal using new and old sigaction structures, returning 0 on success or -1 on error.
+Print a message describing the meaning of the value of errno. This function is a possible cancellation point
+Return the value of envariable NAME, or NULL if it doesn't exist.
+Convert a string to an integer.
+Get resolution of clock CLOCK_ID.
+Get current value of clock CLOCK_ID and store it in TP.
+Same as pipe but apply flags passed in FLAGS to the new file descriptors.
+Invoke `system call' number SYSNO, passing it the remaining arguments. This is completely system-dependent, and not often useful. In Unix, `syscall' sets `errno' for all errors and most calls return -1 for errors; in many systems you cannot pass arguments or get return values for all system calls (`pipe', `fork', and `getppid' typically among them). In Mach, all system calls take normal arguments and always return an error code (zero for success).
+Read NBYTES into BUF from FD.  Return the number read, -1 for errors or 0 for EOF. This function is a cancellation point and therefore not marked with __THROW.
+Removes a file or symbolic link specified by the given path.
+Write N bytes of BUF to FD.  Return the number written, or -1. This function is a cancellation point and therefore not marked with __THROW.
+Modify the signal mask for the calling thread.  The arguments have the same meaning as for sigprocmask(2).
+Manipulate an epoll instance "epfd". Returns 0 in case of success, -1 in case of error ( the "errno" variable will contain the specific error code ) The "op" parameter is one of the EPOLL_CTL_* constants defined above. The "fd" parameter is the target of the operation. The "event" parameter describes which events the caller is interested in and any associated user data.
+Same as epoll_wait, but the thread's signal mask is temporarily and atomically replaced with the one provided as parameter. This function is a cancellation point and therefore not marked with __THROW.
+Same as epoll_create but with an FLAGS parameter.  The unused SIZE parameter has been dropped.
+Return file descriptor for generic event channel.  Set initial value to COUNT.
+Remove the watch specified by WD from the inotify instance FD.
+Deallocate any mapping for the region starting at ADDR and extending LEN bytes.  Returns 0 if successful, -1 for errors (and sets errno).
+Put the local address of FD into *ADDR and its length in *LEN.
+Give the socket FD the local address ADDR (which is LEN bytes long).
+Shut down all or part of the connection open on socket FD. HOW determines what to shut down:   SHUT_RD   = No more receptions;   SHUT_WR   = No more transmissions;   SHUT_RDWR = No more receptions or transmissions. Returns 0 on success, -1 for errors.
+Set socket FD's option OPTNAME at protocol level LEVEL to *OPTVAL (which is OPTLEN bytes long). Returns 0 on success, -1 for errors.
+Prepare to accept connections on socket FD. N connection requests will be queued before further requests are refused. Returns 0 on success, -1 for errors.
+Create a new socket of type TYPE in domain DOMAIN, using protocol PROTOCOL.  If PROTOCOL is zero, one is chosen automatically. Returns a file descriptor for the new socket, or -1 for errors.
+Put information about the system in NAME.
+Wipe the packet.  Unreference the buffer referenced by the packet and reset the  remaining packet fields to their default values.  @param pkt The packet to be unreferenced.
+Free the packet, if the packet is reference counted, it will be  unreferenced first.  @param pkt packet to be freed. The pointer will be set to NULL.  @note passing NULL is a no-op.
+Convenience function to free all the side data stored.  All the other fields stay untouched.  @param pkt packet
+Allocate an AVPacket and set its fields to default values.  The resulting  struct must be freed using av_packet_free().  @return An AVPacket filled with default values or NULL on failure.  @note this only allocates the AVPacket itself, not the data buffers. Those  must be allocated through other means such as av_new_packet.  @see av_new_packet
+On success, unit->content and unit->content_ref are updated with  the new content; unit is untouched on failure.  Any old content_ref is simply overwritten and not freed.
+Reads 'n' bits from the bitstream context and returns the unsigned integer value, ensuring the result is within the valid range for the specified bit count.

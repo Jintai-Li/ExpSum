@@ -1,0 +1,200 @@
+Handles ordered emission of values in a concurrent environment using atomic operations to manage queue backpressure and ensure sequential processing via a drain loop.
+Creates an Observable<T> that emits items from the first ObservableSource in the provided Iterable to start emitting, using RxJava's amb algorithm to select the active source.
+Creates an Observable<T> that emits items from the first non-null ObservableSource in the provided array to emit an item, handling empty input arrays and single-source cases by returning an empty Observable or wrapped source respectively.
+Concatenates Observables from an Iterable into a single Observable, emitting items sequentially while delaying error propagation until all sources complete.
+Concatenates nested ObservableSources into a single Observable sequence with immediate error handling and specified prefetch buffer size.
+Concatenates an array of ObservableSource instances into a single Observable that sequentially emits items from each source in order.
+Creates an Observable that sequentially emits items from provided ObservableSources, delaying error propagation until all sources complete, handling empty or single-source cases by returning an empty Observable or wrapping the sole source respectively.
+Creates an Observable that sequentially concatenates emissions from the provided ObservableSource instances in eager subscription order.
+Creates an Observable that concatenates multiple ObservableSource instances with specified maximum concurrency and prefetch values.
+Concatenates multiple ObservableSource instances into a single Observable, executing emissions eagerly with specified max concurrency and prefetch buffer size while delaying error propagation until all sources are processed.
+Concatenates inner observables from the source sequence, delaying error propagation until all inner Observables have completed, and returns an Observable<T>.
+Concatenates observables from a nested source with delayed error emission until completion or boundary based on the tillTheEnd flag, using the specified prefetch count.
+Concatenates observables from the input source eagerly with specified maximum concurrency and prefetch values, returning an Observable<T>.
+Concatenates observables from provided sources with specified maximum concurrency and prefetch values, emitting items sequentially using eager execution and immediate error propagation.
+Creates and returns an empty Observable sequence of type T via RxJava's plugin system.
+Creates an Observable that emits an error by invoking the provided Callable to supply a Throwable.
+Creates an Observable sequence from an array, returning an empty Observable for zero elements, a single-element Observable for one item, or an ObservableFromArray for multiple items.
+Converts a non-null Iterable<? extends T> source into an Observable<T> stream using RxJava's ObservableFromIterable adapter.
+Converts a non-null Publisher into an Observable instance, enforcing backpressure support and applying RxJava plugin assembly mechanisms.
+Generates an Observable that emits items by invoking the specified generator function with an Emitter.
+Creates an Observable that emits items by iteratively applying a state-updating generator function starting from an initial state.
+Creates an Observable<Long> that emits sequential values at regular intervals starting after an initial delay, using the specified TimeUnit and Scheduler for timing and execution.
+Creates an Observable<Long> emitting sequential values at regular intervals defined by the given period and time unit on the computation scheduler.
+Creates an Observable that emits sequential Long values at regular intervals defined by the given period duration and time unit, executed on the specified Scheduler.
+Generates an Observable emitting sequential Long values starting from 'start' parameter, emitting 'count' items with initial delay and periodic interval using computation scheduler.
+Creates an Observable that emits a sequence of Long values starting from a specified start value, emitting a given count of items with initial delay and periodic interval on a provided Scheduler.
+Creates and returns an Observable<T> that emits a single specified item as an onNext signal, ensuring non-null input via ObjectHelper.requireNonNull.
+Merges multiple ObservableSource instances into a single Observable sequence with specified maximum concurrency and buffer size for flattening operations.
+Merges multiple ObservableSource instances into a single Observable with specified max concurrency and buffer size parameters.
+Merges an ObservableSource of ObservableSources into a single Observable<T> by flattening emissions using a flatMap strategy with maximum concurrency.
+Merges an array of ObservableSource instances into a single Observable by flattening their emissions through sequential concatenation.
+Merges three ObservableSource instances into a single Observable sequence, delaying error propagation until all sources have emitted items.
+Creates and returns an Observable<T> that never emits items or terminal signals.
+Creates an Observable<Integer> emitting a sequence starting from 'start' for 'count' elements, handling overflow and invalid count values.
+Generates an Observable sequence of Long values from the specified start value to start + count - 1, handling edge cases for count <= 0, single-element sequences, and overflow conditions.
+Compares two ObservableSource sequences for element-wise equality using a BiPredicate and returns a Single<Boolean> result.
+Checks if two ObservableSources produce equal elements in sequence using a BiPredicate comparator, returning a Single<Boolean> with a specified buffer size for emission handling.
+Determines if two observable sequences have identical elements in the same order using a specified buffer size, returning a Single<Boolean> result.
+Creates an Observable that switches to the latest inner ObservableSource emissions using a specified buffer size.
+Creates an Observable that switches to the latest inner ObservableSource from the provided sequence, delaying error propagation until all preceding inner observables complete, using the specified prefetch buffer size.
+Creates an Observable<T> from a provided ObservableSource<T>, validating non-null input and prohibiting existing Observable instances, then returns the assembled observable via RxJavaPlugins.onAssembly.
+Creates an Observable that manages a resource using the provided resourceSupplier, generates elements via sourceSupplier, and ensures proper resource disposal through the disposer.
+Creates an Observable that manages a resource via resourceSupplier, generates items using sourceSupplier, and disposes the resource via disposer with eager disposal based on the eager flag.
+Wraps an ObservableSource into an Observable instance, adapting it if necessary via RxJavaPlugins and ObservableFromUnsafeSource.
+Creates an Observable that zips emissions from multiple ObservableSources using a specified Function to combine their latest values into results of type R.
+Zips emissions from multiple ObservableSources into an Observable<R> using a Function<Object[], R> to combine their elements.
+Creates an Observable that combines emissions from multiple ObservableSources using a zipper function, applying specified bufferSize for backpressure and delayError flag to control error propagation.
+Returns a Single<Boolean> indicating whether all elements emitted by the Observable satisfy the provided Predicate condition.
+Creates an Observable that emits items from the first of this or the provided ObservableSource to emit an item, ignoring subsequent emissions from other sources.
+Determines whether any elements in the Observable sequence satisfy the provided predicate and returns a Single emitting a Boolean result.
+Blocks execution until the first emitted item is received from the Observable, returning the item or throwing NoSuchElementException if no items are emitted.
+Blocks execution to iteratively apply a Consumer to each element of an Observable sequence while handling exceptions and disposing resources on error.
+Creates a blocking Iterable from an Observable sequence, validating the buffer size is positive.
+Blocks execution until the Observable emits its last element, returning it, or throws NoSuchElementException if no elements were emitted.
+Returns an Iterable<T> that blocks to provide the most recent value from the Observable, using the initial value if no emissions have occurred.
+Blocks execution to retrieve exactly one element from the Observable, throwing NoSuchElementException if none is found, and returns the element as type T.
+Blocks execution and returns the single emitted item or the provided default if none, from an Observable sequence.
+Converts an Observable sequence into a Future object that completes with the first emitted item or terminal signal.
+Blocks the current thread to subscribe and process items from an Observable using a Consumer, suppressing errors and skipping completion actions.
+Blocks the current thread to subscribe to the Observable, processing emitted items via the onNext consumer and propagating errors through the onError handler.
+Blocks the current thread to subscribe to the Observable, handling item emissions via onNext, errors via onError, and completion via onComplete callbacks without scheduler intervention.
+Blocks the current thread to synchronously subscribe the Observer and emit all items from the Observable.
+Buffers emissions into lists of the specified count, emitting each buffer when filled, using the count as both buffer size and skip interval.
+Buffers emissions into lists of size 'count', emitting each buffer and starting new buffers after skipping 'skip' elements.
+Buffers emissions from the Observable into Collection instances using specified count and skip intervals, returning an Observable of these collections via a supplied bufferSupplier.
+Buffers emissions into collections of exactly 'count' elements each using the provided supplier, emitting each buffer when filled.
+Buffers items from the source Observable into lists, closing each buffer after the specified timespan and starting new buffers every timeskip interval in the given time unit.
+Buffers emissions into timed collections using specified timespan, timeskip, unit, scheduler, and bufferSupplier, returning an Observable of Collection-type buffers.
+Buffers emissions into lists when either the timespan duration (in specified unit) elapses or the buffer reaches the specified count, returning an Observable of lists using the computation scheduler.
+Buffers emissions from an Observable into lists over a specified timespan and count using a custom scheduler, returning an Observable of List<T> containing the buffered items.
+Creates an Observable that buffers emissions into collections over a specified timespan using a custom scheduler, with each buffer resetting its timer on reaching the maximum size if configured.
+Creates an Observable that collects emitted elements into lists between opening and closing events signaled by provided ObservableSource and Function-based closing indicators, returning each buffer as a List<T> wrapped in an Observable.
+Buffers emissions from the source Observable using opening and closing boundary indicators, producing collections via a supplier function.
+Buffers emissions from the source Observable into lists, emitting each list when the provided boundary Observable emits an item.
+Creates an Observable that buffers source emissions into lists triggered by boundary Observable emissions, using the specified initial list capacity.
+Buffers emissions from the source Observable into collections determined by a boundary Observable, using a Callable-supplied Collection instance for each buffer.
+Creates an Observable that emits lists of items collected from the source Observable between emissions or completion of the boundary Observable supplied by the Callable.
+Creates a cached Observable instance with the specified initial capacity using the current Observable's emissions.
+Collects emissions from an Observable into a Single<U> result using an initial value supplier and accumulator collector function.
+Collects elements into an initial value using a BiConsumer collector and returns the result as a Single<U>.
+Composes the current Observable with the provided ObservableTransformer, returning a new Observable<R>.
+Applies the provided mapper function to each item, sequentially concatenating the resulting ObservableSources into a single Observable<R>.
+Applies a mapper function transforming each item into an ObservableSource, concatenates their emissions sequentially with specified prefetch, and returns an Observable of results.
+This method applies a mapper function to each item emitted by the source Observable, concatenates the resulting ObservableSources sequentially, and delays error emission until all preceding inner Observables have completed.
+Applies a mapper function to each element to produce inner Observables and sequentially emits their items by eagerly subscribing with unbounded concurrency.
+Transforms emissions into ObservableSources via the mapper function and concatenates their results with specified max concurrency and prefetch limits.
+Transforms each item into an ObservableSource, concatenates their emissions with controlled concurrency and prefetch limits, and delays error propagation until all sources complete or a boundary is reached based on the tillTheEnd flag.
+Maps each item emitted by the Observable to a CompletableSource via the provided mapper function and concatenates their executions sequentially, returning a Completable that completes when all sources have finished.
+Maps each item to a CompletableSource via a provided function, concatenating their executions sequentially and propagating errors immediately.
+Concatenates CompletableSources generated by applying a mapper function to each item, delaying error emission until all inner Completables complete.
+Maps each item to a CompletableSource, concatenates them sequentially with delayed error propagation until the end or at boundaries based on the tillTheEnd flag, using the specified prefetch count.
+Concatenates emissions from an Observable by applying a mapper function to each item, transforming it into an Iterable and flattening the results into an Observable sequence.
+Applies a mapper function to each element to produce an Iterable, then sequentially flattens and emits items from each Iterable into an Observable sequence with a specified prefetch buffer size.
+Transforms each item into a MaybeSource, concatenating their emissions sequentially with a maximum concurrency of 2 and returning an Observable<R> of results.
+Transforms each item emitted by the Observable into a MaybeSource, sequentially concatenating their emissions while propagating errors immediately using a specified prefetch buffer size.
+Concatenates emissions from applying a MaybeSource-producing function to each item, delaying error propagation until all items are processed.
+Concatenates MaybeSources generated by mapping each item with the provided mapper function, delaying error propagation until all preceding sources complete based on the tillTheEnd mode, using a prefetch buffer of specified size.
+Maps each item to a SingleSource via the provided Function, then concatenates their emissions into an Observable with a maximum concurrency of 2.
+Concatenates emissions from SingleSources generated by applying a mapper function to each element, emitting results sequentially with immediate error handling and specified prefetch count.
+Concatenates the results of mapping each item to a SingleSource into an Observable with delayed error propagation, continuing emissions until the source completes based on the tillTheEnd flag.
+Concatenates emissions from mapping each item to a SingleSource with delayed error handling until the end or boundary based on the 'tillTheEnd' flag, using a specified prefetch count.
+Concatenates the current Observable with another ObservableSource, emitting items sequentially from both sources.
+Returns an Observable<T> that sequentially emits items from the current Observable followed by the SingleSource's emission.
+Returns an Observable<T> that sequentially emits items from the current Observable followed by the provided MaybeSource<T>, ensuring non-null input via ObjectHelper and leveraging RxJava assembly plugins.
+Concatenates the current Observable<T> with a CompletableSource, emitting all items from the source followed by the Completable's completion as an Observable<T>.
+Returns a Single<Boolean> indicating whether the Observable sequence contains the specified element using element equality checks.
+Creates an Observable that emits items from the source only after a cooldown period determined by the ObservableSource returned by the debounceSelector function for each item.
+Filters emissions by dropping items followed by another within a given timeout duration, using the computation scheduler for timing.
+Returns an Observable that emits items from the source Observable only after a particular timespan has passed without it emitting another item, using the specified time unit and scheduler.
+Returns an Observable<T> that emits the specified defaultItem if the upstream Observable emits no items, otherwise propagates the original emissions.
+Delays emission of items by applying a Function that returns an ObservableSource<U> for each item, returning a new Observable<T> with delayed emissions.
+Delays emission of items in the Observable sequence by a specified duration using the provided TimeUnit and Scheduler, returning a new Observable.
+Delays the emission of items from the source Observable by a specified duration using a custom scheduler, and optionally delays errors based on the delayError flag.
+Delays observable subscription and individual item emissions using provided ObservableSource and Function, returning an Observable of type T.
+Creates an Observable that delays subscription to the source Observable until another ObservableSource emits an item.
+Delays the subscription of an Observable sequence by a specified duration using the provided TimeUnit and Scheduler.
+Dematerializes the Observable, converting emissions of Notification into actual T2 values by applying the identity function.
+Dematerializes an Observable of Notification objects into an Observable of their contained values using a provided selector function.
+Returns an Observable<T> that emits distinct items from the source sequence based on element identity using a HashSet for uniqueness tracking.
+Returns an Observable that emits distinct items from the upstream sequence based on the provided keySelector function, using a HashSet to track seen keys.
+Returns an Observable<T> emitting distinct elements based on a keySelector function, using a custom collection from collectionSupplier to track seen keys.
+Returns an Observable that emits items from the original Observable only when the current item is different from the previous item, using identity comparison.
+Returns an Observable that emits items only when the keySelector function's result changes from the previous item, suppressing consecutive duplicates with the same key.
+Returns an Observable that emits items only when consecutive elements differ, as determined by the provided BiPredicate comparison.
+Returns an Observable that invokes the specified Consumer after each emitted item, preserving the original item sequence.
+Returns an Observable that executes the specified Action after the source Observable terminates, regardless of completion or error.
+Returns an Observable<T> that executes the specified Action upon termination of the source Observable sequence.
+Attaches the specified Action to execute when the Observable is disposed, returning a new Observable instance.
+Attaches an action to execute when the Observable completes and returns the modified Observable sequence.
+Creates an Observable that invokes specified Consumer and Action callbacks for onNext, onError, onComplete, and onAfterTerminate events.
+Returns an Observable<T> that invokes the specified Consumer<? super Notification<T>> for each Notification event (onNext, onError, onComplete) emitted by the source Observable.
+Attaches the specified Observer to handle onNext, onError, and onComplete events for the Observable and returns the modified Observable.
+Returns an Observable that executes the specified Consumer action when an error occurs in the observable sequence, without affecting the emitted items or terminating the stream.
+Attaches specified Consumer and Action to execute on Observable's lifecycle events (onSubscribe/onDispose) and returns new Observable instance.
+Attaches a Consumer to perform a side-effect action for each emitted item, returning a new Observable that propagates the original emissions while executing the provided Consumer on each onNext event.
+Attaches the provided Consumer to execute when the Observable is subscribed, returning a new Observable instance that propagates items from the source sequence.
+Attaches an action to execute upon Observable termination, returning the modified Observable<T>.
+Returns a Maybe<T> that emits the element at the specified index in the Observable sequence.
+Returns the element at the specified index as a Single<T>, or the provided defaultItem if the index is out of bounds.
+Returns the item at the specified index as a Single<T>, throwing an IndexOutOfBoundsException for negative indices or when the index exceeds available elements.
+Filters items emitted by the Observable using a Predicate and returns a new Observable containing only those items that meet the predicate condition.
+Returns a Single emitting the first item from the source Observable or the provided defaultItem if the source is empty.
+Applies a mapper function to each element, emitting items from the resulting ObservableSources into an Observable<R>, with optional delayed error handling.
+Applies a mapper function to each element to produce ObservableSources, flattening their emissions with specified concurrency and buffer limits while controlling error delay, returning an Observable of results.
+Applies the flatMap operator to transform emissions, errors, and completion notifications into ObservableSources and merges their emissions into a single Observable<R>.
+Maps each element to an ObservableSource via a Function, merges emissions from nested Observables, and combines original and mapped elements using a BiFunction to produce an Observable<R>.
+Translates each element of an Observable into a CompletableSource and merges their emissions into a single Completable.
+Flattens each element into an Iterable via mapper, then applies a BiFunction to each element with its original source, emitting results as an Observable<V>.
+Flattens emissions by mapping each element to a MaybeSource and emitting their results as an Observable stream.
+Converts each element into a MaybeSource via the provided mapper function, flattening the results into an Observable sequence with optional delayed error propagation.
+Applies a function to each item to produce SingleSource instances and merges their emissions into an Observable sequence.
+Flattens each element of an Observable into a SingleSource via a mapper function, emitting their results as an Observable while managing error propagation based on the delayErrors flag.
+Processes emissions from an Observable by evaluating a predicate to continue iteration, handling errors and completion events, and returns a Disposable for managing the subscription.
+Groups source Observable items into GroupedObservable instances by applying a keySelector function, preserving original values, and using default buffer size.
+Groups elements emitted by the Observable into GroupedObservable instances using specified key and value selector functions.
+Groups elements of the source Observable into GroupedObservable instances using keySelector and valueSelector functions, configurable with delayError and bufferSize parameters.
+Returns an Observable that masks the origin Observable's identity to prevent upstream operator exposure.
+Converts an Observable to a Completable that completes when the source Observable completes, discarding all emitted items.
+Returns a Single<Boolean> indicating whether this Observable emits no items by evaluating if all elements satisfy a always-false condition.
+Creates an Observable<R> by joining the current Observable with an ObservableSource<TRight> using specified end functions and a result selector BiFunction to combine elements.
+Returns the last element of the Observable sequence as a Maybe<T>, emitting no value if the sequence is empty.
+Returns a Single that emits the last item emitted by the Observable or the specified defaultItem if the source is empty.
+Returns the last emitted item as a Single<T> or signals an error if the Observable emits no items, leveraging RxJava's last operator implementation.
+Returns an Observable<R> by applying the provided Function<T, R> mapper to each element of the source Observable sequence, ensuring non-null mapper via ObjectHelper.requireNonNull.
+Materializes the source Observable's emissions into an Observable emitting Notification<T> instances representing onNext, onError, and onComplete events.
+Merges the current Observable with another ObservableSource into a single Observable sequence by combining their emissions.
+Merges the current Observable with a provided SingleSource into a new Observable sequence.
+Merges the current Observable<T> with the specified MaybeSource<? extends T> into a new Observable sequence by combining their emissions.
+Merges the current Observable<T> with a non-null CompletableSource to produce a new Observable<T> that emits items until the Completable completes.
+Schedules emissions of this Observable on the specified Scheduler, returning a new Observable instance.
+Schedules the observation of this Observable on a specified Scheduler with optional error delay and backpressure support via buffer size.
+Returns an Observable<T> that resumes with the provided ObservableSource upon error by evaluating the specified Function<Throwable, ObservableSource<? extends T>>.
+Creates an Observable that resumes emission with the provided ObservableSource upon encountering an error.
+Returns an Observable<T> that emits a value supplied by the provided Function when an error occurs, continuing the sequence with the returned item instead of terminating.
+Returns an Observable that resumes with the provided ObservableSource upon encountering an exception in the source sequence.
+Returns an Observable<T> that detaches termination events from the source Observable via RxJava's plugin mechanism.
+Returns an Observable<R> by applying the provided selector Function to the current Observable<T>, creating an ObservableSource<R> through RxJava's assembly-aware composition.
+Reduces the Observable's items by sequentially applying the provided BiFunction<T, T, T> to accumulate a single result, returning a Maybe<T> that emits the aggregated value or completes if empty.
+Reduces an observable sequence by applying a seed value and a BiFunction accumulator, returning the result as a Single<R>.
+Reduces the Observable's items into a Single value using a seed supplier and a BiFunction accumulator.
+Repeats the observable sequence infinitely until unsubscribed, returning an Observable<T> instance.
+Repeats the source Observable sequence a specified number of times, returning an empty Observable if the count is zero.
+Repeats the observable sequence until the provided BooleanSupplier evaluates to true, returning a new Observable<T>.
+Repeats the source Observable's emissions by responding to emissions from a handler-provided ObservableSource, where the handler is a Function mapping an Observable<Object> to an ObservableSource<?>.
+Creates a replayable Observable by applying a selector function to an internal replay source, multicasting emissions to all subscribers including late ones.
+Creates a replay observable by applying the provided selector function with specified buffer size, time window, and computation scheduler.
+Creates a replay observable that multicasts the source's emissions through the specified selector function and scheduler, returning an Observable<R>.
+Creates a ConnectableObservable that replays emissions to subscribers with a specified buffer size.
+Creates a ConnectableObservable that replays emissions with a specified buffer size, time window, and time unit using the computation scheduler.
+Creates a ConnectableObservable that replays emissions within a specified buffer size and time window using the provided scheduler.
+Creates a ConnectableObservable that replays emissions with a specified buffer size using the provided scheduler.
+Creates a ConnectableObservable that replays emissions on the specified Scheduler.
+Retries the observable sequence indefinitely until successful completion, returning an Observable<T> that re-emits source emissions with unbounded error retries filtered by a always-true predicate.
+Retries the observable emissions conditionally using a BiPredicate to evaluate the retry count and encountered Throwable.
+Retries the observable sequence upon encountering errors up to the specified number of times using a constant true retry condition.
+Retries the observable sequence execution up to the specified number of times when an error occurs, using the provided predicate to determine which exceptions to retry, and returns the retried observable sequence.
+Retry the observable sequence indefinitely until successful completion, using the provided predicate to determine which exceptions to retry, returning an Observable<T>.
+Returns a new Observable that retries the source sequence based on a user-defined backoff/retry logic provided via a Function handler processing error Observable<Throwable> into an ObservableSource control stream.
+Samples items from an Observable at regular periodic intervals defined by the provided duration and time unit, emitting the last item observed within each interval.
+Samples emissions from an Observable at regular intervals using a specified scheduler and time unit, emitting the last observed item within each interval period.

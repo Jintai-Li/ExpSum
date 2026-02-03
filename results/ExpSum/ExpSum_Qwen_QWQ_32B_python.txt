@@ -1,0 +1,200 @@
+Extracts video ID from various YouTube URL formats.
+Convert XML data to a list of URLs by parsing 'durl' nodes and extracting 'url' child node data.
+Generates a unique hash from `upid` using a predefined seed string for FC2 video encryption utility.
+Download video from FC2 or Xiaojiadianvideo by URL, optionally merging segments and providing info only if requested.
+Downloads Dailymotion videos by URL, extracts video information, and handles the download process with options for merging and output directory.
+Converts an XML element tree into a dictionary representation, including attributes and text content.
+Downloads a single video from UCAS, optionally merging parts and providing information only if requested.
+Downloads playlist from UCAS course page, extracting video parts and downloading them to the specified directory.
+Downloads a Sina video by its unique vid, optionally merging the video parts and providing information only if requested.
+Downloads a Sina video by its unique vkey, optionally merging segments and providing video information.
+Downloads Sina videos by URL, handling different video page structures to extract and use the video ID or key for downloading.
+Download media content from Yixia platforms (Miaopai, Xiaokaxiu) based on URL, with options to specify output directory, merging files, and information display.
+Extracts the item ID from the given URL and downloads the content using the extracted ID.
+Downloads video from Veoh by ID, optionally merging segments and providing info only if requested.
+Download video by ID from BokeCC cloud, optionally merging segments and saving to specified directory.
+Extracts video ID from URL using regex patterns for live.qq.com and directory match pages.
+Format text with color or other effects into ANSI escaped string.
+Prints a log message with optional color formatting to standard error.
+Prints an error log message and optionally exits with a specified code.
+Logs an error message and exits the program with the specified exit code.
+Detects the current operating system and returns a string indicating the OS type.
+Download Miaopai video by fid, optionally merging segments and providing info only if requested.
+Downloads videos from a Vimeo channel by ID, optionally merging segments and providing info only if requested.
+Downloads videos from a Vimeo channel by channel ID, optionally merging parts and providing info only.
+Download Vimeo video by ID, optionally merging output files and providing additional keyword arguments for customization.
+Parses XML content from CKPlayer API to extract and return video information as a dictionary.
+Constructs and returns the video URL from the given video ID by applying a series of transformations and checks to ensure the URL is valid.
+Extracts video ID from the provided URL using regex patterns.
+Fetches the real URL segments and their total size from the given MGTV URL.
+Retrieve the current branch and commit hash from the HEAD of a Git repository.
+Converts a string to a valid filename by replacing or removing characters illegal for the detected operating system.
+Get the width and height of the current terminal, falling back to default values if an error occurs.
+Downloads CBS videos from the given URL, optionally merging segments and extracting video information.
+Download the specified or best-quality stream from IQIYI, optionally saving captions.
+Download Acfun video by vid, determine source type, and delegate to appropriate extractor.
+Main entry point for the development version of you-get, handling command-line options and arguments, and launching either GUI or console mode based on user input.
+Downloads a streaming content using FFmpeg, saving it to the specified directory with the given title and extension.
+Scans through a string for substrings matched by given patterns, returning the first subgroup of matches.
+Scans through a string for substrings matched by a list of regex patterns and returns a list of all matches.
+Parses the query string of a URL and returns the value of a specified parameter.
+Decompresses the input data using gzip decompression.
+Decompresses data using zlib for Content-Encoding: deflate.
+Fetches and decodes content from a URL using specified headers and decoding options.
+Posts content to a URL using HTTP POST method, with options for custom headers, data encoding, and response decoding.
+Parses host name and port number from the given host string.
+Overloads the default print function for Python versions <3.3 to support the 'flush' keyword.
+Retrieve room ID from the given room URL key by parsing the webpage content.
+Downloads or streams live content from Showroom by room ID, optionally merging files and providing info only.
+Retrieves the title by combining the course name, topic name, and part name from the JSON content using the provided indices.
+Download an entire course by iterating through topics and parts, using the provided JSON API content.
+Download a specific part of a course topic from Wanmen, given JSON API content, topic index, part index, and optional parameters.
+Retrieve video stream links by account and video ID, prioritizing HTTPS for security.
+Checks if a task is either queued or running in this executor.
+Returns and flushes the event buffer, optionally filtering by specified DAG IDs.
+Fetches connection parameters as a dictionary, including user, password, schema, database, account, warehouse, region, role, and optionally private key details for Snowflake connection.
+Override DbApiHook get_uri method to construct Snowflake URI with connection parameters.
+Returns a Snowflake connection object using the provided connection configuration.
+Retrieves AWS credentials from the connection object for use in import and export statements.
+Fetches a field from extras, returning the value or a default if not found.
+Executes SQL using psycopg2's copy_expert method, ensuring the file exists before copying data.
+Loads data from a tab-delimited temporary file into a specified database table using COPY command.
+Dumps a database table into a tab-delimited file using COPY command.
+Uploads a file to Google Cloud Storage using the specified connection ID and parameters.
+Retrieves the maximum partition value for a specified table, considering optional schema, field, filter map, and metastore connection ID.
+Finds the closest date in a list to the target date, optionally before or after the target.
+Finds the closest date partition in a Hive table relative to a specified date.
+Returns a MySQL connection object with configuration details from the connection ID.
+Loads data from a tab-delimited file into a specified database table using MySQL hook.
+Checks if the bucket has been updated by comparing the current number of objects with the previous count and updating the sensor's state based on inactivity and deletion policies.
+Prints stack traces for all threads in the current process upon receiving a SIGQUIT signal.
+Triggers a DAG run for the specified DAG with given arguments.
+Deletes all database records associated with the specified DAG, confirming user intent before proceeding.
+Returns unmet dependencies for a task instance, explaining why it is not scheduled or run.
+Returns the current state of a specified TaskInstance using provided arguments.
+Retrieves and prints the state of a specified DAG run based on the provided arguments.
+Returns the next execution datetime of a DAG, considering its paused state and latest execution date.
+Monitors and manages the number of running workers by adjusting the Gunicorn master process based on the expected number of workers and their readiness status.
+Retrieves or creates a connection to the Cloud Translate service.
+Translates a string or list of strings into the specified target language using the Google Cloud Translation API.
+Execute the bash command in a temporary directory which will be cleaned up after execution.
+Retrieves and returns a Cloud SQL instance resource by specified instance ID and optional project ID.
+Creates a new Cloud SQL instance using the provided body and optional project ID, then waits for the operation to complete.
+Updates settings of a Cloud SQL instance using the provided body and instance ID, with an optional project ID.
+Deletes a Cloud SQL instance by its ID, optionally specifying the project ID.
+Retrieves a database resource from a Cloud SQL instance using the specified instance ID, database name, and optional project ID.
+Creates a new database inside a Cloud SQL instance using the provided instance ID and request body.
+Updates a database resource within a Cloud SQL instance using patch semantics.
+Deletes a specified database from a Cloud SQL instance, optionally specifying a project ID.
+Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL dump or CSV file.
+Waits for the specified operation to complete by checking its status periodically.
+Starts the Cloud SQL Proxy process, ensuring it's not already running, and logs the process ID upon successful start.
+Stops the running SQL proxy process and cleans up associated resources such as the socket directory and downloaded proxy files.
+Returns the version of the Cloud SQL Proxy by executing the proxy with the version flag and parsing the output.
+Creates a database connection entry in the Connection table based on the specified connection parameters.
+Retrieves the dynamically created connection from the Connection table using the provided session.
+Delete the dynamically created connection from the Connection table using the provided session.
+Retrieve and return the Cloud SQL Proxy runner for managing proxy lifecycle per task.
+Retrieve and return the appropriate database hook based on the database type.
+Cleans up the database hook by logging PostgreSQL connection notices if they exist.
+Reserve a free TCP port for use by the Cloud SQL Proxy.
+Replaces invalid MLEngine job ID characters with underscores and ensures it starts with a valid character.
+Extracts error code from FTP exception or returns the exception itself if no code is found.
+Integrates plugins into the global context by adding them to system modules and globals.
+Remove any existing DAG runs for the performance test DAGs by querying and deleting them from the session.
+Remove any existing task instances for the performance test DAGs.
+Toggle the pause state of specified DAGs in the test environment.
+Prints operational metrics for the scheduler test, including performance results and warnings for incomplete tasks.
+Override the scheduler heartbeat to monitor and determine the completion of the test based on successful task instances or timeout.
+Invoke AWS Lambda function with specified payload and return the response.
+Fetches the state of a specific DAG run by dag_id and execution_date.
+Creates and chains operators for model evaluation including prediction, summarization, and validation using Cloud ML Engine and Dataflow.
+Creates the specified directory with the given mode, ensuring intermediate directories exist, and handles exceptions gracefully.
+Attempts to convert the input string to a float if possible, otherwise returns the original string.
+Returns the current date and time in UTC with timezone information.
+Returns the epoch datetime with UTC timezone information.
+Converts a given datetime object to UTC, adding default timezone if not already localized.
+Make a naive datetime aware in a specified timezone, ensuring it's correctly localized or converted.
+Converts an aware datetime object to a naive datetime object in the specified timezone.
+Wrapper function for creating datetime objects with an optional timezone parameter.
+Sets the GOOGLE_APPLICATION_CREDENTIALS environment variable using the provided key path or JSON key file from extras.
+Fetches a field from extras, returning it or a default value if not found.
+Establishes a connection to the Druid broker using the provided connection details.
+Returns an HTTP session configured with connection details and optional headers for making requests.
+Executes HTTP request with specified method, endpoint, data, headers, and extra options.
+Checks the HTTP response status and raises an exception for non-2XX or 3XX status codes.
+Executes the prepared request with the given session and checks the response based on provided options.
+Runs the HTTP hook with advanced retry logic using Tenacity for handling intermittent failures.
+Creates and manages a database session, ensuring it is properly closed after use.
+Provides a session to the decorated function if not already provided, ensuring proper session management and closure.
+Reset the database by dropping existing tables and initializing the database.
+Uploads a file to Azure Blob Storage using the specified connection and options.
+Returns a connection object to Presto using provided connection details.
+Parses a database error to return a more readable error message.
+Fetch records from Presto using the provided HQL query and optional parameters.
+Fetches data from a SQL query and returns it as a pandas DataFrame.
+Execute the HQL statement against Presto, optionally with parameters, for operations like creating views.
+Inserts rows into a specified table with optional target fields.
+Return a cosmos db client or initialize a new one if it does not exist.
+Checks if a collection exists in CosmosDB by querying the database with the provided collection name.
+Creates a new collection in the specified CosmosDB database if it does not already exist.
+Checks if a database exists in CosmosDB by querying for the database name.
+Creates a new database in Azure Cosmos DB if it does not already exist.
+Deletes an existing database in CosmosDB by name.
+Deletes an existing collection in the specified CosmosDB database.
+Inserts or updates a document in the specified CosmosDB collection, ensuring it has a unique ID.
+Inserts multiple documents into a specified or default collection within an Azure Cosmos DB database.
+Delete an existing document from a specified collection in the Azure Cosmos DB.
+Retrieves a document from the specified collection in the Azure Cosmos DB database.
+Retrieve documents from a specified CosmosDB collection using a provided SQL query.
+Retrieve and return the Python code for the specified DAG ID from the database or file system.
+Retrieves the specified Cloud Function and returns it as a dictionary.
+Creates a new function in Cloud Functions at the specified location with the given body and optional project ID.
+Updates Cloud Functions with specified fields using the provided update mask.
+Uploads a zip file containing the source code for a function to the specified location, optionally specifying a project ID.
+Deletes the specified Cloud Function by name and waits for the operation to complete.
+Waits for the specified operation to complete by periodically checking its status until it is done, then returns the response or raises an exception if an error occurs.
+Publishes messages to a specified Pub/Sub topic in the given GCP project.
+Creates a Pub/Sub topic, ensuring it does not already exist unless specified otherwise.
+Deletes a Pub/Sub topic if it exists, with an option to raise an exception if the topic is not found.
+Creates a Pub/Sub subscription with specified parameters or generates a unique name if not provided, handling existence errors based on configuration.
+Deletes a Pub/Sub subscription, handling non-existent subscriptions based on the `fail_if_not_exists` flag.
+Pulls messages from a Pub/Sub subscription, with options to specify the maximum number of messages and whether to return immediately if no messages are available.
+Acknowledges messages on a Pub/Sub subscription by their ack IDs.
+Wrapper function to retrieve dependency statuses for a task instance with optional context and session parameters.
+Checks if the dependency is met for a given task instance by evaluating all dependency statuses.
+Returns an iterable of failure reasons for a given task instance, session, and dependency context.
+Parses S3 configuration file to extract credentials based on specified format and profile.
+Retrieve and return the frozen credentials from the AWS session, ensuring thread-safe access to authentication attributes.
+Expands role name to IAM role ARN if necessary.
+Returns a Vertica connection object using provided configuration.
+Sets the context for each handler in the logger's hierarchy, ignoring handlers without a `set_context` method.
+Write the given message to the log, handling newlines and buffering as necessary.
+Ensure all logging output has been flushed by writing any remaining buffer content to the logger.
+Adjusts file path to return the path to a zip archive if the file is within a zipped directory.
+Traverse a directory to find and list Python files, optionally including examples and applying Airflow-specific filters.
+Constructs a TaskInstance from the database using the provided session and optional lock for update.
+Retrieve the SimpleDag object for the specified DAG ID from the bag, or raise an exception if not found.
+Launches the DagFileProcessorManager process and initiates the DAG parsing loop.
+Harvests DAG parsing results from the result queue and synchronizes metadata from the stat queue, returning a list of parsed SimpleDag objects.
+Heartbeats the DAG file processor and restarts it if not alive.
+Synchronize metadata from the stat queue, updating file paths, process IDs, completion status, and result count with the latest stat.
+Send termination signal to DAG parsing processor manager and expect it to terminate all DAG file processors.
+Terminate and kill the manager process if it is running.
+Helper method to clean up DAG file processors and exit gracefully when a signal is received.
+Start the manager to process DAG files either in async or sync mode with specified parallelism and intervals.
+Continuously parse DAG files in an asynchronous loop until termination or end signal is received.
+Parse and process DAG files in a loop, responding to agent signals and reporting status updates.
+Refreshes the list of DAG file paths if the last refresh was longer than the specified interval.
+Periodically logs file processing statistics if the defined interval has passed since the last log.
+Clears import errors for files that no longer exist using the provided session.
+Log file processing statistics, including file path, PID, runtime, last runtime, and last run time for each file.
+Retrieve the PID of the process handling the specified file, or return None if the file is not being processed.
+Returns the current runtime in seconds of the process handling the specified file, or None if the file is not being processed.
+Returns the start time of the process handling the specified file or None if not being processed.
+Update the internal list of DAG definition file paths and terminate processors for files no longer in the list.
+Waits until all processors are finished by sleeping in a loop.
+Periodically checks for completed DAG file processors, starts new ones as needed, and returns a list of newly discovered SimpleDags.
+Identifies and returns zombie task instances that have not heartbeated within a specified threshold.
+Checks if all file paths have been processed the maximum number of runs allowed.
+Terminate all child processes to prevent them from becoming orphaned when the manager ends.

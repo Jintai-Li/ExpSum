@@ -1,0 +1,999 @@
+Called when the system configuration is updated.
+Called when the system memory reaches different levels.
+Launch parameters. Automatically passed by the system when the Ability starts; developers do not need to modify.
+The reason for the initial launch of the Ability, represented as an enumeration. This can be used with the onCreate(want, launchParam) method of UIAbility to perform corresponding operations based on different types of launchParam.launchReason.
+The last exit reason of the ability, an enumeration type, can be used with the onCreate(want, launchParam) method of UIAbility to perform corresponding operations based on different types of launchParam.lastExitReason.
+The result of ability migration, this type is an enumeration that can be used with the onContinue(wantParam) method of UIAbility to complete the corresponding return. The enumeration includes AGREE (indicating agreement), REJECT (indicating rejection, such as when an application exception occurs during onContinue leading to abnormal display after migration and data recovery, it is recommended to return REJECT), and MISMATCH (indicating version mismatch, if the version does not match after negotiation in onContinue, causing the inability to migrate, this error can be returned).
+Memory level, an enumeration that can be used with UIAbility's onMemoryLevel(level) method to perform different actions based on the memory level.
+The window mode when starting an Ability, represented as an enumeration. It can be used with startAbility to specify the window mode for launching the Ability.
+The result of saving application data, an enumeration that can be used with the UIAbility's onSaveState(reason, wantParam) method to provide appropriate feedback.
+The reason for saving application data scenarios, this type is an enumeration that can be used with UIAbility's onSaveState(reason, wantParam) method to perform corresponding actions based on different types of reason.
+The enumeration value for the flow state. Represents the current state of the application task flow. Can be used with the setMissionContinueState method of UIAbilityContext for setting.
+Triggers a callback when the ability is created after registering to listen to the lifecycle of the application context.
+Triggers a callback when the window stage is created after registering to listen to the application context lifecycle.
+Triggers a callback when the window stage gains focus after registering to listen to the lifecycle of the application context.
+Triggers a callback when the window stage loses focus after registering to listen to the application context lifecycle.
+Triggers a callback when the WindowStage is destroyed after registering to listen to the lifecycle of the application context.
+Triggers a callback when the ability is destroyed after registering to listen to the lifecycle of the application context.
+Triggers a callback when the ability's state transitions from background to foreground after registering to listen to the application context lifecycle.
+Triggers a callback when the ability's state transitions from foreground to background after registering to listen to the application context lifecycle.
+Triggers a callback when the ability is migrated, after registering to listen to the lifecycle of the application context.
+Called back before the onCreate of UIAbility is triggered, after registering to listen to the lifecycle of the application context.
+Called before the onWindowStageCreate of UIAbility is triggered, after registering to listen to the lifecycle of the application context.
+Called before the onWindowStageDestroy of UIAbility when the lifecycle of the application context is registered for listening.
+Called before the UIAbility's onForeground is triggered, after registering to listen to the application context lifecycle.
+Called before the onDestroy of UIAbility is triggered, after registering to listen to the lifecycle of the application context.
+Called before the UIAbility's onBackground when the application context lifecycle is registered to listen.
+Called before onNewWant in UIAbility when the application context lifecycle is registered for listening.
+Called back after onNewWant is triggered in UIAbility, following the registration of lifecycle listeners for the application context.
+Called before onContinue in UIAbility when the lifecycle of the application context is registered for listening.
+Called before the onWindowStageRestore of UIAbility is triggered, after registering to listen to the lifecycle of the application context.
+Called back after onWindowStageRestore is triggered in UIAbility, following the registration of lifecycle listeners for the application context.
+Called before the onSaveState of UIAbility is triggered, after registering to listen to the lifecycle of the application context.
+Called back after onSaveState is triggered in UIAbility, following the registration of lifecycle listeners for the application context.
+Called when the application is created.
+Event triggered when a specified ability is launched.
+Callback when starting UIAbility in a specified process.
+Callback interface for environment change notifications, triggered when global configuration changes occur, such as system language or light/dark mode settings.
+Called when the system has decided to adjust memory. For example, this can be used when the feature is running in the background and there isn't enough memory to run as many background processes as possible.
+Indicates the context of AbilityStage.
+Called when the application is destroyed. This method will be invoked during the normal scheduling lifecycle. If the application exits abnormally or is terminated, this method will not be called.
+Callback when ActionExtensionAbility is created, to execute initialization business logic operations.
+Called when the ActionExtensionAbility interface content object is created.
+Lifecycle callback for ActionExtensionAbility, triggered when ActionExtensionAbility moves from the background to the foreground.
+Lifecycle callback for ActionExtensionAbility, triggered when ActionExtensionAbility moves from the foreground to the background.
+Called when the ActionExtensionAbility interface content object is destroyed.
+Lifecycle callback for ActionExtensionAbility, invoked when the ActionExtensionAbility is destroyed, for performing resource cleanup and other operations.
+Creates the Context for the specified module based on the provided application context.
+Triggers a callback when the current application switches from the background to the foreground after registering the listener for application foreground and background changes.
+Triggers a callback when the current application switches from the foreground to the background after registering the listener for the application's foreground and background state changes.
+This callback is invoked when the save request succeeds.
+Called when the save request fails.
+Requests to save form data, using a callback for asynchronous response.
+The entry method for the child process, invoked after the child process is launched via the childProcessManager.
+Enumeration for subprocess start modes. Includes SELF_FORK and APP_SPAWN_FORK. SELF_FORK starts a subprocess by forking from the app's own process; subprocesses started in this mode cannot perform Binder IPC calls, leading to crashes, and do not support asynchronous ArkTS API calls. APP_SPAWN_FORK starts a subprocess by forking from AppSpawn; subprocesses started in this mode do not inherit parent process resources and lack ApplicationContext, thus not supporting API calls dependent on ApplicationContext.
+Starts a child process and invokes the entry method of the child process. Uses a Promise for asynchronous callback.
+Starts a child process and invokes the entry method of the child process. Uses a callback for asynchronous invocation.
+Starts a child process and invokes the entry method of the child process. Uses a Promise for asynchronous callback.
+Data encryption level.
+Process mode. This feature only takes effect on tablet-like devices.
+The visibility of the Ability after startup. This feature only takes effect on tablet devices.
+Callback when EmbeddedUIExtensionAbility is created, to execute initialization business logic operations.
+Called when the EmbeddedUIExtensionAbility interface content object is created.
+Called when the EmbeddedUIExtensionAbility interface content object is destroyed.
+Lifecycle callback for EmbeddedUIExtensionAbility, triggered when it moves from the background to the foreground.
+Lifecycle callback for EmbeddedUIExtensionAbility, triggered when it moves from the foreground to the background.
+Lifecycle callback for EmbeddedUIExtensionAbility, invoked when the instance is destroyed to perform resource cleanup operations.
+Triggers a callback when the system environment changes after registering a listener for system environment changes.
+Triggers a callback when the system memory changes after registering the listener for system environment changes, returning the memory tuning level that indicates the current memory usage status.
+Intent invocation execution mode.
+The result returned from the intent invocation.
+Starts the Ability only if the Ability and the base class for intent invocation have the same package name. Uses a callback for asynchronous response.
+Starts the Ability only when the Ability and the base class for intent invocation have the same package name. Uses a Promise for asynchronous callback.
+The execution result of the intent invocation in the UI ability foreground mode.
+The execution result of the intent invocation in the background mode of UI ability.
+The execution result of the intent invocation, or a promise that resolves to the execution result of the intent invocation.
+The execution result of the intent invocation.
+Callback when PhotoEditorExtensionAbility is created, performs initialization business logic operations.
+Called when the PhotoEditorExtensionAbility interface content object is created, allowing operations such as reading the original image and loading the page.
+Lifecycle callback for PhotoEditorExtensionAbility, triggered when PhotoEditorExtensionAbility moves from the background to the foreground.
+Lifecycle callback for PhotoEditorExtensionAbility, triggered when it moves from the foreground to the background.
+Lifecycle callback for PhotoEditorExtensionAbility, triggered when the instance is destroyed, allowing for resource cleanup and other finalization operations.
+Callback when ShareExtensionAbility is created, performs initialization business logic operations.
+Called when the ShareExtensionAbility interface content object is created.
+Lifecycle callback for ShareExtensionAbility, triggered when ShareExtensionAbility moves from the background to the foreground.
+Lifecycle callback for ShareExtensionAbility, triggered when ShareExtensionAbility moves from the foreground to the background.
+Called when the ShareExtensionAbility interface content object is destroyed.
+Lifecycle callback for ShareExtensionAbility, invoked when the instance is destroyed to perform resource cleanup and other necessary operations.
+This lifecycle callback is entered after the UIAbility instance is fully shut down and recreated, where initialization business logic operations are executed. This occurs when the UIAbility instance is cold started. It is a synchronous interface and does not support asynchronous callbacks.
+Called when WindowStage is created.
+Called when the WindowStage is about to be destroyed.
+Called when the WindowStage is destroyed.
+Called after restoring the WindowStage when migrating multi-instance ability.
+Lifecycle callback for UIAbility, invoked when the instance is destroyed. Use this to perform resource cleanup operations. Supports synchronous or Promise-based asynchronous callbacks.
+Lifecycle callback for UIAbility, triggered when the application moves from the background to the foreground. Synchronous interface, does not support asynchronous callbacks.
+Lifecycle callback for UIAbility, triggered when the application moves from the foreground to the background. Synchronous interface, does not support asynchronous callbacks.
+Triggered when the Ability is preparing to migrate, to save data.
+This method is called when the UIAbility instance, which has been launched and run in the foreground, is switched to the background due to certain reasons and then restarted. This lifecycle callback occurs during the hot restart of the UIAbility instance.
+Called when dumping client information, useful for dumping non-sensitive information.
+This API works in conjunction with appRecovery. When an application encounters a fault, if automatic state saving is enabled, the framework will invoke onSaveState to save the UIAbility state.
+In cross-device sharing scenarios, specifies the data to be shared by the sharing device in UIAbility.
+Lifecycle callback for UIAbility, triggered when the system is set to prepare for termination (by setting the system parameter persist.sys.prepare_terminate to true). This callback allows defining operations to determine whether to proceed with the UIAbility termination. If user interaction is required to confirm the closure of UIAbility during exit, pre-termination operations can be defined in this lifecycle callback to work with the terminateSelf interface, such as displaying a confirmation dialog. Returning true from this lifecycle callback cancels the normal termination process, while returning false allows the UIAbility to continue with the normal shutdown procedure.
+Lifecycle callback for UIAbility, triggered when UIAbility is swiped back. The return value determines whether to destroy the UIAbility. Returning true indicates that the UIAbility will be moved to the background without being destroyed, while returning false indicates that the UIAbility will be normally destroyed.
+Sends serialized data to the generic component server as per the agreement. Uses a Promise for asynchronous callback.
+Sends serialized data to the generic component server according to the agreement and brings back the serialized data returned by the server. Uses Promise for asynchronous callback.
+Initiate the release of the communication interface for the general component server.
+Register the notification for when the generic component server stub disconnects. Uses callback for asynchronous response.
+Registers the listener for component state changes across devices in a collaborative scenario. Uses callback for asynchronous notification.
+Registers the notification for when the generic component server stub disconnects. Uses a callback for asynchronous response.
+Unregisters the generic component server stub to disconnect from listening notifications. This feature is reserved and currently unsupported. Uses a callback for asynchronous response.
+Unregister the generic component service server stub to disconnect the listening notification. This feature is reserved and currently unsupported.
+Registers a callback for message notifications from the client on the generic component server. The callback function must accept a parameter of type rpc.MessageSequence and return at least an empty rpc.Parcelable object; otherwise, it is considered an execution error.
+Unregisters the callback for notification messages from the generic component server.
+The callback function type for unregistering the generic component server stub (mock) disconnection notification.
+The callback function type for registering cross-device component status change notifications in a collaborative scenario.
+The input data to be transmitted. The returned data object.
+Callback when UIExtensionAbility is created, to execute initialization business logic operations.
+Called when the UIExtensionAbility interface content object is created.
+Called when the UIExtensionAbility interface content object is destroyed.
+Lifecycle callback of UIExtensionAbility, triggered when UIExtensionAbility moves from background to foreground.
+Lifecycle callback for UIExtensionAbility, triggered when UIExtensionAbility moves from the foreground to the background.
+Returns a Promise object that does not resolve with any result.
+Loads the specific page content associated with LocalStorage for the window corresponding to the current UIExtensionComponent control.
+Stops the window interface object associated with the UIExtensionContentSession. Uses a callback for asynchronous notification. When the operation is successful, the err parameter in the callback is undefined; otherwise, it contains an error object.
+Terminates the UIExtensionContentSession associated window interface object. Uses a Promise for asynchronous callback.
+Stops the window interface object corresponding to the UIExtensionContentSession and returns the result to the UIExtensionComponent control using an asynchronous callback.
+Terminates the UIExtensionContentSession window interface object and returns the result to the UIExtensionComponent control using a Promise asynchronous callback.
+Indicates whether the window is in privacy mode. When in privacy mode, the window content cannot be captured or recorded. Uses a Promise for asynchronous callback.
+Indicates whether the window is in privacy mode. When in privacy mode, the window content cannot be captured or recorded. Uses an asynchronous callback.
+The callback function for ability start, providing detailed error information upon failure.
+Callback function that provides detailed error information in case of a failure during the start of the ability.
+Returns the window proxy of UIExtension.
+Converts the Context into a SendableContext object.
+Converts the SendableContext object to a Context.
+Converts the SendableContext object to an ApplicationContext.
+Converts the SendableContext object to an AbilityStageContext.
+Converts the SendableContext object to a UIAbilityContext.
+Called at application startup to configure the settings of the startup framework.
+Called when all startup tasks have completed.
+Execute the startup framework.
+Remove all startup task results.
+Obtain the result of the specified startup task.
+Indicates whether the specified startup task has been initialized.
+Remove the specified initialization result.
+Called when the dependent startup task has completed execution.
+Initializes the business context for task execution.
+Starts a new Ability. Uses a callback for asynchronous invocation.
+Starts a new Ability. Uses a Promise for asynchronous callback.
+Obtain the DataAbilityHelper object, which is a utility class assisting other Ability in accessing the DataAbility.
+Starts an Ability. Uses a callback for asynchronous invocation. After starting the Ability, several scenarios may occur:
+Launches an Ability. Uses a Promise for asynchronous callback. After launching the Ability, several scenarios may occur:
+Stops the current Ability and uses a callback for asynchronous invocation. If the Ability was launched by calling the `startAbilityForResult` interface, invoking the `terminateSelfWithResult` interface will return the result to the caller. If the Ability was not launched by calling the `startAbilityForResult` interface, invoking the `terminateSelfWithResult` interface will not return any result to the caller.
+Stops the current Ability with asynchronous callback using Promise. If the Ability was launched through the `startAbilityForResult` interface, calling `terminateSelfWithResult` will return the result to the caller. If the Ability was not launched through the `startAbilityForResult` interface, calling `terminateSelfWithResult` will not return any result to the caller.
+Checks whether the main window of the Ability has window focus. Uses a callback for asynchronous response.
+Checks whether the main window of the Ability has window focus. Uses a Promise for asynchronous callback.
+Obtain the Want corresponding to the Ability to be launched. Uses a callback for asynchronous response.
+Gets the Want corresponding to the Ability to be launched. Uses a Promise for asynchronous callback.
+Get the application context.
+Stops the current Ability. Uses a callback for asynchronous invocation. When the current Ability is successfully stopped, `err` is undefined; otherwise, it is an error object.
+Stop the current Ability. Uses a Promise for asynchronous callback.
+Connects the current Ability with the specified ServiceAbility.
+Disconnects from the specified ServiceAbility. Uses a callback for asynchronous notification.
+Disconnects from the specified ServiceAbility. Uses a Promise for asynchronous callback.
+Gets the window corresponding to the current Ability. Uses a callback for asynchronous response.
+Gets the window corresponding to the current Ability. Uses a Promise for asynchronous callback.
+Represents the window configuration of the current Ability, obtained via featureAbility.AbilityWindowConfiguration.
+Represents the window properties associated with the current Ability. The `abilityStartSetting` property is an object defined as `[key: string]: any`, where the key corresponds to the setting type of the `AbilityStartSetting` enumeration, and the value corresponds to the setting type of the `AbilityWindowConfiguration` enumeration.
+Defines the error codes returned when launching an Ability.
+Indicates the operation type of the data. When performing batch operations on data with DataAbility, this enumeration value specifies the type of operation.
+Starts the specified particleAbility. Uses a callback for asynchronous invocation. When the specified particleAbility is started successfully, `err` is undefined; otherwise, it is an error object.
+Starts the specified particleAbility. Uses a Promise for asynchronous callback.
+Destroy the current particleAbility. Uses a callback for asynchronous invocation. When the destruction of the current particleAbility succeeds, `err` is undefined; otherwise, it is an error object.
+Destroy the current particleAbility. Uses a Promise for asynchronous callback.
+Obtain the DataAbilityHelper object, which is a utility class assisting other Ability in accessing DataAbility.
+Request a long-running task from the system. Uses a callback for asynchronous invocation.
+Requests the system to start a long-running task. Uses a Promise for asynchronous callback.
+Request the system to cancel a long-running task. Uses an asynchronous callback.
+Requests the system to cancel a long-running task. Uses a Promise for asynchronous callback.
+Connects the current ability with the specified ServiceAbility.
+Disconnects the current ability from the specified ServiceAbility using the provided connection ID. The operation uses a callback for asynchronous notification. If the disconnection is successful, the err parameter in the callback is undefined; otherwise, it contains an error object.
+Disconnects the current ability from the specified ServiceAbility. Uses a Promise for asynchronous callback.
+Defines the error code returned when launching an Ability.
+Access control management: Obtain the instance of the access control module.
+Verifies whether the application has been granted the specified permission. Uses a Promise for asynchronous callback.
+Verifies whether the application has been granted the specified permission, synchronously returning the result.
+Verifies whether the application has been granted the specified permission. Uses a Promise for asynchronous callback.
+Used for UIAbility to initiate a dialog request for user authorization. Uses callback for asynchronous response.
+Used for UIAbility to request user authorization via a popup dialog. Uses promise for asynchronous callback.
+Verify whether the application has been granted the specified permission. Uses a Promise for asynchronous callback.
+Verifies whether the application has been granted the specified permission, synchronously returns the result.
+Triggers the permission settings dialog for UIAbility/UIExtensionAbility to request permissions again.
+Used to invoke the global switch settings dialog from UIAbility/UIExtensionAbility.
+Indicates the authorization status as an enumeration.
+Indicates the global switch type.
+Enumeration, the status of sensitive data access permission request under lock screen.
+Enumeration, the status of sensitive data access release under lock screen.
+Synchronously requests access permissions for sensitive application data under lock screen conditions. After the screen is locked, sensitive data cannot be accessed, but this method allows access to specified types of sensitive data.
+Releases access to sensitive application data when the device is locked, using a synchronous method.
+Enumeration representing the process state.
+Indicates whether the current environment is running in a stability test scenario. Uses an asynchronous callback to return the result. True if in a stability test scenario, false otherwise.
+Indicates whether the current environment is running in a stability test scenario, using a Promise for asynchronous callback. True if in a stability test scenario, false otherwise.
+Indicates whether the current device is a RAM-constrained device. Uses a Promise for asynchronous callback.
+Indicates whether the current device is a RAM-constrained device. Uses a callback for asynchronous response.
+Gets the amount of memory available to the current application, in megabytes. This value can be used for error handling or other custom processing. Uses a Promise for asynchronous callback.
+Gets the amount of memory available for the current application, in units of M. This value can be used for error handling or other custom processing. Uses a callback for asynchronous invocation.
+Retrieves information about the currently running processes. Uses a Promise for asynchronous callback.
+Obtain information about the currently running processes. Uses a callback for asynchronous response.
+Application restart flag, parameter for the enableAppRecovery interface restart option. This type is an enumeration.
+The flag indicating save conditions, used as an option parameter when the status of the enableAppRecovery interface is saved. This type is an enumeration, including SAVE_WHEN_ERROR (0x0001) for saving when an application error occurs, and SAVE_WHEN_BACKGROUND (0x0002) for saving when the application moves to the background.
+Status preservation flag, parameter for the state saving method of the enableAppRecovery interface. This type is an enumeration indicating whether the state should be saved with file or shared memory.
+Enables the application recovery feature, with parameters filled in order. After this interface is called, the first Ability of the application launched from the launcher supports recovery.
+Restart the current process and launch the first Ability of the application at startup. If there is already saved state data for this Ability, it will be passed into the want parameter of the Ability's OnCreate lifecycle callback as the wantParam attribute.
+Saves the current state of the App, which can be used in conjunction with errorManager related interfaces.
+Actively saves the state of the Ability, which will be used upon the next recovery and launch. Can be used in conjunction with errorManager related interfaces.
+Specifies the Ability to be restarted in the next recovery scenario. The specified Ability must be a UIAbility within the current package.
+Indicates the color mode as an enumeration.
+Indicates the orientation of the screen as an enumeration.
+Represents the screen pixel density enumeration.
+Get the ID at the end of the specified URI path.
+Appends the ID to the end of the URI path.
+Remove the ID from the end of the specified URI path.
+Update the ID in the specified URI.
+This interface can be used under ServiceExtensionAbility. If ServiceExtensionAbility implements a modal dialog, it can obtain the requester's RequestInfo from the Want. Using this interface in other scenarios will not yield a return value.
+Obtain the RequestCallback from the want, used for setting the return result.
+Indicates the properties of the modal dialog box.
+Indicates the request information from the initiator, used as the input parameter for binding the modal dialog to the window.
+The result code of the modal dialog request. Indicates whether the request was successful or canceled.
+Request result information for modal dialog.
+When using the `on('error')` interface, the application will not exit. It is recommended to add a synchronous exit operation after the callback function has been executed.
+Unregisters the error observer. Uses a callback to asynchronously return.
+Unregisters the error observer. Uses a Promise to asynchronously return.
+Registers a main thread message processing duration listener. After registration, it can capture the actual execution time of the application's main thread message processing.
+Registers an unhandled rejection observer. Once registered, it can capture unhandled promise rejections in the current thread.
+Unregister the main thread message processing listener.
+Unregister the unhandled rejection promise listener.
+A function that observes unhandled promise rejections, taking the rejection reason and the rejected promise as parameters.
+Creates a WantAgent (in callback form). If creation fails, the returned WantAgent is null.
+Returns a WantAgent in the form of a Promise. If creation fails, the returned WantAgent is null.
+Gets the package name of the WantAgent instance (in callback form).
+Returns the package name of the WantAgent instance in Promise form.
+Gets the user ID of the WantAgent instance (in callback form).
+Returns the user ID of the WantAgent instance in the form of a Promise.
+Cancels the WantAgent instance (in callback form).
+Cancels the WantAgent instance (in Promise form).
+Actively trigger the WantAgent instance (in callback form).
+Determines if two WantAgent instances are equal (in Callback form), to ascertain whether they represent the same operation from the same application.
+Determines if two WantAgent instances are equal (in Promise form), used to check if they represent the same operation from the same application.
+Gets the OperationType information of a WantAgent (in callback form).
+Gets the OperationType information of a WantAgent (in Promise form).
+Indicates the use of WantAgent type enumeration.
+Indicates the operation type of WantAgent enumeration.
+Indicates the data returned by the actively triggered WantAgent.
+Constants for Params operations.
+Flags. Used to indicate the method of processing Want.
+Indicates the display mode for launching the meta-service, where `WINDOW` (value 0) signifies the standalone window launch mode, and `EMBEDDED_FULL` (value 1) signifies the embedded full-screen launch mode.
+Registers the workflow management service and obtains the corresponding registration token without any filtering conditions, using AsyncCallback as the asynchronous method.
+Connects to the continuation management service and retrieves the corresponding registration token using the AsyncCallback method.
+Connects to the continuation management service and retrieves the corresponding registration token using a Promise-based asynchronous method.
+Registers the continuation management service and obtains the corresponding registration token without any filter conditions, using AsyncCallback as the asynchronous method.
+Connects to the continuation management service and retrieves the corresponding registration token using the AsyncCallback method.
+Connects to the continuation management service and retrieves the corresponding registration token, using a Promise as the asynchronous method.
+Asynchronous method for listening to device connection status, with device information returned via Callback.
+Asynchronous method to listen for device disconnection status, returns disconnected device information via Callback.
+Asynchronous method to stop listening for device connection status, with device information returned via a callback.
+Asynchronous method to stop listening for device disconnection status, with device information returned via a callback.
+Asynchronous method to listen for device connection status, returning connected device information via Callback.
+Asynchronous method to listen for device disconnection status, returns disconnected device information via Callback.
+Unsubscribe from the device selection event.
+Unsubscribe from the device unselected status.
+Launches the device selection module, displaying a list of selectable devices within the network without any filtering conditions, using AsyncCallback as the asynchronous method.
+Starts the device selection module, displaying a list of selectable devices within the network. Uses AsyncCallback as the asynchronous method.
+Launches the device selection module, displaying a list of selectable devices within the network. Uses a Promise-based approach for asynchronous method invocation.
+Initiates the device selection module, displaying a list of selectable devices within the network without any filtering conditions, using AsyncCallback as the asynchronous method.
+Initiates the device selection module, displaying a list of selectable devices within the network. Uses AsyncCallback as the asynchronous method.
+Initiates the device selection module, displaying a list of selectable devices within the network. Uses a Promise-based approach for asynchronous method invocation.
+Notifies the device selection module to update the current connection status, using AsyncCallback as the asynchronous method.
+Notifies the device selection module to update the current connection status, using a Promise-based asynchronous method.
+Notifies the device selection module to update the current connection status, using AsyncCallback as the asynchronous method.
+Notifies the device selection module to update the current connection status, using a Promise-based asynchronous method.
+Unregisters the workflow management service using the token obtained during registration, employing an AsyncCallback method for asynchronous processing.
+Unregisters the workflow management service using the token obtained during registration. The asynchronous method returns a result via Promise.
+Unregisters from the continuation management service using the token obtained during registration, employing an AsyncCallback method for asynchronous processing.
+Unregisters from the continuation management service using the token obtained during registration. The asynchronous method returns a result via Promise.
+The state of the device connection, including initial, connecting, connected, and disconnecting states.
+The connection mode of the device selection module.
+Package information flag, indicating the content of package information to be obtained.
+Indicates the type of the extension component.
+From API version 11 onwards, this interface supports usage in meta services.
+From API version 11 onwards, this interface supports usage in meta services.
+From API version 11 onwards, this interface supports usage in meta services.
+Model constraint: Can only be used under the FA model.
+Identifies the display orientation of the Ability. This label applies only to Abilities of the page type.
+From API version 11 onwards, this interface supports usage in meta services.
+From API version 11 onwards, this interface supports usage in meta-services.
+From API version 11 onwards, this interface supports usage in meta services.
+Identifies the mode type for multi-app instances.
+Asynchronously retrieves the BundleInfo of the current application based on the specified bundleFlags, returning the result via a Promise.
+Retrieves the current application's BundleInfo asynchronously based on the specified bundleFlags, with the result returned via a callback.
+Asynchronously retrieves the JSON formatted string of the corresponding configuration file based on the provided moduleName, abilityName, and metadataName (the name under the metadata tag in module.json). The result is returned using a callback.
+Asynchronously retrieves the JSON formatted string of the corresponding configuration file based on the provided moduleName, abilityName, and metadataName (the name under the metadata tag in module.json). The result is returned in the form of a Promise.
+Synchronously retrieves the JSON formatted string of the corresponding configuration file based on the provided moduleName, abilityName, and metadataName (the name under the metadata tag in module.json). The returned object is an array of strings.
+Retrieves the JSON formatted string of the corresponding configuration file based on the given moduleName, extensionAbilityName, and metadataName (the name under the metadata tag in module.json), and returns the result using a callback.
+Asynchronously retrieves the JSON formatted string of the corresponding configuration file based on the provided moduleName, extensionAbilityName, and metadataName (the name under the metadata tag in module.json). The result is returned in the form of a Promise.
+Retrieves the JSON formatted string of the corresponding configuration file based on the provided moduleName, extensionAbilityName, and metadataName (the name under the metadata tag in module.json). The returned object is an array of strings.
+Retrieves the current application's BundleInfo synchronously based on the specified bundleFlags.
+Indicates whether the specified link can be opened. The scheme of the specified link must be configured in the querySchemes field of the module.json file.
+The default application type. This can be one of the following: 'Web Browser', 'Image Gallery', 'Audio Player', 'Video Player', 'PDF Viewer', 'Word Viewer', 'Excel Viewer', 'PPT Viewer', or 'Email'.
+Determines whether the current application is the default application for the specified type, which can be an ApplicationType or UniformDataType, and returns the result in a Promise form.
+Determines asynchronously whether the current application is the default application for the specified application type or UniformDataType, with the result returned via a callback.
+Determines synchronously if the current application is the default application for the specified type, returning the result as a boolean. True indicates it is the default application; false indicates it is not.
+Sets the enabled or disabled state of the overlay feature module in the current application asynchronously. Uses a Promise for asynchronous callback. Returns null on success, and corresponding error messages on failure.
+Sets the enabled or disabled state of the overlay module in the current application asynchronously. Uses a callback for asynchronous response. Returns null on success, and an error message on failure.
+Retrieves the overlayModuleInfo of the specified module in the current application using an asynchronous method. Uses a promise for asynchronous callback, returns null on success, and the corresponding error message on failure.
+Retrieves the overlayModuleInfo information of the specified module in the current application asynchronously. Uses a callback for asynchronous response; returns null on success, and the corresponding error message on failure.
+Asynchronously retrieves the OverlayModuleInfo of the specified target module using a promise for asynchronous callback. Returns null on success, and the corresponding error message on failure.
+Asynchronously retrieves the OverlayModuleInfo of the specified target module. Uses a callback for asynchronous response, returns null on success, and the corresponding error message on failure.
+Callback function when establishing a connection.
+Callback function when the connection is disconnected.
+Callback function when the connection fails.
+Opens the file corresponding to the specified URI and returns the file descriptor using an asynchronous callback.
+Opens the file corresponding to the specified URI and returns a file descriptor using a Promise for asynchronous callback.
+Registers an observer to listen for data change notifications on the specified URI, using an asynchronous callback.
+Unregisters an observer to stop receiving notifications about changes to the data specified by the URI. Uses a callback for asynchronous invocation.
+Gets the media resource type of the data pointed to by the given URI. Uses a callback for asynchronous response.
+Gets the media resource type of the data pointed to by the given URI. Uses a Promise for asynchronous callback.
+Gets the supported file media resource types. Uses a callback for asynchronous response.
+Gets the supported file media resource types. Uses a Promise for asynchronous callback.
+Converts the given uri of the reference data feature to a normalized uri. Uses callback for asynchronous invocation.
+Converts the given uri of the reference data feature to a normalized uri. Uses a Promise for asynchronous callback.
+Converts the given normalized uri, generated by normalizeUri(uri), to a denormalized uri. Uses callback for asynchronous invocation.
+Converts the given normalized uri, generated by normalizeUri(uri), to a denormalized uri. Uses a Promise for asynchronous callback.
+Notifies registered observers of data changes specified by the uri. Uses an asynchronous callback.
+Notifies registered observers of data changes specified by the uri. Uses a Promise for asynchronous callback.
+Inserts a single data record into the database. Uses a callback for asynchronous invocation.
+Inserts a single data record into the database. Uses a Promise for asynchronous callback.
+Inserts multiple data records into the database. Uses a callback for asynchronous response.
+Inserts multiple data records into the database. Uses a Promise for asynchronous callback.
+Delete one or more data records from the database. Uses a callback for asynchronous invocation.
+Delete one or more data records from the database. Uses a Promise for asynchronous callback.
+When predicates are empty, it defines the logic for handling the deletion of data records in a custom database. Uses a callback for asynchronous response.
+Updates data records in the database. Uses a callback for asynchronous invocation.
+Updates data records in the database. Uses a Promise for asynchronous callback.
+When predicates are empty, customize the logic for processing database updates. Use callback for asynchronous invocation.
+Query data from the database. Uses a callback for asynchronous invocation.
+Query data from the database. Uses a callback for asynchronous response.
+Query data from the database. Uses a callback for asynchronous response.
+Query data from the database. Uses a callback for asynchronous response.
+Query data from the database. Uses a Promise for asynchronous callback.
+Invoke the extended interface of DataAbility. Use callback for asynchronous invocation.
+Invoke the extended interface of DataAbility. Use Promise for asynchronous callback.
+Batch operation on data in the database. Uses a callback for asynchronous invocation.
+Batch operation on data in the database. Uses Promise for asynchronous callback.
+Data stored in key-value pairs, where the value can be a number, string, boolean, array of strings/numbers/booleans, or null.
+Obtain the local root directory of the application. Uses an asynchronous callback to return the path.
+Gets the local root directory of the application. Uses a Promise for asynchronous callback.
+Verify if the specific pid and uid running in the system are allowed the specified permission. Uses a callback for asynchronous response.
+Verify if the current pid and uid running in the system have the specified permission. Uses a callback for asynchronous response.
+Verify whether the specific pid and uid in the system have the specified permission. Uses a Promise for asynchronous callback.
+Request certain permissions from the system. Uses an asynchronous callback for the result.
+Requests certain permissions from the system. Uses a Promise for asynchronous callback.
+Retrieve information about the current application. Uses a callback for asynchronous response.
+Retrieves information about the current application. Uses a Promise for asynchronous callback.
+Gets the bundle name of the current ability. Uses a callback for asynchronous response.
+Gets the bundle name of the current ability. Uses a Promise for asynchronous callback.
+Gets the display orientation of the current ability. Uses a callback for asynchronous response.
+Gets the current display orientation of this capability. Uses a Promise for asynchronous callback.
+Gets the external cache directory of the application. Uses a callback for asynchronous response.
+Gets the external cache directory of the application. Uses a Promise for asynchronous callback.
+Indicates the new display orientation for the current Ability. Uses a callback for asynchronous invocation. If setting the display orientation succeeds, `err` is undefined; otherwise, it is an error object.
+Sets the display orientation of the current Ability. Uses a Promise for asynchronous callback.
+Indicates whether this feature should be displayed at the top of the lock screen whenever it is shown, keeping the feature active. Uses an asynchronous callback.
+Indicates whether this feature should be displayed at the top of the lock screen whenever the lock screen is shown, keeping the feature active. Uses a Promise for asynchronous callback.
+Indicates whether to wake up the screen when restoring this feature. Uses an asynchronous callback.
+Indicates whether to wake up the screen when restoring this feature. Uses a Promise for asynchronous callback.
+Obtain information about the current process, including the process ID and name. Uses an asynchronous callback.
+Returns a Promise object that provides information about the current process, including its ID and name.
+Gets the ohos.bundleManager.ElementName object of the current ability. Uses a callback for asynchronous invocation.
+Gets the ohos.bundleManager.ElementName object of the current ability. Uses a Promise for asynchronous callback.
+Gets the name of the current process. Uses a callback for asynchronous response.
+Gets the name of the current process. Uses a Promise for asynchronous callback.
+The name of the Bundle from which the ability is called. Uses a callback for asynchronous response.
+Returns the Bundle name of the ability caller using a Promise for asynchronous callback.
+Gets the internal storage directory of the application. Uses a callback for asynchronous response.
+Returns the internal storage directory of the application. Uses a Promise for asynchronous callback.
+Obtain the file directory for this application on the internal storage. Uses a callback for asynchronous response.
+Returns the file directory for this application on the internal storage. Uses a Promise for asynchronous callback.
+Gets the distributed file path of the Ability or application. If the path does not exist, the system will create and return the path.
+Gets the distributed file path of the Ability or application. Uses a Promise for asynchronous callback.
+Gets the type of this application. Uses a callback for asynchronous response.
+Gets the type of this application. Uses a Promise for asynchronous callback.
+Obtain the ModuleInfo object of the application. Uses a callback for asynchronous response.
+Gets the ModuleInfo object of the application. Uses a Promise for asynchronous callback.
+Gets the application version information. Uses a callback for asynchronous response.
+Gets the application version information using a Promise for asynchronous callback.
+Query the detailed information of the current affiliated Ability. Uses a callback for asynchronous response.
+Returns the detailed information of the current associated Ability using a Promise for asynchronous callback.
+Returns the application context information.
+Check if the configuration of this ability is being updated. Uses a callback for asynchronous response.
+Indicates whether the configurations of this Ability are being updated. Uses a Promise for asynchronous callback.
+Notifies the system of the time required to draw this page. Uses an asynchronous callback.
+Notifies the system of the time required to draw this page. Uses a Promise for asynchronous callback.
+System capability: The system capability corresponding to the following items is SystemCapability.Ability.AbilityRuntime.Core. 
+The request code provided by the user for permission requests. The permissions requested by the user. The results of the permission requests.
+Callback for when the execution of UIExtensionAbility fails. This function receives the result code, name, and error message indicating the failure details.
+Callback when UIExtensionAbility is terminated.
+Registers the listener for the application's lifecycle within the app. Uses a callback for asynchronous invocation. Supports calling only from the main thread.
+Unregisters the listener for the application's internal lifecycle events. Uses an asynchronous callback. Supports calls from the main thread only.
+Unregisters the listener for the application's internal lifecycle events. Uses a Promise for asynchronous callback. Supports calls from the main thread only.
+Register to listen for changes in the system environment. Uses callback for asynchronous invocation. Supported only on the main thread.
+Unregisters the listener for system environment changes. Uses an asynchronous callback. Supported only on the main thread.
+Unregisters the listener for system environment changes. Uses a Promise for asynchronous callback. Supported only in the main thread.
+Registers the listener for application state changes between foreground and background. Uses callback for asynchronous invocation. Supports only the main thread.
+Unregisters all listeners for foreground and background state changes of the current application. Uses a callback for asynchronous invocation. Supports only the main thread.
+Retrieves information about running processes. Uses a Promise for asynchronous callback.
+Obtain information about running processes. Uses a callback for asynchronous response.
+Terminates all processes of the application. Processes will not complete the normal application lifecycle upon exit. Uses a Promise for asynchronous callback. Only supported in the main thread.
+Terminates all processes of the application. The processes will not complete the normal application lifecycle upon exit. Uses an asynchronous callback. Only supports calls from the main thread.
+Sets the color mode of the application. Supported modes include dark, light, and system-following. This method is only callable from the main thread.
+Sets the application's language. Only supported in the main thread.
+Clears the application's own data and revokes permissions requested from the user. Uses a Promise for asynchronous callback. Only supports calls from the main thread.
+Clear application data and revoke permissions requested from the user. Uses an asynchronous callback. Supports only the main thread.
+Restarts the application and launches the specified UIAbility. The onDestroy callback will not be triggered during the restart. This method supports calls only from the main thread, and the application to be restarted must be in focus.
+Gets the clone index of the current application.
+Sets the font type for the application. This operation is supported only in the main thread.
+Indicates whether the application supports fast startup after caching. This feature is only supported in the main thread.
+Creates a context based on the module name.
+Gets the application context of this application.
+Retrieves the corresponding shared directory using the Group ID from the application, with asynchronous callback via Promise. If the shared directory does not exist, it returns an empty string, and only supports the el2 encryption level.
+Obtains the corresponding shared directory by using the Group ID in the application, with the result returned asynchronously via callback. If the shared directory does not exist, an empty value is returned. This operation supports only the el2 encryption level.
+Called when the JavaScript runtime throws an uncaught exception by the user.
+Called when the JavaScript runtime triggers an uncaught exception by the user.
+Subscribe to the specified event.
+Unsubscribe from the specified event. If no callback is provided, unsubscribe all callbacks under the event.
+Triggers the specified event.
+The callback to be applied on the main thread when the event processing exceeds the specified timeout during the JavaScript runtime loop.
+Starts the Ability. Uses a callback for asynchronous result reporting. Only supported on the main thread.
+Starts the Ability. Uses a callback for asynchronous invocation. Supported only on the main thread.
+Starts the Ability. Uses a Promise for asynchronous callback. Supported only in the main thread.
+Start an Ability. Uses a callback for asynchronous invocation. Supported only on the main thread.
+Starts an Ability using a callback for asynchronous invocation. This operation is supported only on the main thread.
+Starts an Ability using a Promise for asynchronous callback. Only supported in the main thread.
+Stops the Ability itself. Uses a callback for asynchronous invocation. Supported only on the main thread.
+Stops the Ability itself. Uses a Promise for asynchronous callback. Supported only on the main thread.
+Stops the current Ability. Uses a callback for asynchronous invocation. Supported only on the main thread.
+Stops the current Ability. Uses a Promise for asynchronous callback. Supported only on the main thread.
+Connects the current Ability to a ServiceExtensionAbility. Only supported on the main thread.
+Disconnects from the ServiceExtensionAbility. After disconnection, the remote object returned upon successful connection must be set to null. Uses a Promise for asynchronous callback. Supported only on the main thread.
+Disconnects from the ServiceExtensionAbility. After disconnection, the remote object returned upon successful connection should be set to null. Uses a callback for asynchronous response. Supported only on the main thread.
+In cross-device scenarios, launches the specified Ability to the foreground or background and simultaneously obtains its Caller communication interface. The caller can use the Caller to communicate with the launched Ability. Uses a Promise for asynchronous callback. Supported only on the main thread.
+The display name for UIAbility in the mission (callback form).
+The display name for UIAbility in the mission (in promise form).
+Sets the continuation state of the UIAbility task in callback form.
+The state of the UIAbility mission continuation (in promise form).
+Restore the WindowStage data in UIAbility. Only supported on the main thread.
+Indicates whether the UIAbility is currently in the terminating state.
+Launches a ServiceExtensionAbility that supports modal dialog boxes. Once the ServiceExtensionAbility is launched, the application displays a modal dialog box and returns the result to the caller through the setRequestResult interface. Uses callback for asynchronous invocation. Supported only on the main thread.
+Launches a ServiceExtensionAbility that supports modal dialog boxes. Once the ServiceExtensionAbility is launched, the application displays a modal dialog box and returns the result to the caller through the setRequestResult interface. Uses a Promise for asynchronous callback. Supported only on the main thread.
+Provides a callback function for developers to track when the page has finished loading content successfully.
+The callback function for the result of starting an ability, and the asynchronous callback function indicating whether the interface call was successful.
+The callback function for the result of starting an ability.
+Displays the current Ability. Uses a Promise for asynchronous callback. Effective only on 2in1 devices and supports invocation in the main thread only.
+Hides the current Ability. Uses a Promise for asynchronous callback. Effective only on 2-in-1 devices and supported only when called from the main thread.
+Moves the foreground Ability to the background. Uses a Promise for asynchronous callback. Only supported on the main thread.
+Launches EmbeddableUIAbility in a modal manner and returns the result using a Promise asynchronous callback. Only supported on the main thread.
+Launches UIAbility through AppLinking with a Promise for asynchronous callback. Only supported on the main thread.
+When the target Ability is launched via startAbilityForResult or openLink and needs to return a result to the caller, this interface allows the target to send the result back and launch the caller Ability. Unlike terminateSelfWithResult, this interface does not destroy the current Ability upon returning.
+Starts the Ability. Uses a callback for asynchronous invocation.
+Starts the Ability. Uses a callback for asynchronous invocation.
+Starts the Ability. Uses a Promise for asynchronous callback.
+Starts an Ability. Uses a callback for asynchronous invocation. After the Ability is started, the following scenarios may occur:
+Starts an Ability using a callback for asynchronous invocation. Once the Ability is started, the following scenarios may occur:
+Starts an Ability using a Promise for asynchronous callback. Once the Ability is started, the following scenarios may occur:
+Connects the current Ability to a ServiceExtensionAbility.
+Disconnects from the ServiceExtensionAbility. After disconnection, the remote object returned upon successful connection should be set to null. Uses a Promise for asynchronous callback.
+Disconnects from the ServiceExtensionAbility. After disconnection, the remote object returned upon successful connection should be set to null. Uses a callback for asynchronous notification.
+Stops the window interface object associated with the UIExtensionContext. Uses a callback for asynchronous notification.
+Terminates the window interface object corresponding to the UIExtensionContext. Uses a Promise for asynchronous callback.
+Stops the window interface object corresponding to the UIExtensionContext and returns the result to the UIExtensionComponent control using an asynchronous callback.
+Stops the window interface object corresponding to the UIExtensionContext and returns the result to the UIExtensionComponent control using a Promise asynchronous callback.
+Provides developers with the ability to report when the page has finished loading (onSessionCreate successful). Uses an asynchronous callback.
+Launches EmbeddableUIAbility in a modal manner and returns the result using a Promise for asynchronous callback.
+Launches UIAbility via AppLinking with a Promise for asynchronous callback.
+The URI of the edited image is provided and saved.
+Saves the edited image's PixelMap object.
+The system capability corresponding to the following items is SystemCapability.BundleManager.BundleFramework.Core.
+Describes the dimensions of the window.
+System capability: The system capabilities corresponding to the following items are all SystemCapability.BundleManager.BundleFramework.Core.
+Indicates the multi-app mode type.
+Describes the metadata information of the module.
+The system capability corresponding to the following items is SystemCapability.BundleManager.BundleFramework.Core.
+Detailed information about the set of permissions the application needs to request from the system during runtime.
+Describes the scenarios and timing of permission usage.
+Describes the signature information of the application package.
+From API version 11 onwards, this interface supports usage in meta-services.
+From API version 11 onwards, this interface supports usage in meta-services.
+System capability: SystemCapability.BundleManager.BundleFramework.Core
+Describes the preloaded module information in the meta-service module.
+Describes the dynamic shared library information that the module depends on.
+Describes the route table information for module configuration.
+Describes the custom data in the route table of the module configuration.
+From API version 11 onwards, this interface supports usage in metadata services.
+System capability: The system capability corresponding to each item below is SystemCapability.BundleManager.BundleFramework.Core.
+From API version 12 onwards, this interface supports usage in meta-services.
+From API version 12 onwards, this interface supports usage in meta-services.
+Indicates the filter parameters required for the device selection module in the continuation management entry.
+This object returned by the `on` interface of ContinuationManager represents the device information returned from the flow management entry. It includes the device identifier, device type, and device name.
+Get the ID at the end of the specified URI path.
+Appends the ID to the end of the URI path.
+Remove the ID from the end of the specified URI path.
+Update the ID in the specified URI.
+Defines the error codes returned when launching an Ability. These include NO_ERROR indicating no exception, INVALID_PARAMETER for invalid parameters, ABILITY_NOT_FOUND when the Ability cannot be found, and PERMISSION_DENY for permission denial.
+The constant for the ACTION operation. Represents the general operation to be performed.
+The constant for the want entity. Used to represent additional category information of the target Ability.
+Flags. Used to indicate the method of processing the Want.
+Indicates whether the current environment is in a stability test scenario. Uses an asynchronous callback to return the result.
+Indicates whether the current environment is in a stability test scenario. Uses a Promise for asynchronous callback.
+Indicates whether the device is RAM-constrained. Uses a Promise for asynchronous callback.
+Indicates whether the device is RAM-constrained. Uses an asynchronous callback to return the result.
+Gets the amount of memory available for the current application, in megabytes. This value can be used for error handling or custom processing. Uses a Promise for asynchronous callback.
+Gets the amount of memory available to the application, in megabytes. The value can be used for error handling or custom processing. Uses callback for asynchronous invocation.
+Obtain information about running processes. Uses a Promise for asynchronous callback.
+Obtain information about running processes. Uses a callback for asynchronous response.
+Indicates the color mode as an enumeration.
+Creates a WantAgent (in callback form). If creation fails, the returned WantAgent is null.
+Returns a WantAgent in the form of a Promise. If creation fails, the returned WantAgent is null.
+Gets the bundle name of the WantAgent instance (callback form).
+Returns the Bundle name of the WantAgent instance in Promise form.
+Gets the user ID of the WantAgent instance (in callback form).
+Returns the user ID of the WantAgent instance in the form of a Promise.
+Cancels the WantAgent instance (in callback form).
+Cancels the WantAgent instance (in Promise form).
+Actively triggers the WantAgent instance (in callback form).
+Determines if two WantAgent instances are equal (in callback form), to ascertain whether they represent the same operation from the same application.
+Determines if two WantAgent instances are equal (in Promise form), to ascertain whether they represent the same operation from the same application.
+Meta-service API: Starting from API version 12, this interface supports usage in meta-services.
+Meta-service API: Starting from API version 12, this interface supports usage in meta-services.
+From API version 12 onwards, this interface supports usage in meta-services.
+Asynchronously retrieves the ApplicationInfo based on the provided bundle name using a Promise for asynchronous callback.
+Asynchronously retrieves the ApplicationInfo for a specified user based on the given bundle name, with results returned via a callback.
+Asynchronously retrieves the ApplicationInfo based on the given bundle name, with results returned via a callback.
+Retrieves all BundleInfo for the specified user asynchronously using a Promise callback. The BundleInfo includes details marked by the provided bundleFlag. If no userId is specified, it defaults to the calling user.
+Retrieves all the BundleInfo of the current user asynchronously, with results returned via callback.
+Retrieves all BundleInfo for a specified user in the system asynchronously, with results returned via a callback.
+Asynchronously retrieves the BundleInfo based on the provided bundle name using a Promise for asynchronous callback.
+Asynchronously retrieves BundleInfo based on the given bundle name, using a callback for asynchronous response.
+Asynchronously retrieves the BundleInfo based on the provided bundle name, using a callback for asynchronous response.
+Gets all installed application information for the specified user, using a promise for asynchronous callback.
+Obtain all installed application information for the specified user, using an asynchronous callback.
+Obtain the installed application information under the caller's user account, using an asynchronous callback.
+Returns information about the application package contained in the HAP, with the result provided in the form of a Promise.
+Retrieves information about the application packages contained in the HAP asynchronously, with results returned via callback.
+Retrieves Ability component information through the Bundle name and component name, with asynchronous callback in Promise form.
+Obtain the Ability component information through the Bundle name and component name, with the result returned via a callback.
+Gets the application name through the Bundle name and Ability name, returns the result in the form of a Promise.
+Obtains the application name through the Bundle name and Ability component name, with the result returned via a callback.
+Asynchronously queries whether the ability has been enabled based on the provided AbilityInfo, returning the result in the form of a Promise.
+Queries whether the ability has been enabled based on the given AbilityInfo using an asynchronous method, with the result returned via a callback.
+Asynchronously queries whether the specified application is enabled based on the given bundleName, returning the result in the form of a Promise.
+Asynchronously queries whether the specified application is enabled based on the given bundleName, with the result returned via a callback function.
+Asynchronously retrieves Ability component information based on the given intent, returning the result in the form of a Promise.
+Asynchronously retrieves Ability information for a specified user based on the given intent, with results returned via callback.
+Asynchronously retrieves Ability information based on the given intent, with results returned via a callback.
+Queries the want object for launching the specified application asynchronously, returning the result in the form of a Promise.
+Queries the want object for launching the specified application asynchronously, with results returned via a callback.
+Asynchronously retrieves the Bundle name corresponding to the uid, returning the result in the form of a Promise.
+Asynchronously retrieves the Bundle name associated with the given uid, returning the result via a callback.
+Asynchronously retrieves the PixelMap of the corresponding Icon using bundleName and abilityName, with the result returned in the form of a Promise.
+Asynchronously retrieves the PixelMap of the corresponding Icon using bundleName and abilityName, with results returned via callback.
+Deprecated since API version 9, not recommended for use.
+Deprecated since API version 9, it is recommended to use bundleManager.BundleFlag as an alternative.
+Deprecated since API version 9, not recommended for use.
+Deprecated since API version 9, it is recommended to use bundleManager.AbilityType as an alternative.
+Deprecated since API version 9, it is recommended to use bundleManager.DisplayOrientation instead.
+Deprecated since API version 9, it is recommended to use bundleManager.LaunchType as an alternative.
+Deprecated from API version 9, not recommended for use.
+Deprecated since API version 9, not recommended for use.
+Deprecated from API version 9, it is recommended to use bundleManager.PermissionGrantState as an alternative.
+Checks if a specified application exists or if a native application is installed.
+Deprecated since API version 9. Indicates whether the application is installed.
+Deprecated since API version 9.
+Deprecated since API version 9, it is recommended to use bundleManager-AbilityInfo instead.
+Deprecated since API version 9, it is recommended to use bundleManager-ApplicationInfo instead.
+Deprecated since API version 9, it is recommended to use bundleManager-BundleInfo instead.
+Deprecated since API version 9, it is recommended to use ReqPermissionDetail instead.
+Deprecated from API version 9, it is recommended to use UsedScene instead.
+Deprecated since API version 9, it is recommended to use Metadata as an alternative.
+Deprecated since API version 9, it is recommended to use bundleManager-ElementName instead.
+Deprecated since API version 9, it is recommended to use bundleManager-HapModuleInfo instead.
+Deprecated since API version 9, it is recommended to use bundleManager-HapModuleInfo instead.
+System capability: The system capability corresponding to the following items is SystemCapability.BundleManager.BundleFramework.
+Check if the application has been granted the specified permission.
+Returns the information of the current application.
+Returns a string containing the appId information of the application.
+Returns a string containing the appIdentifier information of the application. The appIdentifier is the unique identifier assigned by the cloud and remains unchanged throughout the application's entire lifecycle, including version upgrades, certificate changes, developer key changes, and application transfers.
+Callback function to notify the result of starting the child process.
+Defines error codes for the Native child process module.
+Creates a child process and loads the dynamic link library file specified in the parameters. The result of the process startup is asynchronously notified through the callback parameter. Note that the callback notification runs in an independent thread, so the implementation of the callback function must consider thread synchronization and should not perform high-latency operations to avoid prolonged blocking.
+The package name of the application.
+The fingerprint information of the application.
+Indicates the state of the auxiliary application, whether it is enabled, disabled, or installed.
+The type of accessibility assistance application. Indicates whether it provides audible, generic, haptic, spoken, or visual feedback, or all of the above categories.
+Indicates the operation to perform. Possible values include 'accessibilityFocus', 'clearAccessibilityFocus', 'focus', 'clearFocus', 'clearSelection', 'click', 'longClick', 'cut', 'copy', 'paste', 'select', 'setText', 'delete', 'scrollForward', 'scrollBackward', 'setSelection', 'setCursorPosition', and 'home'.
+Type Capability = 'retrieve' | 'touchGuide' | 'keyEventObserver' | 'zoom' | 'gesture'
+Indicates the type of edge effect applied to captions, including none, raised, depressed, uniform, and dropShadow.
+The font family for captions, including options such as default, monospacedSerif, serif, monospacedSansSerif, sansSerif, casual, cursive, and smallCapitals.
+Captions style.
+Listens for changes in the subtitle configuration enable status, using a callback for asynchronous notification.
+Listens for subtitle style change events, using a callback for asynchronous notification.
+Unsubscribes from the event that monitors changes in the subtitle configuration enable status, using a callback for asynchronous response.
+Unregisters the listener for subtitle style change events, using a callback for asynchronous response.
+Constructor. Initializes an object using the provided JSON formatted string.
+Constructor. Initializes an instance with the specified event type, target application name, and triggering action.
+Indicates the event types supported for accessibility and interaction, including gaining or clearing accessibility focus, clicking, long pressing, selecting, entering or exiting hover state, focusing, updating text or text selection, scrolling, requesting focus for accessibility, and announcing for accessibility.
+Indicates the unit of granularity for moving through node text, such as character, word, line, page, or paragraph.
+Window update types include 'add' indicating a window addition event, 'remove' indicating a window deletion event, 'bounds' indicating a window bounds change event, 'active' indicating a window activation or deactivation event, and 'focus' indicating a window focus change event.
+Query the list of auxiliary applications, using Promise for asynchronous callback.
+Query the list of auxiliary applications, using callback for asynchronous invocation.
+Queries the list of auxiliary applications, using a Promise for asynchronous callback.
+Query the list of auxiliary applications, using callback for asynchronous invocation.
+Query the list of accessibility applications synchronously.
+Gets the captions manager instance for accessibility subtitle configuration.
+Listens for changes in the global accessibility state, notifying the status via the provided callback function.
+Listens for changes in the touch guide state and notifies through the provided callback function asynchronously.
+Unregisters the event listener for changes in the accessibility state, using an asynchronous callback. If no specific callback is provided, all registered listeners for the 'accessibilityStateChange' event will be unregistered.
+Unregister the event listener for changes in the touch guide state, using a callback for asynchronous response. If no specific callback is provided, all registered listeners for the event will be unregistered.
+Indicates whether accessibility features are enabled, using a Promise for asynchronous callback.
+Determine whether the accessibility feature is enabled, using an asynchronous callback.
+Indicates whether accessibility is enabled. Returns true if accessibility is enabled, otherwise returns false.
+Determines whether the touch browsing mode is enabled, using a Promise for asynchronous callback.
+Determine whether the touch browsing mode is enabled, using an asynchronous callback.
+Indicates whether the touch browsing mode is enabled.
+Sends an accessibility event, using a Promise for asynchronous callback.
+Sends an accessibility event, using a callback for asynchronous response. If the event fails to send, the error will be returned in the AsyncCallback.
+Sends an accessibility event, using a Promise for asynchronous callback.
+Sends an accessibility event, using a callback for asynchronous response. If the accessibility event fails to send, the AsyncCallback will contain error data.
+Constructor for creating an instance with the total duration of the gesture, measured in milliseconds.
+Constructor for creating a touch point with X and Y coordinates.
+Indicates an accessibility node element, refer to AccessibilityElement.
+Indicates the property names and types of attribute values associated with node elements. Refer to ElementAttributeValues.
+Indicates the direction for querying the next focus element, refer to FocusDirection.
+Indicates the key of ElementAttributeValues. This key is used to reference specific attributes within the ElementAttributeValues object, facilitating access to particular accessibility features or settings.
+Indicates the type of the focused element, refer to FocusType.
+Indicates the type of the window, refer to WindowType.
+Indicates the rectangular area, refer to Rect.
+Gesture event type.
+Indicates the type of page update, whether it is a content refresh or a state refresh.
+Indicates the state of touch interaction, either at the beginning ('touchBegin') or end ('touchEnd') of a touch event.
+When the user enables AccessibilityExtensionAbility, this callback is invoked after the system service completes the connection. Initialization business logic operations can be performed within this method. This method can be optionally overridden.
+When the user deactivates AccessibilityExtensionAbility, this callback is invoked after the system service completes the disconnection. Resource cleanup and exit business logic operations can be performed in this method. This method can be optionally overridden.
+Callback for the event when the specified application and event types of interest occur. This method can be overridden to implement business logic based on the event information.
+Callback method invoked when a physical button is pressed. This method can be used to determine whether to intercept the event based on business logic.
+Indicates the direction of focus movement, including up, down, left, right, forward, and backward.
+FocusType represents the type of focus, where 'accessibility' indicates the focus type for accessibility, and 'normal' indicates the regular focus type.
+Represents the rectangular area defined by the left, top, width, and height properties.
+Indicates the type of window, either 'application' for application windows or 'system' for system windows.
+Sets the target package names to monitor, using a Promise for asynchronous callback.
+Sets the target package names to monitor, using an asynchronous callback. If setting the target package names fails, error information will be returned in the callback.
+Gets the focused element, using a Promise for asynchronous callback. If `isAccessibilityFocus` is true, it retrieves the accessibility focus element. The returned Promise resolves to the current focused element.
+Gets the currently focused element, using an asynchronous callback to return the element.
+Obtain the focus element, using a callback for asynchronous invocation.
+Gets the root node element of the specified window, using a Promise for asynchronous callback.
+Gets the root node element of the specified window, using an asynchronous callback.
+Gets the root node element of the specified window, using an asynchronous callback.
+Gets all windows in the specified screen, using a Promise for asynchronous callback.
+Gets all windows in the specified screen, using an asynchronous callback.
+Gets all windows in the specified screen, using an asynchronous callback.
+Deprecated since API version 10.
+Deprecated since API version 10.
+Inject gesture path.
+Promise object, returns all attribute names of the node element.
+Asynchronously retrieves all attribute names of the node element, using the provided callback function to return the results.
+Gets the attribute value based on the attribute name, using a Promise for asynchronous callback.
+callback function that receives the attribute value corresponding to the node's attribute name.
+Gets the names of all supported actions for the node element, using a Promise for asynchronous callback.
+Gets the names of all supported operations for the node element, using an asynchronous callback.
+Executes an operation based on the action name, using a Promise for asynchronous callback.
+Executes an operation based on the action name, using a callback for asynchronous response.
+Executes an operation based on the action name, using a callback for asynchronous response.
+Queries all node elements based on the node content, using a Promise for asynchronous callback.
+Query all node elements based on the node content.
+Queries the node element based on the focus element type, using a Promise for asynchronous callback.
+Queries the node element based on the focus element type, using an asynchronous callback.
+Queries the node element based on the direction of the next focus element, using a Promise for asynchronous callback.
+Queries the node element based on the direction of the next focus element, using a callback for asynchronous response.
+Describes the status of asset attachments using enumeration names instead of values.
+Records the relevant information of asset attachments (files, images, videos, etc.).
+Represents an array of Asset types.
+The ValueType represents the possible types of values, including null, number, string, boolean, Uint8Array, Asset, and Assets. Each type indicates a specific kind of data: null for no value, number for numeric data, string for text data, boolean for logical values, Uint8Array for an array of 8-bit unsigned integers, Asset for a single attachment, and Assets for multiple attachments.
+Represents a collection of key-value pairs where the key is of type string and the value is of type ValueType.
+Creates RdbPredicates object through table name and DataAbility predicates.
+Configures a predicate to match data where the specified field has a data type of ValueType and the value equals the specified value.
+Configures a predicate to match data where the specified field has a data type of ValueType and does not equal the specified value.
+Adds a left parenthesis in the predicate. This method is similar to the "(" in SQL statements and should be used together with endWrap.
+Adds a right parenthesis in the predicate. This method is similar to the ")" in SQL statements and should be used together with beginWrap.
+Adds an OR condition to the predicate.
+Adds an AND condition to the predicate.
+Configures a predicate to match fields with a data type of string and a value containing the specified value.
+Configures a predicate to match fields with a data type of string and values that begin with the specified string.
+Configures a predicate to match fields with a data type of string and values that end with the specified string.
+Configure the predicate to match fields with a value of null.
+Configures the predicate to match the specified field with a value that is not null.
+Configures a predicate to match fields with a data type of string and values similar to the specified string.
+Configures a predicate to match a specified field with a data type of string. Unlike the like method, this method's input parameters are case-sensitive.
+Configures a predicate to match the specified field where the data type is ValueType and the value is within the specified range.
+Configures a predicate to match fields of data type ValueType where the value is outside the given range.
+Configures a predicate to match fields with data type ValueType and values greater than the specified value.
+Configures a predicate to match fields with data type valueType and value less than the specified value.
+Configures a predicate to match fields with data type ValueType and value greater than or equal to the specified value.
+Configures a predicate to match fields with data type ValueType and value less than or equal to the specified value.
+Configure the predicate to match columns whose values are sorted in ascending order. When multiple orderByAsc are used, the first one applied has the highest priority.
+Configures the predicate to match columns whose values are sorted in descending order. When multiple orderByDesc are used, the first one applied has the highest priority.
+Configure the predicate to filter out duplicate records and retain only one.
+Predicate for setting the maximum number of data records.
+Configures the predicate to specify the starting position of the returned results. This method must be used together with limitAs.
+Configures the predicate to group query results by the specified columns.
+Configures the predicate to specify the index column. Before using this method, you need to create an index column.
+Configures a predicate to match a specified field where the data type is an array of ValueType and the values are within the given range.
+Configure the predicate to match the specified field where the data type is an array of ValueType and the values are not within the given range.
+Represents the type of value, which can be a number, string, or boolean.
+Configures the predicate to match fields with values equal to the specified value.
+This interface adds an AND condition to the predicate.
+Configures the predicate to match columns whose values are sorted in ascending order.
+Configures the predicate to match columns whose values are sorted in descending order.
+Configures the predicate to specify the total number of results and the starting position.
+Configures a predicate to match fields with values within the specified range.
+Create a distributed data object.
+Randomly generated sessionId.
+Callback information for the save interface.
+Callback information for the RevokeSave interface, indicating the success response. This includes the `sessionId` which serves as the unique identifier for multi-device collaboration.
+The binding information of the database. This version only supports relational databases.
+The identifier for distributed data objects within a trusted network. Setting it to an identical sessionId across multiple devices in a collaborative state enables automatic synchronization. Setting it to "" indicates exiting the distributed network.
+Exit all joined sessions, with asynchronous callback.
+The session ID for distributed objects within a trusted network. If multiple devices in a collaborative state set their distributed objects to the same session ID, they will synchronize automatically. The session ID is a string identifier with a maximum length of 128 characters, consisting only of letters, numbers, or underscores _. To exit the distributed network, set it to "" or leave it unset.
+Listen to data changes of distributed data objects.
+When no longer listening for data changes, use this interface to remove the change listener from the object.
+Listen to the online and offline status of distributed data objects.
+When no longer listening for object online/offline events, use this interface to remove the object's online/offline listener.
+Saves the distributed data object. Uses a callback for asynchronous invocation.
+Saves the distributed data object. Uses a Promise for asynchronous callback.
+Revoke the saved distributed data object. Uses callback as an asynchronous method.
+Revoke the saved distributed data object. Uses a Promise as the asynchronous method.
+Binds a single asset in the distributed object with its corresponding database information. This version only supports binding assets in distributed objects with relational databases. Uses a callback method for asynchronous invocation.
+Binds a single asset in the distributed object with its corresponding database information. This version only supports binding assets in distributed objects with relational databases. Uses a Promise for asynchronous callbacks.
+Create a distributed data object.
+The session ID for distributed data objects within a trusted network. If multiple devices in a trusted network are set to the same session ID, they will automatically synchronize. Setting this to an empty string or not setting it at all will exit the distributed network.
+Listen to changes in distributed data objects.
+When no longer listening for data changes, use this interface to remove the change listener from the object.
+Listen to the online and offline status changes of distributed data objects.
+When object online/offline listening is no longer needed, use this interface to remove the object's online/offline listener.
+Provides configuration information for the KVManager instance, including the caller's package name and the application context.
+Distributed key-value database constants.
+Data type enumeration.
+The value object stored in the database.
+The key-value pair stored in the database.
+The object to notify when data changes, including inserted entries, updated entries, deleted entries, and device ID.
+Sync mode enumeration. Indicates the direction of data synchronization: PULL_ONLY for pulling data from remote to local, PUSH_ONLY for pushing data from local to remote, and PUSH_PULL for both pushing data from local to remote and pulling data from remote to local.
+Subscription type enumeration.
+Distributed key-value database type enumeration.
+The security level enumeration for the database, indicating the potential impact of data breaches, alterations, destruction, or loss on individuals or organizations. Levels include:
+Provides configuration information for creating a database.
+Constructor for creating a Schema instance.
+Constructor for creating an instance of FieldNode with a string field. The value of FieldNode, represented by `name`, must not be empty.
+Appends a child node to the current FieldNode. Returns true if the child node is successfully added to the FieldNode; returns false if the operation fails.
+Creates a KVManager object instance for managing database objects.
+Creates and retrieves a distributed key-value database by specifying storeId and options, with an asynchronous callback using the provided callback function.
+Creates and retrieves a distributed key-value database by specifying storeId and options, using a Promise for asynchronous callback.
+Closes the specified distributed key-value database identified by the `storeId` value, using an asynchronous callback.
+Closes the specified distributed key-value database identified by the value of storeId, using a Promise for asynchronous callback.
+Deletes the specified distributed key-value database identified by the value of storeId, using an asynchronous callback.
+Deletes the specified distributed key-value database identified by the value of storeId, using a Promise for asynchronous callback.
+Gets the storeId of all distributed key-value databases created via the getKVStore method and not deleted via the deleteKVStore method, using an asynchronous callback.
+Returns all storeIds of distributed key-value databases created via the getKVStore method and not deleted using the deleteKVStore method, with asynchronous callback using Promise.
+Subscribes to service status change notifications. If the service terminates, it is necessary to re-register for data change notifications and synchronization completion event callback notifications, and synchronization operations will return failures.
+Unsubscribes from service status change notifications. The deathCallback parameter must be a previously subscribed deathCallback; otherwise, the unsubscription will fail.
+Returns the total number of rows in the result set.
+Returns the current read position in the result set. The read position can change due to operations such as moveToFirst or moveToLast.
+Moves the cursor to the first row. Returns false if the result set is empty.
+Moves the read position to the last row. Returns false if the result set is empty.
+Moves the read position to the next row. Returns false if the result set is empty. Suitable for scenarios where the entire database result set needs to be retrieved.
+Moves the read position to the previous row. Returns false if the result set is empty. Suitable for scenarios where the entire database result set needs to be retrieved.
+Moves the read position relative to the current position by the specified offset. A positive offset moves forward, while a negative offset moves backward.
+Moves the read position from 0 to the specified absolute position.
+Indicates whether the read position is at the first row. Returns true if the read position is at the first row; returns false otherwise.
+Indicates whether the read position is at the last row. Returns true if the read position is at the last row; returns false otherwise.
+Indicates whether the read position is before the first row. Returns true if the read position is before the first row; returns false otherwise.
+Indicates whether the read position is after the last row. Returns true if the read position is after the last row; otherwise, returns false.
+Retrieve the key-value pair from the current position.
+Constructor for creating a Query instance.
+Reset the Query object.
+Constructs a Query object to query entries with the specified field, whose value is equal to the specified value.
+Constructs a Query object to retrieve entries with the specified field whose value does not equal the given value.
+Constructs a Query object to retrieve entries with the specified field greater than the given value.
+Constructs a Query object to find entries with the specified field less than the given value.
+Constructs a Query object to retrieve entries with the specified field and value greater than or equal to the given value.
+Constructs a Query object to find entries with the specified field having a value less than or equal to the given value.
+Constructs a Query object to find entries where the specified field has a value of null.
+Constructs a Query object to find entries with the specified field whose values are in the given list of values.
+Constructs a Query object to query entries with the specified field whose values are in the given list of string values.
+Constructs a Query object to find entries where the specified field has values not in the given list.
+Constructs a Query object to find entries with the specified field whose values are not in the given list of string values.
+Constructs a Query object to find entries with the specified field that has values similar to the given string value.
+Constructs a Query object to retrieve entries with the specified field that does not match the given string value.
+Constructs a query object with an AND condition.
+Constructs a Query object with an OR condition.
+Constructs a Query object, ordering the query results in ascending order.
+Constructs a Query object, ordering the query results in descending order.
+Constructs a Query object to specify the number of results and the starting position. This interface must be called after operations such as querying and sorting on the Query object. After calling the limit interface, no further operations such as querying and sorting can be performed on the Query object.
+Constructs a Query object to find entries where the specified field has a non-null value.
+Begins a query condition group with a left parenthesis.
+Ends a group of query conditions with a right parenthesis, returning the Query object.
+Creates query conditions with the specified key prefix. The prefix must not contain '^', as it would invalidate the predicate and result in returning all data from the database.
+Specifies an index to be prioritized for queries. The index should not contain '^' as it would invalidate the predicate, causing the query to return all data from the database.
+Adds the device ID as a prefix to the key.
+Returns the SQL query statement from the Query object.
+Adds a key-value pair of the specified type to the database, using an asynchronous callback.
+Adds a key-value pair of the specified type to the database, using a Promise for asynchronous callback.
+Inserts multiple key-value pairs into the SingleKVStore database asynchronously with a callback.
+Inserts multiple key-value pairs into the SingleKVStore database, using a Promise for asynchronous callback.
+Deletes the data associated with the specified key from the database, using an asynchronous callback.
+Deletes the data associated with the specified key from the database, using a Promise for asynchronous callback.
+Batch delete key-value pairs from the SingleKVStore database, using an asynchronous callback.
+Batch delete key-value pairs from the SingleKVStore database, using a Promise for asynchronous callback.
+Remove data for the specified device, using an asynchronous callback.
+Delete the data of the specified device, using a Promise for asynchronous callback.
+Retrieves the value associated with the specified key, using an asynchronous callback to return the result.
+Gets the value of the specified key, using a Promise for asynchronous callback.
+Retrieve all key-value pairs matching the specified key prefix, using an asynchronous callback.
+Gets all key-value pairs matching the specified key prefix, using a Promise for asynchronous callback.
+Retrieve the list of key-value pairs that match the specified Query object, using an asynchronous callback.
+Returns a list of key-value pairs matching the specified Query object, using a Promise for asynchronous callback.
+Retrieves the result set with the specified prefix from the SingleKVStore database, using an asynchronous callback.
+Retrieves the result set with the specified prefix from the SingleKVStore database, using a Promise for asynchronous callback.
+Obtain the KVStoreResultSet object that matches the specified Query object, using an asynchronous callback.
+Gets the KVStoreResultSet object that matches the specified Query object, using a Promise for asynchronous callback.
+Closes the KVStoreResultSet object returned by SingleKvStore.getResultSet, using a callback for asynchronous notification.
+Closes the KVStoreResultSet object returned by SingleKvStore.getResultSet, using a Promise for asynchronous callback.
+Gets the number of results matching the specified Query object, using an asynchronous callback.
+Gets the number of results matching the specified Query object, using a Promise for asynchronous callback.
+Backs up the database with the specified name, using an asynchronous callback.
+Backs up the database with the specified name, using a Promise for asynchronous callback.
+Restores the database from the specified database file, using an asynchronous callback.
+Restores the database from the specified database file, using a Promise for asynchronous callback.
+Deletes backup files according to the specified names, using an asynchronous callback to return the filenames and their processing results.
+Deletes backup files according to the specified names, using a Promise for asynchronous callback.
+Starts a transaction in the SingleKVStore database, using an asynchronous callback. If the transaction starts successfully, `err` is undefined; otherwise, it is an error object.
+Starts a transaction in the SingleKVStore database, using a Promise for asynchronous callback.
+Submit transactions in the SingleKVStore database, using callback for asynchronous invocation. If the transaction submission is successful, err is undefined; otherwise, it is an error object.
+Submits the transaction in the SingleKVStore database, using a Promise for asynchronous callback.
+Rollback the transaction in the SingleKVStore database, using an asynchronous callback. The callback function indicates success if `err` is undefined, otherwise it contains an error object.
+Rolls back the transaction in the SingleKVStore database, using a Promise for asynchronous callback.
+Indicates whether synchronization is enabled, with asynchronous callback for operation status.
+Determines whether synchronization is enabled, using a Promise for asynchronous callback.
+Synchronization range labels for local and remote devices, using asynchronous callback for completion status.
+Synchronization range labels, using Promise for asynchronous callback.
+The default allowed delay for database synchronization, measured in milliseconds. The callback function is used for asynchronous invocation, where setting success is indicated by `err` being `undefined`, otherwise it represents an error object.
+The default allowed delay for database synchronization, measured in milliseconds. This value determines the maximum acceptable delay before the system considers the synchronization process to be lagging. The setting uses a Promise for asynchronous callback without returning any result.
+Triggers database synchronization in manual sync mode. For details on synchronization methods for key-value databases, see Cross-Device Data Synchronization for Key-Value Databases.
+Triggers database synchronization in manual sync mode. This method is synchronous. For more information on synchronization methods for key-value databases, see Key-Value Database Cross-Device Data Synchronization.
+Subscribes to notifications for changes of the specified type.
+Subscription for the synchronization completion event callback notification.
+Unsubscribe from data change notifications. If no callback is specified, all subscribed functions will be unsubscribed.
+Unsubscribe from the sync complete event callback notification.
+Obtain the security level of the database, using an asynchronous callback.
+Gets the security level of the database, using a Promise for asynchronous callback.
+Retrieve the value associated with the specified key on this device, using an asynchronous callback.
+Retrieves the value associated with the specified key on this device, using a Promise for asynchronous callback.
+Obtain the string value that matches the specified device ID and Key, using an asynchronous callback.
+Gets the string value associated with the specified device ID and key, using a Promise for asynchronous callback.
+Retrieve all key-value pairs matching the specified key prefix of this device, using an asynchronous callback.
+Retrieves all key-value pairs matching the specified key prefix of this device, using a Promise for asynchronous callback.
+Retrieves all key-value pairs matching the specified device ID and key prefix, using an asynchronous callback.
+Retrieves all key-value pairs matching the specified device ID and key prefix, using a Promise for asynchronous callback.
+Retrieve the list of key-value pairs on this device that match the specified Query object, using an asynchronous callback.
+Returns a list of key-value pairs on this device that match the specified Query object, using a Promise for asynchronous callback.
+Gets the list of key-value pairs that match the specified device ID and Query object, using an asynchronous callback.
+Retrieves a list of key-value pairs associated with the specified device ID and matching the provided Query object, using a Promise for asynchronous callback.
+Retrieves the result set from the DeviceKVStore database for keys with the specified prefix, using an asynchronous callback.
+Retrieves the result set from the DeviceKVStore database for keys with the specified prefix, using a Promise for asynchronous callback.
+Obtain the KVStoreResultSet object that matches the specified device ID and key prefix, using an asynchronous callback.
+Gets the KVStoreResultSet object matching the specified device ID and key prefix, using a Promise for asynchronous callback.
+Obtain the KVStoreResultSet object that matches the specified device ID and Query object, using an asynchronous callback.
+Gets the KVStoreResultSet object matching the specified device ID and Query object, using a Promise for asynchronous callback.
+Gets the KVStoreResultSet object that matches the specified Query object on this device, using a Promise for asynchronous callback.
+Obtain the KVStoreResultSet object that matches the specified Query object on this device, using an asynchronous callback.
+Gets the number of results matching the specified Query object on this device, using an asynchronous callback.
+Gets the number of results matching the specified Query object on this device, using a Promise for asynchronous callback.
+Gets the number of results matching the specified device ID and Query object, using an asynchronous callback.
+Gets the number of results matching the specified device ID and Query object, using a Promise for asynchronous callback.
+Obtain the Preferences instance, using the callback for asynchronous invocation.
+Obtain a Preferences instance, using a Promise for asynchronous callback.
+Obtain the Preferences instance, using the callback for asynchronous invocation.
+Obtain a Preferences instance, using a Promise for asynchronous callback.
+Obtain the Preferences instance, this is a synchronous interface.
+Removes the specified Preferences instance from the cache and deletes its associated persistent file if it exists. Uses a callback for asynchronous notification.
+Removes the specified Preferences instance from the cache and deletes its associated persistent file if it exists. Uses a Promise for asynchronous callback.
+Removes the specified Preferences instance from the cache and deletes its associated persistent file if it exists. Uses a callback for asynchronous notification.
+Removes the specified Preferences instance from the cache and deletes its associated persistent file if it exists. Uses a Promise for asynchronous callback.
+Removes the specified Preferences instance from the cache, using an asynchronous callback.
+Removes the specified Preferences instance from the cache, using a Promise for asynchronous callback.
+Removes the specified Preferences instance from the cache. This is a synchronous interface.
+Removes the specified Preferences instance from the cache, using an asynchronous callback.
+Removes the specified Preferences instance from the cache, using a Promise for asynchronous callback.
+Removes the specified Preferences instance from the cache. This is a synchronous operation.
+Configuration options for the Preferences instance. Includes the name of the Preferences instance and an optional dataGroupId to specify the sandbox path under which the Preferences instance is created. If dataGroupId is not provided, the Preferences instance is created in the application's sandbox directory. This property is only available in the Stage model.
+Retrieves the value associated with the key from the cached Preferences instance. If the value is null or not of the default type, returns the default data `defValue`. Uses `callback` for asynchronous invocation.
+Retrieves the value associated with the key from the cached Preferences instance. If the value is null or not of the default type, returns the default data defValue, using a Promise for asynchronous callback.
+Retrieves the value associated with the key from the cached Preferences instance. If the value is null or not of the default type, returns the default data defValue. This is a synchronous interface.
+Retrieve all key-value data from the cached Preferences instance.
+Retrieves all key-value data from the cached Preferences instance.
+Retrieves all key-value data from the cached Preferences instance. This is a synchronous interface.
+Writes data to the Preferences instance in the cache, which can be persisted through flush, using a callback for asynchronous notification.
+Writes data to the Preferences instance in the cache, which can be persisted through flush, using a Promise for asynchronous callback.
+Synchronously writes data to the Preferences instance in cache, which can be persisted through flush.
+Checks if the Preferences instance in the cache contains a storage key-value pair with the given key, using an asynchronous callback.
+Checks if the Preferences instance in the cache contains a stored key-value pair with the given key, using a Promise for asynchronous callback.
+Checks if the Preferences instance in the cache contains a stored key-value pair with the given key, this is a synchronous interface.
+Removes the key-value pair with the specified key from the cached Preferences instance. The changes can be made persistent by calling flush. The operation is confirmed through an asynchronous callback.
+Remove the stored key-value pair with the given key from the cached Preferences instance. The Preferences instance can be persisted using flush, and it uses a Promise for asynchronous callback.
+Removes the stored key-value pair with the specified key from the cached Preferences instance. The Preferences instance can be persisted using flush. This is a synchronous interface.
+Asynchronously stores the data from the cached Preferences instance to the persistent file of user preferences, using a callback for asynchronous notification. When the save is successful, `err` is undefined; otherwise, it is an error object.
+Asynchronously stores the data from the cached Preferences instance to the persistent file of user preferences, using a Promise for asynchronous callback.
+Clears all data from the Preferences instance cache. The Preferences instance can be persisted using flush. Uses callback for asynchronous invocation. When the clear operation is successful, err is undefined; otherwise, it is an error object.
+Clears all data from the cached Preferences instance, which can be persisted through flush, using a Promise for asynchronous callback.
+Clears all data from the Preferences instance in the cache. The Preferences instance can be persisted through flush. This is a synchronous interface.
+Subscribes to data changes. When the value of the subscribed key changes, the callback function is triggered after the flush method is executed.
+Subscribes to data changes across multiple processes. When the value of a subscribed key changes in any process (including the current process), and after the flush method is executed, the callback function is triggered.
+Triggers the callback when the subscribed key values change, after the flush method is executed.
+Unsubscribe from data change notifications.
+Unsubscribe from inter-process data change events. If no callback is specified, all subscriptions will be canceled.
+Unsubscribe from precise data change events. If `keys` is an empty array, unsubscribe from all keys; otherwise, unsubscribe only from the specified keys. If `callback` is not provided, all callbacks are processed; if `callback` is specified, only the given callback is processed.
+The value type can be a number, string, boolean, array of numbers, array of booleans, array of strings, 8-bit unsigned integer array, object, or arbitrary precision integer.
+Obtain the Preferences instance using a Promise for asynchronous callback.
+Obtain the Preferences instance, this is a synchronous interface.
+Removes the specified Preferences instance from the cache and deletes its associated persistent file if it exists. Uses a Promise for asynchronous callback.
+Removes the specified Preferences instance from the cache, using a Promise for asynchronous callback.
+Removes the specified Preferences instance from the cache. This is a synchronous operation.
+Configuration options for the Preferences instance. Specifies the name and optional data group ID for the Preferences instance. The data group ID is used to create the Preferences instance in the sandbox path corresponding to the specified dataGroupId. If not provided, the Preferences instance is created in the application's sandbox directory. This property is only available in the Stage model.
+Retrieves the value associated with the key from the cached Preferences instance. If the value is null or not of the default type, returns the default data `defValue`. Uses a Promise for asynchronous callback.
+Retrieves the value associated with the key from the cached Preferences instance. If the value is null or not of the default type, returns the default data defValue. This is a synchronous interface.
+Retrieves all key-value data from the cached Preferences instance. The returned Promise object contains all the key-value data and can be passed between ArkTS concurrent instances, including the main thread, TaskPool, and Worker threads, with the passing behavior being reference passing. Refer to the usage scenarios of Sendable for more details.
+Retrieves all key-value data from the cached Preferences instance. This is a synchronous interface.
+Writes data to the Preferences instance in the cache, which can be persisted through flush, using a Promise for asynchronous callback.
+Synchronously writes data into the Preferences instance in the cache, which can be persisted through flush.
+Checks if the Preferences instance in the cache contains a stored key-value pair with the given key, using a Promise for asynchronous callback.
+Checks if the Preferences instance in the cache contains a stored key-value pair with the given key, this is a synchronous interface.
+Removes the key-value pair with the specified key from the cached Preferences instance. The changes can be made persistent through flush, using a Promise for asynchronous callback.
+Removes the stored key-value pair with the specified key from the cached Preferences instance. The Preferences instance can be persisted using flush. This is a synchronous interface.
+Asynchronously stores the data from the cached Preferences instance into the persistent file shared for user preferences, using a Promise for asynchronous callback.
+Clears all data from the cached Preferences instance, which can be persisted through flush, using a Promise for asynchronous callback.
+Clears all data from the Preferences instance in the cache. The Preferences instance can be persisted using flush. This is a synchronous interface.
+Subscribes to data changes. When the value of a subscribed Key changes, the callback function is triggered after the flush method is executed, returning the changed Key.
+Subscribes to data changes across processes. When the value of a subscribed key changes in any process (including the current process), and after the flush method is executed, the callback function is triggered, returning the changed key.
+Triggers the callback when the subscribed key values change, after the flush method is executed.
+Unsubscribe from data change notifications.
+Unsubscribe from inter-process data change events. If no callback is specified, all subscriptions will be canceled.
+Unsubscribe from precise data change notifications.
+Obtain a related RdbStore for operating a relational database. Users can configure parameters of the RdbStore according to their needs, and then call relevant interfaces through the RdbStore to perform data operations, using a callback for asynchronous invocation.
+Obtain a related RdbStore for operating a relational database. Users can configure parameters of the RdbStore according to their needs, and then call relevant interfaces through the RdbStore to perform data operations, using Promise for asynchronous callbacks.
+Delete the database file, using an asynchronous callback.
+Delete the database configured with the specified database file, using a Promise for asynchronous callback.
+Delete the database using the specified database file configuration, with the operation result notified via the provided callback asynchronously.
+Delete the database using the specified database file configuration, with asynchronous callback via Promise.
+Manage relational database configuration.
+The security level of the database. Use the enum name instead of the enum value.
+Describes the status of asset attachments using enumeration names instead of values.
+Records the relevant information of asset attachments (files, images, videos, etc.).
+Represents an array of assets.
+Represents the type of value, which can be null, a number, a string, a boolean, a Uint8Array, an Asset, an Assets array, a Float32Array, or a bigint. Each type has specific usage and constraints, such as bigint not supporting certain predicates and requiring explicit type casting when used.
+Represents a collection of key-value pairs where the key is of type string and the value is of type ValueType.
+The type of the primary key, which can be either a number or a string.
+UTC time represented as a Date object.
+The key represents the primary key of a row in the database table, and the value represents the last modification time of that row, expressed in UTC format.
+Indicates the database synchronization mode. Use the enum names instead of the enum values.
+Indicates the source of the data. Use the enum name instead of the enum value.
+Special field used for predicate query conditions. Use the enumeration name instead of the enumeration value.
+Describes the subscription type. Use the enum names instead of enum values.
+Describes the enumeration for database rebuild types. Use the enumeration names instead of their values.
+Describes the type of data change using the enum name instead of the enum value.
+Tracks the details of the endpoint-cloud synchronization process.
+Describes the distributed type of the table. Use the enum name instead of the enum value.
+Distributed configuration information of the table. This includes settings such as whether the table supports auto synchronization and manual synchronization.
+The conflict resolution mode for insert and update interfaces. Use the enum names instead of the enum values.
+Describes the endpoint-cloud synchronization process using enumeration names instead of values.
+Describes the statistics of the end-cloud synchronization process for the database table.
+Describes the statistics for upload and download processes of end-cloud synchronization tasks for database tables.
+Indicates the status of the device-cloud synchronization process. Use the enum names instead of the enum values.
+Describes the overall statistics of upload and download tasks for end-cloud synchronization of the database.
+Describes the statistical information of SQL statements executed in the database.
+Constructor for creating an instance with the specified database table name.
+Connects to specified remote devices within the network when synchronizing the distributed database.
+Connects to all remote devices within the network when synchronizing the distributed database.
+Configures the predicate to match fields in the data table's column where the value equals the specified value.
+Configures a predicate to match fields in the data table's field column where the value is not equal to the specified value.
+Adds a left parenthesis to the predicate.
+Adds a right parenthesis to the predicate.
+Adds an OR condition to the predicate.
+Adds an AND condition to the predicate.
+Configures a predicate to match fields in the data table's field column that contain the value.
+Configures a predicate to match fields in the data table's field column that start with the specified value.
+Configures a predicate to match fields in the data table's field column that end with the specified value.

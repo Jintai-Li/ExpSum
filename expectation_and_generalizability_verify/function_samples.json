@@ -1,0 +1,242 @@
+[
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/jmh/java/io/reactivex/rxjava3/core/InputWithIncrementingInteger.java",
+    "function_with_comment": "/**\n * Exposes an Observable and Observer that increments n Integers and consumes them in a Blackhole.\n */\npublic abstract class InputWithIncrementingInteger {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/jmh/java/io/reactivex/rxjava3/core/MemoryPerf.java",
+    "function_with_comment": "/**\n * Measure various prepared flows about their memory usage and print the result\n * in a JMH compatible format; run {@link #main(String[])}.\n */\npublic final class MemoryPerf {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/jmh/java/io/reactivex/rxjava3/core/PerfAsyncConsumer.java",
+    "function_with_comment": "/**\n * A multi-type asynchronous consumer.\n */\npublic final class PerfAsyncConsumer extends CountDownLatch implements FlowableSubscriber<Object>, Observer<Object>,\nSingleObserver<Object>, CompletableObserver, MaybeObserver<Object> {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/jmh/java/io/reactivex/rxjava3/core/PerfAsyncConsumer.java",
+    "function_with_comment": "/**\n     * Wait for the terminal signal.\n     * @param count if less than 1001, a spin-wait is used\n     * @return this\n     */\n    public PerfAsyncConsumer await(int count) {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/jmh/java/io/reactivex/rxjava3/core/PerfBoundedSubscriber.java",
+    "function_with_comment": "/**\n * Performance subscriber with a one-time request from the upstream.\n */\npublic class PerfBoundedSubscriber extends CountDownLatch implements FlowableSubscriber<Object> {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/jmh/java/io/reactivex/rxjava3/core/PerfConsumer.java",
+    "function_with_comment": "/**\n * A multi-type synchronous consumer.\n */\npublic final class PerfConsumer implements FlowableSubscriber<Object>, Observer<Object>,\nSingleObserver<Object>, CompletableObserver, MaybeObserver<Object> {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/jmh/java/io/reactivex/rxjava3/core/PerfInteropConsumer.java",
+    "function_with_comment": "/**\n * A multi-type synchronous consumer that doesn't implement FlowableSubscriber and\n * thus should be treated by Flowable as a candidate for strict interop.\n */\npublic final class PerfInteropConsumer implements Subscriber<Object>, Observer<Object>,\nSingleObserver<Object>, CompletableObserver, MaybeObserver<Object> {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/BackpressureKind.java",
+    "function_with_comment": "/**\n * Enumeration for various kinds of backpressure support.\n * @since 2.0\n */\npublic enum BackpressureKind {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/BackpressureKind.java",
+    "function_with_comment": "/**\n     * The backpressure-related requests pass through this operator without change.\n     */\n    PASS_THROUGH,\n    /**\n     * The operator fully supports backpressure and may coordinate downstream requests\n     * with upstream requests through batching, arbitration or by other means.\n     */\n    FULL,\n    /**\n     * The operator performs special backpressure management; see the associated javadoc.\n     */\n    SPECIAL,\n    /**\n     * The operator requests {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/BackpressureSupport.java",
+    "function_with_comment": "/**\n * Indicates the backpressure support kind of the associated operator or class.\n * @since 2.0\n */\n@Retention(RetentionPolicy.RUNTIME)\n@Documented\n@Target({"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/Beta.java",
+    "function_with_comment": "/**\n * Indicates the feature is in beta state: it will be most likely stay but\n * the signature may change between versions without warning.\n */\npublic @interface Beta {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/CheckReturnValue.java",
+    "function_with_comment": "/**\n * Marks methods whose return values should be checked.\n * <p>History: 2.0.2 - experimental\n * @since 2.1\n */\n@Retention(RetentionPolicy.RUNTIME)\n@Documented\n@Target(ElementType.METHOD)\npublic @interface CheckReturnValue {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/Experimental.java",
+    "function_with_comment": "/**\n * Indicates the feature is in experimental state: its existence, signature or behavior\n * might change without warning from one release to the next.\n */\npublic @interface Experimental {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/NonNull.java",
+    "function_with_comment": "/**\n * Indicates that a field/parameter/variable/type parameter/return type is never null.\n */\n@Documented\n@Target(value = {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/Nullable.java",
+    "function_with_comment": "/**\n * Indicates that a field/parameter/variable/type parameter/return type may be null.\n */\n@Documented\n@Target(value = {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/SchedulerSupport.java",
+    "function_with_comment": "/**\n * Indicates what kind of scheduler the class or method uses.\n * <p>\n * Constants are provided for instances from {@link Schedulers} as well as values for\n * {@linkplain #NONE not using a scheduler} and {@linkplain #CUSTOM a manually-specified scheduler}.\n * Libraries providing their own values should namespace them with their base package name followed\n * by a colon ({@code :}) and then a human-readable name (e.g., {@code com.example:ui-thread}).\n * @since 2.0\n */\n@Retention(RetentionPolicy.RUNTIME)\n@Documented\n@Target({"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/SchedulerSupport.java",
+    "function_with_comment": "/**\n     * A special value indicating the operator/class doesn't use schedulers.\n     */\n    String NONE = \"none\";\n    /**\n     * A special value indicating the operator/class requires a scheduler to be manually specified.\n     */\n    String CUSTOM = \"custom\";\n\n    // Built-in schedulers:\n    /**\n     * The operator/class runs on RxJava's {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/SchedulerSupport.java",
+    "function_with_comment": "/**\n     * The operator/class runs on RxJava's {@linkplain Schedulers#io() I/O scheduler} or takes\n     * timing information from it.\n     */\n    String IO = \"io.reactivex:io\";\n    /**\n     * The operator/class runs on RxJava's {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/annotations/SchedulerSupport.java",
+    "function_with_comment": "/**\n     * The operator/class runs on RxJava's {@linkplain Schedulers#trampoline() trampoline scheduler}\n     * or takes timing information from it.\n     */\n    String TRAMPOLINE = \"io.reactivex:trampoline\";\n    /**\n     * The operator/class runs on RxJava's {"
+  },
+  {
+    "project": "ReactiveX/RxJava",
+    "project_url": "https://github.com/ReactiveX/RxJava",
+    "file_path": "src/main/java/io/reactivex/rxjava3/core/BackpressureOverflowStrategy.java",
+    "function_with_comment": "/**\n * Options to deal with buffer overflow when using onBackpressureBuffer.\n */\npublic enum BackpressureOverflowStrategy {"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api/client/local_client.py",
+    "function_with_comment": "\"\"\"Local client API.\"\"\"\n\nfrom __future__ import annotations\n\nimport httpx\n\nfrom airflow.api.common import delete_dag, trigger_dag\nfrom airflow.exceptions import AirflowBadRequest, PoolNotFound\nfrom airflow.models.pool import Pool\nfrom airflow.utils.types import DagRunTriggeredByType\n\n\nclass Client:\n    \"\"\"Local API client implementation.\"\"\"\n\n    def __init__(self, auth=None, session:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/base_auth_manager.py",
+    "function_with_comment": "\"\"\"\n    Class to derive in order to implement concrete auth managers.\n\n    Auth managers are responsible for any user management related operation such as login, logout, authz, ...\n    \"\"\"\n\n    def init(self) -> None:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/base_auth_manager.py",
+    "function_with_comment": "\"\"\"\n        Run operations when Airflow is initializing.\n\n        By default, do nothing.\n        \"\"\"\n\n    @abstractmethod\n    def deserialize_user(self, token: dict[str, Any]) -> T:\n        \"\"\"Create a user object from dict.\"\"\"\n\n    @abstractmethod\n    def serialize_user(self, user: T) -> dict[str, Any]:\n        \"\"\"Create a subject and extra claims dict from a user object.\"\"\"\n\n    async def get_user_from_token(self, token: str) -> BaseUser:\n        \"\"\"Verify the JWT token is valid and create a user object from it if valid.\"\"\"\n        try:\n            payload: dict[str, Any] = await self._get_token_validator().avalidated_claims(token)\n        except InvalidTokenError as e:\n            log.error(\"JWT token is not valid: %s\", e)\n            raise e\n\n        try:\n            return self.deserialize_user(payload)\n        except (ValueError, KeyError) as e:\n            log.error(\"Couldn't deserialize user from token, JWT token is not valid: %s\", e)\n            raise InvalidTokenError(str(e))\n\n    def generate_jwt(\n        self, user: T, *, expiration_time_in_seconds: int = conf.getint(\"api_auth\", \"jwt_expiration_time\")\n    ) -> str:\n        \"\"\"Return the JWT token from a user object.\"\"\"\n        return self._get_token_signer(expiration_time_in_seconds=expiration_time_in_seconds).generate(\n            self.serialize_user(user)\n        )\n\n    @abstractmethod\n    def get_url_login(self, **kwargs) -> str:\n        \"\"\"Return the login page url.\"\"\"\n\n    def get_url_logout(self) -> str | None:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/base_auth_manager.py",
+    "function_with_comment": "\"\"\"\n        Return the logout page url.\n\n        The user is redirected to this URL when logging out. If None is returned (by default), no redirection\n        is performed. This redirection is usually needed to invalidate resources when logging out, such as a\n        session.\n        \"\"\"\n        return None\n\n    def refresh_user(self, *, user: T) -> T | None:\n        \"\"\"\n        Refresh the user if needed.\n\n        By default, does nothing. Some auth managers might need to refresh the user to, for instance,\n        refresh some tokens that are needed to communicate with a service/tool.\n\n        This method is called by every single request, it must be lightweight otherwise the overall API\n        server latency will increase.\n        \"\"\"\n        return None\n\n    @abstractmethod\n    def is_authorized_configuration(\n        self,\n        *,\n        method: ResourceMethod,\n        user: T,\n        details: ConfigurationDetails | None = None,\n    ) -> bool:\n        \"\"\"\n        Return whether the user is authorized to perform a given action on configuration.\n\n        :param method: the method to perform\n        :param user: the user to performing the action\n        :param details: optional details about the configuration\n        \"\"\"\n\n    @abstractmethod\n    def is_authorized_connection(\n        self,\n        *,\n        method: ResourceMethod,\n        user: T,\n        details: ConnectionDetails | None = None,\n    ) -> bool:\n        \"\"\"\n        Return whether the user is authorized to perform a given action on a connection.\n\n        :param method: the method to perform\n        :param user: the user to performing the action\n        :param details: optional details about the connection\n        \"\"\"\n\n    @abstractmethod\n    def is_authorized_dag(\n        self,\n        *,\n        method: ResourceMethod,\n        user: T,\n        access_entity: DagAccessEntity | None = None,\n        details: DagDetails | None = None,\n    ) -> bool:\n        \"\"\"\n        Return whether the user is authorized to perform a given action on a DAG.\n\n        :param method: the method to perform\n        :param user: the user to performing the action\n        :param access_entity: the kind of DAG information the authorization request is about.\n            If not provided, the authorization request is about the DAG itself\n        :param details: optional details about the DAG\n        \"\"\"\n\n    @abstractmethod\n    def is_authorized_backfill(\n        self,\n        *,\n        method: ResourceMethod,\n        user: T,\n        details: BackfillDetails | None = None,\n    ) -> bool:\n        \"\"\"\n        Return whether the user is authorized to perform a given action on a backfill.\n\n        :param method: the method to perform\n        :param user: the user to performing the action\n        :param details: optional details about the backfill\n        \"\"\"\n\n    @abstractmethod\n    def is_authorized_asset(\n        self,\n        *,\n        method: ResourceMethod,\n        user: T,\n        details: AssetDetails | None = None,\n    ) -> bool:\n        \"\"\"\n        Return whether the user is authorized to perform a given action on an asset.\n\n        :param method: the method to perform\n        :param user: the user to performing the action\n        :param details: optional details about the asset\n        \"\"\"\n\n    @abstractmethod\n    def is_authorized_asset_alias(\n        self,\n        *,\n        method: ResourceMethod,\n        user: T,\n        details: AssetAliasDetails | None = None,\n    ) -> bool:\n        \"\"\"\n        Return whether the user is authorized to perform a given action on an asset alias.\n\n        :param method: the method to perform\n        :param user: the user to perform the action on\n        :param details: optional details about the asset alias\n        \"\"\"\n\n    @abstractmethod\n    def is_authorized_pool(\n        self,\n        *,\n        method: ResourceMethod,\n        user: T,\n        details: PoolDetails | None = None,\n    ) -> bool:\n        \"\"\"\n        Return whether the user is authorized to perform a given action on a pool.\n\n        :param method: the method to perform\n        :param user: the user to performing the action\n        :param details: optional details about the pool\n        \"\"\"\n\n    def is_authorized_team(\n        self,\n        *,\n        method:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/base_auth_manager.py",
+    "function_with_comment": "\"\"\"\n        Return whether the user is authorized to perform a given action on a team.\n\n        It is used primarily to check whether a user belongs to a team.\n        This function needs to be overridden by an auth manager compatible with multi-team.\n\n        :param method: the method to perform\n        :param user: the user performing the action\n        :param details: optional details about the team\n        \"\"\"\n        raise NotImplementedError(\n            \"The auth manager you are using is not compatible with multi-team. \"\n            \"In order to run Airflow in multi-team mode you need to use an auth manager compatible with it.\"\n        )\n\n    @abstractmethod\n    def is_authorized_variable(\n        self,\n        *,\n        method: ResourceMethod,\n        user: T,\n        details: VariableDetails | None = None,\n    ) -> bool:\n        \"\"\"\n        Return whether the user is authorized to perform a given action on a variable.\n\n        :param method: the method to perform\n        :param user: the user to performing the action\n        :param details: optional details about the variable\n        \"\"\"\n\n    @abstractmethod\n    def is_authorized_view(\n        self,\n        *,\n        access_view: AccessView,\n        user: T,\n    ) -> bool:\n        \"\"\"\n        Return whether the user is authorized to access a read-only state of the installation.\n\n        :param access_view: the specific read-only view/state the authorization request is about.\n        :param user: the user to performing the action\n        \"\"\"\n\n    @abstractmethod\n    def is_authorized_custom_view(self, *, method: ResourceMethod | str, resource_name: str, user: T) -> bool:\n        \"\"\"\n        Return whether the user is authorized to perform a given action on a custom view.\n\n        A custom view can be a view defined as part of the auth manager. This view is then only available when\n        the auth manager is used as part of the environment. It can also be a view defined as part of a\n        plugin defined by a user.\n\n        :param method: the method to perform.\n            The method can also be a string if the action has been defined in a plugin.\n            In that case, the action can be anything (e.g. can_do).\n            See https://github.com/apache/airflow/issues/39144\n        :param resource_name: the name of the resource\n        :param user: the user to performing the action\n        \"\"\"\n\n    @abstractmethod\n    def filter_authorized_menu_items(self, menu_items: list[MenuItem], *, user: T) -> list[MenuItem]:\n        \"\"\"\n        Filter menu items based on user permissions.\n\n        :param menu_items: list of all menu items\n        :param user: the user\n        \"\"\"\n\n    def batch_is_authorized_connection(\n        self,\n        requests:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/base_auth_manager.py",
+    "function_with_comment": "\"\"\"\n        Batch version of ``is_authorized_connection``.\n\n        By default, calls individually the ``is_authorized_connection`` API on each item in the list of requests.\n        Can lead to some poor performance. It is recommended to override this method in the auth manager\n        implementation to provide a more efficient implementation.\n\n        :param requests: a list of requests containing the parameters for ``is_authorized_connection``\n        :param user: the user to performing the action\n        \"\"\"\n        return all(\n            self.is_authorized_connection(\n                method=request[\"method\"],\n                details=request.get(\"details\"),\n                user=user,\n            )\n            for request in requests\n        )\n\n    def batch_is_authorized_dag(\n        self,\n        requests: Sequence[IsAuthorizedDagRequest],\n        *,\n        user: T,\n    ) -> bool:\n        \"\"\"\n        Batch version of ``is_authorized_dag``.\n\n        By default, calls individually the ``is_authorized_dag`` API on each item in the list of requests.\n        Can lead to some poor performance. It is recommended to override this method in the auth manager\n        implementation to provide a more efficient implementation.\n\n        :param requests: a list of requests containing the parameters for ``is_authorized_dag``\n        :param user: the user to performing the action\n        \"\"\"\n        return all(\n            self.is_authorized_dag(\n                method=request[\"method\"],\n                access_entity=request.get(\"access_entity\"),\n                details=request.get(\"details\"),\n                user=user,\n            )\n            for request in requests\n        )\n\n    def batch_is_authorized_pool(\n        self,\n        requests: Sequence[IsAuthorizedPoolRequest],\n        *,\n        user: T,\n    ) -> bool:\n        \"\"\"\n        Batch version of ``is_authorized_pool``.\n\n        By default, calls individually the ``is_authorized_pool`` API on each item in the list of requests.\n        Can lead to some poor performance. It is recommended to override this method in the auth manager\n        implementation to provide a more efficient implementation.\n\n        :param requests: a list of requests containing the parameters for ``is_authorized_pool``\n        :param user: the user to performing the action\n        \"\"\"\n        return all(\n            self.is_authorized_pool(\n                method=request[\"method\"],\n                details=request.get(\"details\"),\n                user=user,\n            )\n            for request in requests\n        )\n\n    def batch_is_authorized_variable(\n        self,\n        requests: Sequence[IsAuthorizedVariableRequest],\n        *,\n        user: T,\n    ) -> bool:\n        \"\"\"\n        Batch version of ``is_authorized_variable``.\n\n        By default, calls individually the ``is_authorized_variable`` API on each item in the list of requests.\n        Can lead to some poor performance. It is recommended to override this method in the auth manager\n        implementation to provide a more efficient implementation.\n\n        :param requests: a list of requests containing the parameters for ``is_authorized_variable``\n        :param user: the user to performing the action\n        \"\"\"\n        return all(\n            self.is_authorized_variable(\n                method=request[\"method\"],\n                details=request.get(\"details\"),\n                user=user,\n            )\n            for request in requests\n        )\n\n    @provide_session\n    def get_authorized_connections(\n        self,\n        *,\n        user: T,\n        method: ResourceMethod = \"GET\",\n        session: Session = NEW_SESSION,\n    ) -> set[str]:\n        \"\"\"\n        Get connection ids (``conn_id``) the user has access to.\n\n        :param user: the user\n        :param method: the method to filter on\n        :param session: the session\n        \"\"\"\n        stmt = select(Connection.conn_id, Connection.team_name)\n        rows = session.execute(stmt).all()\n        connections_by_team: dict[str | None, set[str]] = defaultdict(set)\n        for conn_id, team_name in rows:\n            connections_by_team[team_name].add(conn_id)\n\n        conn_ids: set[str] = set()\n        for team_name, team_conn_ids in connections_by_team.items():\n            conn_ids.update(\n                self.filter_authorized_connections(\n                    conn_ids=team_conn_ids, user=user, method=method, team_name=team_name\n                )\n            )\n\n        return conn_ids\n\n    def filter_authorized_connections(\n        self,\n        *,\n        conn_ids: set[str],\n        user: T,\n        method: ResourceMethod = \"GET\",\n        team_name: str | None = None,\n    ) -> set[str]:\n        \"\"\"\n        Filter connections the user has access to.\n\n        By default, check individually if the user has permissions to access the connection.\n        Can lead to some poor performance. It is recommended to override this method in the auth manager\n        implementation to provide a more efficient implementation.\n\n        :param conn_ids: the set of connection ids (``conn_id``)\n        :param user: the user\n        :param method: the method to filter on\n        :param team_name: the name of the team associated to the connections if Airflow environment runs in\n            multi-team mode\n        \"\"\"\n\n        def _is_authorized_connection(conn_id:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/base_auth_manager.py",
+    "function_with_comment": "\"\"\"\n        Get DAGs the user has access to.\n\n        :param user: the user\n        :param method: the method to filter on\n        :param session: the session\n        \"\"\"\n        stmt = (\n            select(DagModel.dag_id, dag_bundle_team_association_table.c.team_name)\n            .join(DagBundleModel, DagModel.bundle_name == DagBundleModel.name)\n            .join(\n                dag_bundle_team_association_table,\n                DagBundleModel.name == dag_bundle_team_association_table.c.dag_bundle_name,\n                isouter=True,\n            )\n        )\n        rows = session.execute(stmt).all()\n        dags_by_team: dict[str | None, set[str]] = defaultdict(set)\n        for dag_id, team_name in rows:\n            dags_by_team[team_name].add(dag_id)\n\n        dag_ids: set[str] = set()\n        for team_name, team_dag_ids in dags_by_team.items():\n            dag_ids.update(\n                self.filter_authorized_dag_ids(\n                    dag_ids=team_dag_ids, user=user, method=method, team_name=team_name\n                )\n            )\n\n        return dag_ids\n\n    def filter_authorized_dag_ids(\n        self,\n        *,\n        dag_ids: set[str],\n        user: T,\n        method: ResourceMethod = \"GET\",\n        team_name: str | None = None,\n    ) -> set[str]:\n        \"\"\"\n        Filter DAGs the user has access to.\n\n        By default, check individually if the user has permissions to access the DAG.\n        Can lead to some poor performance. It is recommended to override this method in the auth manager\n        implementation to provide a more efficient implementation.\n\n        :param dag_ids: the set of DAG ids\n        :param user: the user\n        :param method: the method to filter on\n        :param team_name: the name of the team associated to the Dags if Airflow environment runs in\n            multi-team mode\n        \"\"\"\n\n        def _is_authorized_dag_id(dag_id:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/base_auth_manager.py",
+    "function_with_comment": "\"\"\"\n        Get pools the user has access to.\n\n        :param user: the user\n        :param method: the method to filter on\n        :param session: the session\n        \"\"\"\n        stmt = select(Pool.pool, Pool.team_name)\n        rows = session.execute(stmt).all()\n        pools_by_team: dict[str | None, set[str]] = defaultdict(set)\n        for pool_name, team_name in rows:\n            pools_by_team[team_name].add(pool_name)\n\n        pool_names: set[str] = set()\n        for team_name, team_pool_names in pools_by_team.items():\n            pool_names.update(\n                self.filter_authorized_pools(\n                    pool_names=team_pool_names, user=user, method=method, team_name=team_name\n                )\n            )\n\n        return pool_names\n\n    def filter_authorized_pools(\n        self,\n        *,\n        pool_names: set[str],\n        user: T,\n        method: ResourceMethod = \"GET\",\n        team_name: str | None = None,\n    ) -> set[str]:\n        \"\"\"\n        Filter pools the user has access to.\n\n        By default, check individually if the user has permissions to access the pool.\n        Can lead to some poor performance. It is recommended to override this method in the auth manager\n        implementation to provide a more efficient implementation.\n\n        :param pool_names: the set of pool names\n        :param user: the user\n        :param method: the method to filter on\n        :param team_name: the name of the team associated to the connections if Airflow environment runs in\n            multi-team mode\n        \"\"\"\n\n        def _is_authorized_pool(name:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/base_auth_manager.py",
+    "function_with_comment": "\"\"\"\n        Get teams the user belongs to.\n\n        :param user: the user\n        :param method: the method to filter on\n        :param session: the session\n        \"\"\"\n        team_names = Team.get_all_team_names(session=session)\n        return self.filter_authorized_teams(teams_names=team_names, user=user, method=method)\n\n    def filter_authorized_teams(\n        self,\n        *,\n        teams_names: set[str],\n        user: T,\n        method: ResourceMethod = \"GET\",\n    ) -> set[str]:\n        \"\"\"\n        Filter teams the user belongs to.\n\n        By default, check individually if the user has permissions to access the team.\n        Can lead to some poor performance. It is recommended to override this method in the auth manager\n        implementation to provide a more efficient implementation.\n\n        :param teams_names: the set of team names\n        :param user: the user\n        :param method: the method to filter on\n        \"\"\"\n\n        def _is_authorized_team(name:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/base_auth_manager.py",
+    "function_with_comment": "\"\"\"\n        Get variable keys the user has access to.\n\n        :param user: the user\n        :param method: the method to filter on\n        :param session: the session\n        \"\"\"\n        stmt = select(Variable.key, Variable.team_name)\n        rows = session.execute(stmt).all()\n        variables_by_team: dict[str | None, set[str]] = defaultdict(set)\n        for var_key, team_name in rows:\n            variables_by_team[team_name].add(var_key)\n\n        var_keys: set[str] = set()\n        for team_name, team_var_keys in variables_by_team.items():\n            var_keys.update(\n                self.filter_authorized_variables(\n                    variable_keys=team_var_keys, user=user, method=method, team_name=team_name\n                )\n            )\n\n        return var_keys\n\n    def filter_authorized_variables(\n        self,\n        *,\n        variable_keys: set[str],\n        user: T,\n        method: ResourceMethod = \"GET\",\n        team_name: str | None = None,\n    ) -> set[str]:\n        \"\"\"\n        Filter variables the user has access to.\n\n        By default, check individually if the user has permissions to access the variable.\n        Can lead to some poor performance. It is recommended to override this method in the auth manager\n        implementation to provide a more efficient implementation.\n\n        :param variable_keys: the set of variable keys\n        :param user: the user\n        :param method: the method to filter on\n        :param team_name: the name of the team associated to the connections if Airflow environment runs in\n            multi-team mode\n        \"\"\"\n\n        def _is_authorized_variable(var_key:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/managers/simple/user.py",
+    "function_with_comment": "\"\"\"\n    User model for users managed by the simple auth manager.\n\n    :param username: The username\n    :param role: The role associated to the user. If not provided, the user has no permission\n    \"\"\"\n\n    def __init__(self, *, username:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/auth/tokens.py",
+    "function_with_comment": "\"\"\"Raised when a claim in the JWT is invalid.\"\"\"\n\n    def __init__(self, claim:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/common/exceptions.py",
+    "function_with_comment": "\"\"\"Base class for error handlers.\"\"\"\n\n    def __init__(self, exception_cls:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/common/exceptions.py",
+    "function_with_comment": "\"\"\"exception_handler method.\"\"\"\n        raise NotImplementedError\n\n\nclass _DatabaseDialect(Enum):\n    SQLITE = \"sqlite\"\n    MYSQL = \"mysql\"\n    POSTGRES = \"postgres\"\n\n\nclass _UniqueConstraintErrorHandler(BaseErrorHandler[IntegrityError]):\n    \"\"\"Exception raised when trying to insert a duplicate value in a unique column.\"\"\"\n\n    unique_constraint_error_prefix_dict: dict[_DatabaseDialect, str] = {\n        _DatabaseDialect.SQLITE: \"UNIQUE constraint failed\",\n        _DatabaseDialect.MYSQL: \"Duplicate entry\",\n        _DatabaseDialect.POSTGRES: \"violates unique constraint\",\n    }\n\n    def __init__(self):\n        super().__init__(IntegrityError)\n        self.dialect: _DatabaseDialect | None = None\n\n    def exception_handler(self, request: Request, exc: IntegrityError):\n        \"\"\"Handle IntegrityError exception.\"\"\"\n        if self._is_dialect_matched(exc):\n            exception_id = get_random_string()\n            stacktrace = \"\"\n            for tb in traceback.format_tb(exc.__traceback__):\n                stacktrace += tb\n\n            log_message = f\"Error with id {exception_id}\\n{stacktrace}\"\n            log.error(log_message)\n            if conf.get(\"api\", \"expose_stacktrace\") == \"True\":\n                message = log_message\n            else:\n                message = (\n                    \"Serious error when handling your request. Check logs for more details - \"\n                    f\"you will find it in api server when you look for ID {exception_id}\"\n                )\n\n            raise HTTPException(\n                status_code=status.HTTP_409_CONFLICT,\n                detail={\n                    \"reason\": \"Unique constraint violation\",\n                    \"statement\": str(exc.statement),\n                    \"orig_error\": str(exc.orig),\n                    \"message\": message,\n                },\n            )\n\n    def _is_dialect_matched(self, exc: IntegrityError) -> bool:\n        \"\"\"Check if the exception matches the unique constraint error message for any dialect.\"\"\"\n        exc_orig_str = str(exc.orig)\n        for dialect, error_msg in self.unique_constraint_error_prefix_dict.items():\n            if error_msg in exc_orig_str:\n                self.dialect = dialect\n                return True\n        return False\n\n\nclass DagErrorHandler(BaseErrorHandler[DeserializationError]):\n    \"\"\"Handler for Dag related errors.\"\"\"\n\n    def __init__(self):"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/common/parameters.py",
+    "function_with_comment": "\"\"\"Base class for path or query parameters with ORM transformation.\"\"\"\n\n    def __init__(self, value:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/common/parameters.py",
+    "function_with_comment": "\"\"\"Filter on the limit.\"\"\"\n\n    def to_orm(self, select:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/common/parameters.py",
+    "function_with_comment": "\"\"\"Filter on offset.\"\"\"\n\n    def to_orm(self, select:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/common/parameters.py",
+    "function_with_comment": "\"\"\"Filter Dags by favorite status.\"\"\"\n\n    def __init__(self, user_id:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/common/parameters.py",
+    "function_with_comment": "\"\"\"Filter on is_stale.\"\"\"\n\n    def to_orm(self, select:"
+  },
+  {
+    "project": "apache/airflow",
+    "project_url": "https://github.com/apache/airflow",
+    "file_path": "airflow-core/src/airflow/api_fastapi/common/parameters.py",
+    "function_with_comment": "\"\"\"Search on attribute.\"\"\"\n\n    def __init__(self, attribute:"
+  }
+]

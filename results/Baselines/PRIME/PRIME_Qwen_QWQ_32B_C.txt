@@ -1,0 +1,200 @@
+Swaps two nodes in a heap, updating their parent and child relationships to maintain heap structure.
+This function manages a worker thread that processes tasks from a queue, handling both regular and slow I/O work, ensuring that slow I/O tasks are managed according to a threshold and re-scheduled if necessary.
+Closes the async handle by stopping the spin, removing it from the queue, and stopping the handle.
+Spin-wait loop to handle asynchronous operations, ensuring thread safety and preventing CPU hogging by yielding when necessary.
+Stops and cleans up the async IO watcher and handles associated with the given event loop.
+// Creates a socket with specified domain, type, and protocol, applying non-blocking and close-on-exec flags, and optionally disabling SIGPIPE.
+Closes a file descriptor with platform-specific handling to avoid cancellation or sanitization issues.
+Set or clear the close-on-exec flag for the given file descriptor.
+Returns high-resolution time based on the specified clock type, preferring faster clocks with sufficient precision.
+// This function sets up a pipe to listen for incoming connections, with checks for valid state and platform-specific adjustments to the backlog parameter.
+Check if the given string `s` of length `n` contains a null character, with special handling for Linux abstract socket namespace paths.
+Closes the signal handle and stops the signal watcher.
+Initializes a stream handle with the given loop and type, setting up various callbacks and internal structures.
+Starts listening for incoming TCP connections on the specified socket, binding if necessary, and sets up the callback for connection events.
+// Allocates memory for an array of `count` elements, each of `size` bytes, using the local allocator.
+// Initializes and listens for connections on a specified server type, managing multiple server contexts and semaphores.
+// This function waits for a signal with a timeout, ensuring the flag is set before proceeding.
+Wait for a condition variable while holding a mutex, and ensure the condition is met before proceeding.
+Signal the condition variable to wake up the waiting thread, using broadcast or signal based on configuration.
+// This function returns the address of the global errno variable, which stores error codes for system calls and library functions.
+// Declares the fcntl function which performs operations on an open file descriptor, such as getting and setting attributes.
+Waits on the condition variable `__cond` with a timeout specified by `__abstime`, while holding the mutex `__mutex`.
+// Waits for the condition variable `__cond` while holding the mutex `__mutex`.
+// Destroy the read-write lock object and release any associated resources.
+// Unlocks the mutex object specified by __mutex.
+// Initializes a read-write lock with the specified attributes.
+// Declares a function to perform an initialization routine once in a multi-threaded environment.
+// This function locks the specified mutex, blocking if the mutex is already locked by another thread.
+Initialize a mutex with specified attributes.
+// Destroy the given mutex and release any resources it is using.
+// Broadcasts to all threads waiting on the condition variable `__cond`.
+// Signals one of the threads waiting on the specified condition variable.
+// This function yields the processor to other threads or processes.
+// Declare the external function `sem_post` which posts a semaphore, allowing another thread waiting on the semaphore to proceed.
+// Waits for the semaphore to be available and decrements it.
+// Adds a signal to a signal set
+// Declare an external function `sigemptyset` that initializes a signal set to empty, returning an integer status.
+// Declares an external function `sigfillset` that initializes a signal set with all signals.
+// This function sets or gets the action to take upon delivery of a signal, with parameters for the signal number and action structures.
+// Prints a system error message to the standard error stream, prefixed by the string __s.
+// Retrieves the value of the environment variable specified by __name
+// Declares an external function atoi that converts a string to an integer, marked as pure and throw-safe.
+// Retrieves the resolution of the specified clock and stores it in the provided timespec structure.
+// Declares the function `clock_gettime` which retrieves the current value of the specified clock `__clock_id` and stores it in the `timespec` structure pointed to by `__tp`.
+// Declares the pipe2 function, which creates a pipe with specified file descriptors and flags.
+// Declare an external function `syscall` that takes a system call number and variable arguments, returning a long integer.
+// Reads up to __nbytes bytes from file descriptor __fd into buffer __buf and returns the number of bytes read.
+// Declares the function `unlink` which removes a file or directory specified by `__name`.
+// Writes up to __n bytes from the buffer __buf to the file descriptor __fd and returns the number of bytes written.
+// This function modifies the calling thread's signal mask according to the specified parameters and optionally returns the previous mask.
+// Extern declaration for the epoll_ctl function, which controls an epoll file descriptor with specified operations and events.
+Waits for events on file descriptors using `epoll` with a specified timeout and signal mask.
+// Creates an epoll instance with the specified flags.
+// Declare the eventfd function that creates an event file descriptor for event notification, with parameters for initial value and flags.
+// Remove a watch from an inotify instance, where __fd is the file descriptor and __wd is the watch descriptor.
+// Declares the extern function `munmap` which unmaps a memory region specified by address and length.
+// Declaration of the getsockname function to retrieve the socket name and store it in the provided address structure.
+// Binds the socket file descriptor to an address and port.
+// Declares the shutdown function, which closes parts of a full-duplex connection.
+// This function sets the socket options for the specified file descriptor with the given level, option name, value, and length.
+// Declares the `listen` function to prepare a socket for accepting connections, with `__fd` as the file descriptor and `__n` as the maximum number of pending connections.
+// Declares an external function to create a socket with specified domain, type, and protocol.
+// Declares the external function `uname` which fills the given `struct utsname` with system name and other related information.
+Releases all side data and buffer references of the packet, then resets it to default state.
+Frees the memory allocated for an AVPacket and unreferences it if it is not null.
+Frees all side data elements and the side data array itself from the given AVPacket, setting the element count to zero.
+Allocate and initialize an AVPacket structure, returning a pointer to it.
+Clone the content of a coded bitstream unit based on its type.
+// Retrieves `n` bits from the bitstream context and returns the value as an unsigned integer, ensuring the operation is within valid bit range and updating the context accordingly.
+// This function retrieves a VLC (Variable Length Code) from the bitstream using the provided VLC table and returns the decoded value.
+Encodes a run termination value using JPEG-LS algorithm, updating state and bitstream with error value and run type.
+Parses a PGS subtitle palette segment, converting YCbCr to RGB and storing the colors in the palette.
+// Safely writes `n` bits of `value` to the bitstream context `s`, ensuring `n` is within valid range and `value` fits in `n` bits.
+// Sets the Golomb-Rice code for JPEG-LS encoding, handling both regular and escape cases.
+Allocates memory for an object with reference counting, initializes it, and optionally zeroes the user data.
+Decrements the reference count of an object and frees it if the count reaches zero.
+Reorders the block components and applies DXT5 compression to the reordered data.
+// This function matches colors in a 4x4 block to one of four colors derived from two input colors, using a linear projection method for fast approximation.
+Compresses an alpha block by finding the minimum and maximum alpha values, encoding them, and then determining and writing the color indices based on a linear scale and DXT5 alpha block index determination.
+Converts a 16-bit RGB565 color value to a 32-bit RGBA format, expanding each 5 or 6-bit channel to 8 bits and setting the alpha channel to 0.
+Converts RGBA to YCoCg color space and stores the result in the destination array.
+Refines color values for a block of pixels, adjusting the minimum and maximum color values based on pixel data and a mask, and returns whether the values were updated.
+Optimizes and selects the most prominent colors from a 4x4 pixel block, converting them into 16-bit RGB565 format.
+// Linearly interpolates the RGB values of two pixels and stores the result in the output array.
+Compresses a color block by either using a constant color or optimizing and refining colors based on principal component analysis, then writes the compressed data to the destination buffer.
+Checks if a 4x4 block of pixels has a constant color by comparing each pixel's value to the first pixel's value.
+// This function returns the exact number of bits per sample for a given codec ID, or 0 if the codec is not recognized.
+// This function returns the number of bits per sample for a given codec ID, with specific cases handled and a default fallback to `av_get_exact_bits_per_sample`.
+// Calculates the duration of an audio frame based on codec parameters and frame size, ensuring a non-negative result.
+// This function retrieves a VLC-coded value from the bitstream, adjusting it based on the shift and base value.
+Iterates through the filter list and returns the next filter, updating the opaque pointer for subsequent calls.
+// Retrieves an AVFilter by its name, returning NULL if not found.
+Frees an AVFilterContext and all associated resources, including uninitializing the filter, freeing input/output pads and links, and cleaning up command queues and options.
+Sets the ready state of the filter with the given priority, ensuring it is at least as high as the current value.
+Initializes an AVFilterContext with the provided options, setting up threading and enabling expressions if specified.
+// Links two filter contexts by creating a new AVFilterLink object, ensuring compatibility and initializing necessary structures.
+Unblocks all output links of the given filter by setting their `frame_blocked_in` flag to 0.
+Allocates and initializes an AVFilterContext for the given filter and instance name, handling memory allocation and error checking.
+Frees the resources associated with an AVFilterLink, including its internal FIFO queue, frame pool, and channel layout, and deallocates the link itself.
+Process and validate an incoming frame for a filter link, ensuring format consistency and updating link statistics, or handle errors if inconsistencies are found.
+Parses and sets filter options from a string, handling key-value pairs and shorthand options, logging errors and debug information.
+Removes a filter from the filter graph and updates the graph's internal state accordingly.
+Allocates and initializes a new filter context within the specified filter graph, handling threading initialization if necessary.
+// Unreferences the AVFilterFormats object pointed to by ref and sets ref to NULL.
+Frees and unreferences the AVFilterChannelLayouts structure pointed to by `ref`.
+// Retrieves video configuration (width, height, pixel format, and alignment) from the frame pool, returning an error if the pool is invalid or not of video type.
+Uninitializes and frees the frame pool, including its buffer pools.
+Initializes a video frame pool with specified dimensions, pixel format, and alignment, allocating memory and setting up internal structures.
+Allocates and initializes an `AVFrame` from the specified frame pool, setting up video or audio properties based on the pool's type.
+Frees all frames in the frame queue and deallocates the queue if it's not the first bucket.
+Add a frame to the frame queue, reallocating memory if necessary and updating queue statistics.
+Takes a frame from the frame queue, updates queue state, and returns the frame.
+Initializes the frame queue by setting the queue pointer to the first bucket and marking it as allocated.
+Parses and applies filter graph description, managing segments and handling errors.
+Initialize filter chains in the graph segment, returning an error if initialization fails or unsupported flags are provided.
+Frees the memory allocated for an `AVFilterGraphSegment` and its associated chains, scale options, and itself.
+Frees the memory allocated for the `AVFilterInOut` linked list, including each element's name.
+// Function to link filters within a segment of an AVFilterGraph, handling input and output connections and error conditions.
+Logs an error for any non-existent option found in the filter parameters of each chain in the segment.
+Create and initialize filters for the given filter graph segment, handling scale options and filter names.
+Parses a filter graph segment from a string, creating and populating an `AVFilterGraphSegment` structure with filter chains.
+Applies the specified segment of the filter graph, creating and initializing filters, and linking them with the provided inputs and outputs.
+Parses a link name from the buffer, checking for valid label and bracket matching, and logs errors if any.
+Apply options to filters in the graph segment, returning an error if any options are left unset or unsupported.
+Process the input frame, applying normalization if enabled, and pass it to the output link.
+Normalize the input frame's pixel values for each channel using historical min/max values and apply the transformation to the output frame.
+Fetches a video buffer for the specified filter link with the given dimensions, or defaults to a standard buffer if none is available.
+Reads and parses the AIFF header from the input stream, setting up the necessary audio parameters and codec information.
+// Skips the given number of bytes from the current position in the stream.
+Fills the input buffer with data from the underlying stream, managing buffer size and handling end-of-file conditions.
+Seek to a specified position in the stream, handling various seek modes and buffer conditions.
+Sets the buffer size for an AVIOContext, allocating a new buffer and updating internal pointers accordingly.
+Reads a single byte from the AVIOContext buffer, refilling the buffer if necessary.
+// Dumps packet information to the log with an option to include payload and uses the time base from the provided stream.
+Ensure the playlist is created or reused for the given URL, returning an error if memory allocation fails.
+// Finds the next track edit unit based on the current offset and updates the edit unit output.
+// This function calculates the absolute offset for a given BodySID and relative offset, returning the result and associated partition if found, or an error if not.
+// This function calculates the absolute file offset for a given edit unit in an MXF file, using the provided index table and edit rate, and returns the offset along with the corresponding partition and adjusted edit unit if requested.
+// Function to create an absolute URL from a base and a relative URL, considering the path style.
+Decomposes a URL into its components (scheme, authority, userinfo, host, port, path, query, and fragment) and stores them in the provided `URLComponents` structure.
+// Constructs an absolute URL from a base URL and a relative URL, handling various path simplifications and schemes.
+// Parses the given string according to the specified format and returns the number of successfully matched and assigned input items.
+// Compares two strings ignoring case differences, returning an integer less than, equal to, or greater than zero if the first string is found, respectively, to be less than, to match, or be greater than the second.
+Compares up to `n` characters of two strings case-insensitively, returning 0 if they are equal, or the difference of the first differing characters otherwise.
+Checks if a given name matches any of the comma-separated names in a list, considering case-insensitivity and negation prefixes.
+// Copies up to `size` - 1 characters from the null-terminated string `src` to `dst`, ensuring null-termination and returning the total length of `src`.
+Checks if `str` starts with the prefix `pfx` and optionally sets `*ptr` to the point in `str` after the prefix. Returns 1 if `str` starts with `pfx`, otherwise 0.
+Extracts a token from the buffer, skipping whitespace and handling escape sequences and quotes, updating the buffer position.
+Converts a lowercase letter to its uppercase equivalent, returning the character unchanged if it is not a lowercase letter.
+// Checks if the given character is a digit (0-9).
+Converts an uppercase letter to lowercase, leaving other characters unchanged.
+// Checks if the given character is a whitespace (space, form feed, newline, carriage return, tab, or vertical tab).
+// Returns `p` if it is not NULL, otherwise returns `x`.
+Initialize an AVBufferPool with the specified buffer size and allocation function, or use the default allocation function if none is provided.
+Releases the reference to the buffer and sets the pointer to NULL.
+Check if the buffer is writable by verifying it's not read-only and has a single reference count.
+// Creates an AVBufferRef with the given data and a custom free function, returning NULL on failure.
+Releases and uninitializes the buffer pool, ensuring all resources are properly cleaned up and the pool is flushed.
+Free resources and destroy the buffer pool, including flushing, mutex destruction, and invoking a custom free function if provided.
+Allocates a buffer of the specified size and wraps it in an AVBufferRef structure, returning a pointer to the new reference or NULL on failure.
+Allocate a buffer from the pool, or create a new one using the provided allocation function, and associate it with a buffer pool entry for management.
+Acquires a buffer from the buffer pool, creating a new one if necessary, and increments the pool's reference count upon successful retrieval.
+Replaces the buffer reference `*pdst` with a new reference to `src`, ensuring data consistency and handling memory allocation errors.
+// Creates a new reference to an AVBufferRef, incrementing the refcount and returning the new reference.
+// Initializes an AVChannelLayout from a given channel mask, setting the order to native and the number of channels based on the mask.
+Parses a string to set the channel layout for an audio stream, handling various formats including named layouts, ambisonic orders, and custom channel configurations.
+Frees the custom channel map if applicable and resets the channel layout structure to zero.
+// Returns the default channel layout for the given number of channels, or 0 if not found.
+Sets the default channel layout for the given number of channels, or unspecified order if no match is found.
+Compares two AVChannelLayout structures for equality based on their channel counts, order, and specific channel configurations.
+Function to get the channel ID from an index in a given channel layout, handling custom, ambisonic, and native channel orders.
+Parses a string representing a channel layout and returns the corresponding channel layout as an integer.
+Copies the channel layout from `src` to `dst`, handling custom channel maps with dynamic memory allocation.
+Checks the validity of an AVChannelLayout based on the number of channels and the channel order type.
+Clip the value of `a` to the range of an unsigned integer with `p` bits, ensuring it does not exceed the maximum value representable with `p` bits.
+// Returns the maximum alignment value for the current CPU architecture, defaulting to 8 if the architecture is not recognized.
+Determine the number of logical CPU cores available on the system, with logging and an option to override the detected core count.
+Retrieve and cache CPU flags using atomic operations for thread safety.
+Iterates through the dictionary entries, returning the next entry or NULL if at the end.
+Retrieve a dictionary entry by key with case sensitivity and suffix handling options.
+Parses a string into key-value pairs and adds them to an AVDictionary, handling specified separators and flags.
+Copies all entries from the source dictionary to the destination dictionary, applying the specified flags.
+// Returns the number of entries in the dictionary, or 0 if the dictionary is NULL.
+Frees the memory allocated for an AVDictionary and its elements.
+Sets or updates a key-value pair in the dictionary with specified flags, handling memory allocation and key collision based on the provided options.
+Parses a string to a double, supporting hexadecimal, SI prefixes, and 'dB' notation, and optionally returns the position after the last parsed character.
+Frees the memory allocated for an AVExpr expression and its parameters recursively.
+Parses and evaluates an expression string, returning the result or an error code.
+Evaluates an expression using the provided values and context.
+Parses and evaluates an expression string, handling constants, functions, and validation, with error logging and memory management.
+// Computes 10 raised to the power of x using the base-2 exponential function.
+// Opens a file with the specified mode, handling different access types and returning a file pointer.
+A function to open a file with specified flags and optional creation mode, applying platform-specific flags and ensuring the file descriptor is closed on exec if supported.
+Copies properties from one AVFrame to another.
+Copies the content of one AVFrame to another, ensuring format compatibility and handling video or audio frames accordingly.
+Replaces the content of `dst` AVFrame with that of `src`, handling buffer replacements and property copying, ensuring proper memory management and error handling.
+Allocates buffer for the given frame based on its format, dimensions, and sample count, returning an error if invalid parameters are provided.
+// This function copies the properties and data from one AVFrame to another, handling both refcounted and non-refcounted buffers, and ensuring channel layout compatibility.
+Clone an AVFrame by allocating a new frame and copying the contents of the source frame into it.
+// Allocates and initializes a new side data buffer for the given frame, returning a pointer to the allocated AVFrameSideData or NULL on failure.

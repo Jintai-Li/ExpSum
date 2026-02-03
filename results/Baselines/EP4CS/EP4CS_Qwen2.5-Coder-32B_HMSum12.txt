@@ -1,0 +1,200 @@
+Called when the system configuration updates, requiring the provided new configuration information to be applied.
+Called when the memory reaches different levels to notify the system callback.
+Single line comment: Represents launch parameters automatically passed by the system to an Ability when it starts, which developers do not need to modify.
+Launch reason for an Ability, used to determine the initial start cause and can be utilized with UIAbility's onCreate method to perform corresponding operations based on different launch reasons.
+Returns the reason why the ability last exited, which is an enum type that can be used with the onCreate(want, launchParam) method of UIAbility to perform corresponding operations.
+This method represents the migration result of an Ability and can be used with UIAbility's onContinue(wantParam) method to return appropriate values (AGREE, REJECT, MISMATCH).
+Memory level enum for different memory usage scenarios,配合UIAbility's onMemoryLevel(level) method to perform actions accordingly.
+Defines the window mode for starting an Ability, including fullscreen and split-screen modes for specific devices.
+The `OnSaveResult` enum represents the result of saving application data and can be used with UIAbility's onSaveState(reason, wantParam) method.
+This enum defines migration and application recovery save states for UIAbility, supporting operations based on different save reasons.
+Enum values for mission state, indicating whether the current application task is active or inactive.
+Triggered callback when the current UIAbility is created, allowing registration of lifecycle listeners for the application context.
+Triggered callback when the window stage is created, requiring the current UIAbility and WindowStage objects as parameters.
+Register a callback to be triggered when the windowStage gains focus after the application context's lifecycle is registered.
+Register a listener for application context lifecycle callbacks and invoke this method when the windowStage loses focus.
+Register a listener for application context lifecycle callbacks and invoke this method when the window stage is destroyed.
+Register the listener for application context lifecycle callbacks and trigger the callback when the ability is destroyed.
+Trigger callback when the ability's state changes from background to foreground.
+Trigger callback when the ability's state changes from foreground to background.
+Register a listener for ability lifecycle events and trigger a callback when the ability migrates.
+Called before the UIAbility's onCreate method is triggered to register a listener for application context lifecycle events.
+Callback invoked before the onWindowStageCreate triggers in UIAbility, and it supports atomic services starting from API version 12.
+Callback invoked before the `onWindowStageDestroy` is triggered in UIAbility, and supports usage in atomic services from API version 12.
+Callback to register an ability lifecycle listener before UIAbility's onForeground is triggered.
+Called before the UIAbility's onDestroy is triggered to register a listener for the application context's lifecycle.
+Callback invoked to register a listener for the lifecycle of the application context before UIAbility's onBackground is triggered.
+Callback invoked before the onNewWant method is triggered in UIAbility, allowing registration of listeners for application context lifecycle events.
+Register a listener for the application context's lifecycle and callback when the UIAbility's onNewWant is triggered.
+Callback invoked before the onContinue method is triggered in UIAbility, stage model only.
+Called before the onWindowStageRestore callback in UIAbility, indicating that the window stage is about to be restored.
+Callback triggered after the onWindowStageRestore method is called in UIAbility.
+Callback before the `onSaveState` is triggered in UIAbility.
+Callback triggered after UIAbility's onSaveState is called to register a listener for application context lifecycle events.
+Called when the application is created.
+Triggered when an event to start a specified ability occurs.
+Callback to start an UIAbility in an existing or new process based on the provided Want parameters.
+Callback for global configuration changes, such as system language and theme mode.
+Called when the system decides to adjust memory, for example, when there's not enough memory to run all background processes.
+Indicates the context of the AbilityStage.
+Called when the application is destroyed, this method is invoked in the normal scheduling lifecycle and will not be called if the app exits abnormally or is terminated.
+onCreate(): void - Called when the ActionExtensionAbility is created to execute initialization business logic operations.
+Called when the ActionExtensionAbility interface content object is created.
+onForeground(): void - Called when the ActionExtensionAbility transitions from the background to the foreground.
+onBackground(): void - Lifecycle callback for ActionExtensionAbility, triggered when it moves from the foreground to the background.
+Called when the UIExtensionContentSession object is destroyed.
+onDestroy(): Perform resource cleanup when the ActionExtensionAbility is being destroyed.
+Create a module context based on the provided application context and module name.
+Registers a listener for foreground/background state changes and triggers a callback when the current application switches from background to foreground.
+Registers a listener for foreground/background state changes and triggers a callback when the current application moves to the background.
+Called when the save request is successful.
+This method is called when the save request fails.
+Request auto-saving of form data within the provided UI context, with an optional callback for asynchronous response.
+The onStart method is called when a child process is started via childProcessManager, and it accepts optional parameters of type ChildProcessArgs.
+An enumeration for subprocess startup modes, specifying whether the subprocess is forked from the App itself or from AppSpawn.
+Start a child process and invoke its entry method asynchronously, returning a Promise with the子进程PID.
+Start a child process asynchronously by specifying the source entry file and callback for PID retrieval.
+Start a child process by specifying the source entry path and arguments, returning a Promise with the process PID.
+The `AreaMode` enum represents different encryption levels for data access, with various permissions in locked and unlocked states.
+Process mode applicable only on tablet devices.
+Startup visibility flag for the Ability after it starts, applicable only on tablet devices.
+onCreate(): void - Callback when EmbeddedUIExtensionAbility is created, executing initialization business logic operations.
+Called when the EmbeddedUIExtensionAbility interface content object is created.
+Called when the EmbeddedUIExtensionAbility interface content object is destroyed.
+onForeground(): Called when the EmbeddedUIExtensionAbility transitions from the background to the foreground.
+onBackground(): void - Called when the EmbeddedUIExtensionAbility transitions to the background.
+onDestroy(): Perform resource cleanup when the EmbeddedUIExtensionAbility is being destroyed.
+Trigger callback when the system environment changes after registering for system environment change listeners.
+Register a system environment change listener to trigger a callback when the system memory changes, returning the memory tweak level.
+Set the execution mode for UIAbility, where 0 displays it in the foreground, 1 runs it in the background, and 2 invokes a UIExtensionAbility. Supported from API version 11.
+The `ExecuteResult` interface represents the return result of an intent call, containing the error code and optional result data.
+Start the Ability asynchronously using the provided Want and callback function.
+Start an Ability asynchronously using the provided Want information.
+Executes an intent in the foreground UI ability with the specified name, parameters, and page loader, returning the execution result or a promise for it.
+Executes an intent in the background mode of a UI ability and returns the execution result as a promise.
+Execute an intent in the UI extension ability and return the execution result or a promise containing the result.
+Executes a service extension ability with the given intent name and parameters and returns the execution result.
+onCreate(): void - Called when PhotoEditorExtensionAbility is created to execute initialization business logic operations.
+Called when the PhotoEditorExtensionAbility interface content object is created to perform operations such as reading the original image and loading the page.
+onForeground(): Triggered when the PhotoEditorExtensionAbility moves from the background to the foreground.
+onBackground(): void - Called when the PhotoEditorExtensionAbility transitions from the foreground to the background.
+onDestroy(): Perform resource cleanup when the photo editor extension ability is being destroyed.
+onCreate(): void - Callback when ShareExtensionAbility is created, execute initialization business logic operations.
+Called when the ShareExtensionAbility interface content object is created.
+onForeground(): void - Callback for ShareExtensionAbility lifecycle, triggered when the ability switches from background to foreground.
+onBackground(): void - Called when the ShareExtensionAbility transitions from the foreground to the background.
+Called when the ShareExtensionAbility interface content object is destroyed.
+Perform resource cleanup when the ShareExtensionAbility is being destroyed.
+This method is called when a UIAbility instance is created after a cold start, to perform initialization logic, and it is a synchronous interface that does not support asynchronous callbacks.
+Called when the WindowStage is created, requiring the `windowStage` parameter of type `window.WindowStage`.
+Called when the WindowStage is about to be destroyed.
+Called when the WindowStage is destroyed.
+Called after restoring the WindowStage when migrating a multi-instance ability.
+onDestroy(): Perform resource cleanup when the UIAbility is being destroyed.
+onForeground(): void - Callback for UIAbility lifecycle, triggered when the application moves from background to foreground.
+onBackground(): void - Callback for UIAbility lifecycle when the app switches to the background.
+Triggered when the Ability is preparing to migrate, to save data; returns the continue result or a Promise with the continue result.
+This method is called when an already launched and foreground-running UIAbility instance is restarted due to switching to the background, and it supports atomic services from API version 11.
+Call this method to dump client information when needed, which can be used for dumping non-sensitive data.
+This method is called to save the state of the UIAbility when automatic state saving is enabled and the application encounters a fault, returning whether the state can be saved.
+Set the data to be shared on the UIAbility for cross-end sharing scenarios.
+onPrepareToTerminate(): boolean - Callback for UIAbility lifecycle, indicating whether to cancel the UIAbility shutdown process.
+Returns `true` to keep the UIAbility in the background or `false` to destroy it when side-swiped back.
+Call the service endpoint with a specified method and Parcelable data using a Promise for asynchronous callback.
+Call the generic component service on the server with a serialized method and data, returning a Promise of the server's response.
+Release the communication interface for a generic component server.
+Register a generic component service endpoint for asynchronous notification of disconnection events, using the callback function.
+Register a callback to asynchronously receive notifications for state changes in co-ordinated scenarios across devices.
+Register an asynchronous listener for the 'release' event using the callback function.
+Cancel registering the listener for the 'release' event asynchronously; this capability is currently unsupported.
+Cancel unregistering the listener for the 'release' event on the generic component service stub; this feature is currently unsupported.
+Register a message notification callback for the generic component with the specified method and callback function.
+Turn off the callback for a registered general component service event.
+Register the callback type for generic component service end Stub to handle disconnection notifications with the msg parameter.
+Register the callback type for cross-device component state change notifications in协作场景.
+Send a data sequence using `rpc.MessageSequence` and return an `rpc Parcelable` object.
+Callback for UIExtensionAbility initialization, executing business logic operations.
+Called when the UIExtensionAbility interface content object is created.
+Called when the UIExtensionAbility interface content object is destroyed.
+onForeground(): void - Callback for UIExtensionAbility lifecycle, triggered when the ability moves from background to foreground.
+onBackground(): void - Called when the UIExtensionAbility transitions from the foreground to the background.
+Invokes when the ability is destroyed and returns a Promise<void> to indicate asynchronous destruction.
+Load the specific page content associated with the UIExtensionComponent control and LocalStorage, given the path and optionally a LocalStorage instance.
+Stop the UIExtensionContentSession's corresponding window interface object asynchronously using the callback.
+Stop the UIExtensionContentSession corresponding window interface asynchronously and return a Promise<void>.
+Stop the UIExtensionContentSession and return the result to the UIExtensionComponent control asynchronously.
+Stop the UIExtensionContentSession and return the result to the UIExtensionComponent control asynchronously.
+Set the window to privacy mode, which prevents the window content from being screen-captured or recorded, and returns a Promise indicating the operation's success.
+Set the window privacy mode to either true or false and provide an asynchronous callback for the result.
+Start an Ability by specifying the type, parameters, and callbacks for handling start success or failure.
+Start a UIExtensionAbility by specifying the type, parameters, and callback for handling start failures, returning a Promise<void>.
+Get the UIExtension window proxy.
+Convert the given Context object to a SendableContext object.
+Convert a SendableContext object to a Context object.
+Convert the given `SendableContext` object to an `ApplicationContext`.
+Convert a SendableContext object to an AbilityStageContext.
+Convert a SendableContext object to a UIAbilityContext.
+Configure the application startup framework settings when the app starts.
+Called when all startup tasks have completed.
+Execute the startup framework with the specified tasks and configuration.
+Delete all startup task results.
+Retrieve the result of the specified startup task that implements the StartupTask interface.
+Check if the specified startup task has been initialized and return a boolean value.
+Delete the specified initialization result by providing the class name that implements the StartupTask interface.
+This method is called when the dependent startup task has completed execution.
+Initialize business logic using the provided AbilityStageContext.
+Start a new Ability asynchronously using the provided parameters and callback.
+Start a new Ability asynchronously and return a Promise indicating success (0) or failure (other values).
+Acquire a DataAbilityHelper object to access data abilities via the given URI.
+Start an Ability asynchronously and handle the result or error through the provided callback function.
+Start an Ability asynchronously and return a Promise containing the AbilityResult.
+Terminate the current Ability asynchronously and return the specified result using the provided callback.
+Terminate the current Ability and return the specified result using a Promise.
+Check if the main window of the Ability has focus asynchronously using the provided callback.
+Check if the main window of the Ability has focus, returning a Promise<boolean>.
+Get the Want information for the Ability to be launched asynchronously using the provided callback.
+Return a Promise containing the Want information for the Ability to be launched.
+Get the application context.
+Stop the current Ability asynchronously using the provided callback function.
+Stops the current Ability and returns a Promise<void>.
+Establish a connection with the specified ServiceAbility and return its ID.
+Disconnect the specified ServiceAbility by ID asynchronously and use the callback to handle the result.
+Disconnect the specified ServiceAbility by its ID asynchronously.
+Get the current Ability's window using an asynchronous callback.
+Get the current Ability's window using a Promise callback.
+Represents the current Ability's window configuration settings, accessible via featureAbility.AbilityWindowConfiguration.
+Represents the window settings for the current Ability as an object with keys of type AbilityStartSetting and values of type AbilityWindowConfiguration.
+This enum defines error codes returned when starting an Ability.
+This enum represents the types of data operations, such as insertion, modification, deletion, and assertion, for DataAbility batch data processing.
+Start the specified particle ability asynchronously using the provided parameters and callback.
+Start the specified particle ability asynchronously and return a Promise<void>.
+Destroy the current particleAbility asynchronously using the provided callback function.
+Destroy the current particleAbility asynchronously and return a Promise<void>.
+Acquire a DataAbilityHelper object to assist with accessing DataAbility for a given file URI.
+Apply for a long-running task to the system using an asynchronous callback, with the specified ID and notification parameters.
+Start a background running task with the given id and notification request using a Promise.
+Cancel long-running task with an asynchronous callback.
+Cancel the long-running background task asynchronously and return a Promise<void>.
+Establish a connection with the specified ServiceAbility and return its ID.
+Disconnect the current ability from a specified ServiceAbility asynchronously using the provided callback.
+Disconnect the current ability from a specified ServiceAbility asynchronously.
+Define error codes returned when starting an Ability.
+Get an instance of the access control module.
+Check if the application with the given tokenID has the specified permission and returns a Promise with the authorization status.
+Syncically verify if the application with the given tokenID has the specified permission and return the authorization status.
+Verify the authorization status of an application token for a specific permission using a Promise.
+Request user permissions asynchronously using the specified context and callback.
+Request user permissions using a UIAbility context and a list of permission names, returning a Promise with the result.
+Verify the access token and check if the specified application has the given permission. Returns a Promise containing the authorization status.
+Check if the application is granted the specified permission and return the authorization status synchronously.
+Request the specified permissions on the setting UI from the given context.
+Request the global switch setting dialog for the given UIAbility/UIExtensionAbility and return a Promise with the switch state.
+This enum represents the grant status with values indicating authorization outcomes.
+This enum represents the types of global switches including CAMERA (0), MICROPHONE (1), and LOCATION (2).
+Enum representing the status of accessing sensitive data in screen lock mode.
+This enum represents the status of releasing sensitive data access permissions when the screen is locked.
+ acquires the access status for accessing sensitive data under screen lock.
+Releases the access permissions for sensitive data in screen lock mode and returns the status of the operation.
+This enum represents the state of a process, including creation, foreground, active, background, and destruction states.
+Query if the current context is running in a stability test scenario using an asynchronous callback.
+Check if the current execution is in a stability test scenario and return a Promise<boolean>.
