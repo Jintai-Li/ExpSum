@@ -67,9 +67,7 @@ def get_accuracies(pred_file, ref_file):
             [hypotheses[key]],
             [references[key]]
         )
-
-    # ★ 数值等价关键点 ★
-    denom = len(references)   # 实际仍然是 200 或 999
+    denom = len(references)
     return total / denom * 100
 
 
