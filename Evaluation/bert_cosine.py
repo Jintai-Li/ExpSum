@@ -6,17 +6,9 @@ import getopt
 from sentence_transformers import SentenceTransformer
 from sentence_transformers.util import cos_sim
 
-
-# =====================================================
-# 环境变量（与原版一致）
-# =====================================================
 os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 os.environ["CUDA_VISIBLE_DEVICES"] = "7"
 
-
-# =====================================================
-# 模型加载（与原版一致）
-# =====================================================
 model = SentenceTransformer(
     'roberta-large-nli-stsb-mean-tokens'
 )
@@ -51,8 +43,6 @@ def get_accuracies(pre_file_path, ref_file_path):
 
         cosine_scores = cos_sim(embeddings1, embeddings2)
         cosin_results += cosine_scores.item()
-
-    # ★ 唯一变化：200 → 自动规模（数值等价）
     return cosin_results / total * 100
 
 
