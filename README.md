@@ -47,7 +47,7 @@ python download_proconsul_dataset.py --output_dir <TARGET_DIRECTORY>
 
 ------
 
-## Data Sampling for Open-Source / Industrial Projects
+## Data Sampling for Open-Source Projects
 
 To ensure representativeness and comparability, we apply a controlled sampling strategy when selecting data from open-source and industrial projects.
 
