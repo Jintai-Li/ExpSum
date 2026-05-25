@@ -42,7 +42,7 @@ A classic (read-only) token is sufficient.
 
 ## Installation
 
-```json
+```
 pip install PyGithub
 ```
 
